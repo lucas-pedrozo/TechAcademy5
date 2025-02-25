@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar com Cor Dinâmica</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Estilo do Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Seções com diferentes cores */
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #sec1 { background: #FF5733; }
+        #sec2 { background: #33B5FF; }
+        #sec3 { background: #33FF57; }
+        #sec4 { background: #B533FF; }
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">Minha Navbar</div>
+
+    <div id="sec1" class="section">Seção 1</div>
+    <div id="sec2" class="section">Seção 2</div>
+    <div id="sec3" class="section">Seção 3</div>
+    <div id="sec4" class="section">Seção 4</div>
+
+    <script>
+        // Seleciona o Navbar
+        const navbar = document.querySelector('.navbar');
+
+        // Função para detectar a seção visível
+        function updateNavbarColor() {
+            const sections = document.querySelectorAll('.section');
+            let currentColor = '';
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    currentColor = window.getComputedStyle(section).backgroundColor;
+                }
+            });
+
+            navbar.style.backgroundColor = currentColor;
+        }
+
+        // Evento de scroll para atualizar a cor
+        window.addEventListener('scroll', updateNavbarColor);
+
+        // Chamada inicial para garantir que a cor seja correta no início
+        updateNavbarColor();
+    </script>
+
+</body>
+</html>
