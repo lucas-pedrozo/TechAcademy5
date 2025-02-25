@@ -3,16 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-:root {
-    /* VAR COLORO*/
-    --text: white;
-
-    /* VAR FONTES */
-
-
-    /* VAR MABRGE */
-    --btn: 10px 20px;
-    --global-10: 10px;
-
-}
