@@ -3,6 +3,7 @@ import Containers from "../../components/Containers";
 import imagemSound from "../../assets/imagemsound.webp";
 import imagemTimeLine from "../../assets/imagemTimeLine.png";
 import bannerAnimado1 from "../../assets/bannerAnimado1.mp4";
+import bannerAnimado2 from "../../assets/bannerAnimado2.mp4";
 
 function Home() {
   const onClickChange = () => {
@@ -20,7 +21,7 @@ function Home() {
               textButton="More"
             />
             <video
-              src={bannerAnimado1}
+              src={bannerAnimado2}
               autoPlay
               loop
               muted
@@ -43,6 +44,7 @@ function Home() {
             />
           </div>
         </div>
+        <h4>Come discover the power of audiovisual</h4>
       </div>
     </>
   );

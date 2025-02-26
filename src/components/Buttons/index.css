@@ -12,6 +12,7 @@
     border: none !important;
     font-family: montserrat;
     font-weight: bold;
+    font-size: 1rem;
     padding: var(--padding-btn);
 
     transition: 500ms;

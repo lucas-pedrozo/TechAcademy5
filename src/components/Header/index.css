@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        img {
+            width: 40px;
+        }
+
+        p {
+            color: white;
+            font-family: var(--primary);
+            font-family: 1.25rem;
+        }
+    }
+
+
+
+    .login {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 40px;
+        }
+    }
+}

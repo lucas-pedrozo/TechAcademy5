@@ -10,7 +10,7 @@
 .container {
     background-color: var(--BG-Grad);
     backdrop-filter: blur(20px);
-    padding: 20px;
+    padding: var(--padding-15);
     border: solid 1px var(--BG-White);
     border-radius: 20px;
     box-shadow: var(--box-shadow-btn);
@@ -22,7 +22,7 @@
     }
 
     p {
-        font-size: 1rem;
+        font-size: 0.875rem;
         color: white;
         padding-bottom: 40px;
         padding-top: 10px;

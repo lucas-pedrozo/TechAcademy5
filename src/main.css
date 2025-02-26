@@ -15,6 +15,9 @@
     --Text-White: #fff;
     --Text-Black: #000;
 
+    /* font family */
+    --primary: montserrat;
+
     /*border-radius */
     --border-radius-40: 40px;
     --border-radius-30: 30px;
@@ -22,9 +25,13 @@
     --border-radius-10: 10px;
 
     /* padding */
-    --padding-btn: 10px 20px;
-    --padding-10: 10px;
-    --padding-20: 20px;
+    --padding-btn: 0.5em 1.25em;
+    --padding-10: 0.625em;
+    --padding-15: 0.9375em;
+    --padding-20: 1.25em;
+    --paddingBT: 2.5em 0;
+
+
 
     /* box-shadow */
     --box-shadow-btn: 0 2px 10px rgba(0, 0, 0, 0.6);

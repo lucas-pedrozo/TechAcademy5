@@ -11,14 +11,15 @@ body {
 }
 
 .home {
+    width: 100%;
+    max-width: 1200px;
     padding: 0 10px;
-
     margin: auto;
 
     .newsFlex {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 40px;
 
         .newsLeft {
             display: flex;
@@ -41,5 +42,15 @@ body {
                 box-shadow: var(--box-shadow-btn);
             }
         }
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.625rem;
+        color: var(--Text-White);
+        font-family: var(--primary);
+
+        padding: var(--paddingBT);
+
     }
 }
