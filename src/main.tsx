@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./main.css";
-import App from "./App";
+import Tome from "../public/Tabela";
 import Home from "./pages/Home";
 
 createRoot(document.getElementById("root")!).render(

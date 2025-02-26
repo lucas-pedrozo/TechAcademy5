@@ -1,8 +1,8 @@
-import "./Home.css";
-import Containers from "../components/Containers";
+import "./Tabela.css";
+import Containers from "../src/components/Containers";
 import imagemSound from "../assets/imagemsound.webp";
 
-function Home() {
+function Tabela() {
   const onClickChange = () => {};
   return (
     <>
@@ -18,4 +18,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Tabela;

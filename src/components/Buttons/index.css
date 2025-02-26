@@ -14,5 +14,10 @@
     font-weight: bold;
     padding: var(--padding-btn);
 
-    transition: 500ms
+    transition: 500ms;
+
+    &:hover {
+        box-shadow: 0 0 10px white;
+        transform: scale(1.03);
+    }
 }
