@@ -13,17 +13,19 @@
     padding: 20px;
     border: solid 1px var(--BG-White);
     border-radius: 20px;
+    box-shadow: var(--box-shadow-btn);
 
     img {
         width: 100%;
         border-radius: 20px;
-        padding-bottom: 10px;
+        box-shadow: var(--box-shadow-btn);
     }
 
     p {
         font-size: 1rem;
         color: white;
         padding-bottom: 40px;
+        padding-top: 10px;
         font-family: montserrat;
     }
 
