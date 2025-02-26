@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.container {
+    background-color: var(--BG-Grad);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border: solid 1px var(--BG-White);
+    border-radius: 20px;
+
+    img {
+        width: 100%;
+        border-radius: 20px;
+        padding-bottom: 10px;
+    }
+
+    p {
+        font-size: 1rem;
+        color: white;
+        padding-bottom: 40px;
+        font-family: montserrat;
+    }
+
+    .directionButton {
+        display: flex;
+        justify-content: end;
+    }
+}
