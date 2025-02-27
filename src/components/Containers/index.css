@@ -7,7 +7,8 @@
 
 
 
-.container {
+.Card {
+
     background-color: var(--BG-Grad);
     backdrop-filter: blur(20px);
     padding: var(--padding-15);

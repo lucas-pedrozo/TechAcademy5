@@ -12,7 +12,7 @@ body {
 
 .home {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1220px;
     padding: 0 10px;
     margin: auto;
 
@@ -32,7 +32,7 @@ body {
             }
         }
 
-        .newsRight {
+        .newsRigth {
             display: flex;
             flex-direction: column-reverse;
             gap: 40px;
@@ -52,5 +52,18 @@ body {
 
         padding: var(--paddingBT);
 
+    }
+}
+
+@media (min-width:600px) {
+    .home {
+        .newsFlex {
+            flex-direction: row;
+            gap: 20px;
+
+            .newsRigth {
+                flex-direction: column;
+            }
+        }
     }
 }

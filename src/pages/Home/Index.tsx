@@ -28,7 +28,7 @@ function Home() {
               className="video"
             ></video>
           </div>
-          <div className="newsRight">
+          <div className="newsRigth">
             <video
               src={bannerAnimado1}
               autoPlay

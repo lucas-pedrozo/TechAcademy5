@@ -46,3 +46,7 @@ body {
     background-color: var(--BG-Primary);
     color: var(--Text-White);
 }
+
+.sp {
+    padding: 20px 0;
+}

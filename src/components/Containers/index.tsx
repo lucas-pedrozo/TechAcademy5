@@ -16,7 +16,7 @@ export default function Containers({
 }: containerProps) {
   return (
     <>
-      <div className="container">
+      <div className="Card">
         <img src={img} alt="" />
         <p>{text}</p>
         <div className="directionButton">
