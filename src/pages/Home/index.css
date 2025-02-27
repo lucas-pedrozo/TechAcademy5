@@ -46,10 +46,11 @@ body {
 
     h4 {
         text-align: center;
-        font-size: 1.625rem;
+        /* font-size: 1.625rem; */
+        font-size: clamp(1.625rem, 5vw, 2.5rem);
         color: var(--Text-White);
         font-family: var(--primary);
-
+        font-weight: bold;
         padding: var(--paddingBT);
 
     }

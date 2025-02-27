@@ -12,6 +12,7 @@
     --BG-Black: #000;
     --BG-Primary: #0E0E0E;
     --BG-Grad: rgba(255, 255, 255, 0.1);
+    --BG-Grad-black: rgba(0, 0, 0, 0.1);
 
 
 
@@ -35,6 +36,7 @@
     --padding-15: 0.9375em;
     --padding-20: 1.25em;
     --paddingBT: 2.5em 0;
+    --padding10-20: 0.625em 1.25rem;
 
 
 

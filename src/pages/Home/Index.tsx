@@ -11,7 +11,7 @@ function Home() {
   };
   return (
     <>
-      <div className="home">
+      <main className="home">
         <div className="newsFlex">
           <div className="newsLeft">
             <Containers
@@ -45,7 +45,7 @@ function Home() {
           </div>
         </div>
         <h4>Come discover the power of audiovisual</h4>
-      </div>
+      </main>
     </>
   );
 }
