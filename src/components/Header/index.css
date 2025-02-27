@@ -4,37 +4,94 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    background-image: url(./assets/bg.png);
+    background-position: top center;
+    color: white !important;
+}
+
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: var;
+    background-color: rgba(255, 255, 255, 0.137);
+    backdrop-filter: blur(20px);
+    border-bottom: solid 1px #B5B5B5;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.623);
 
-    .logo {
+
+
+    nav {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 5px;
+        padding: 10px 20px;
 
-        img {
-            width: 40px;
+        .containerLogo {
+            a {
+                gap: 10px;
+
+                img {
+                    width: 40px;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.623);
+
+                }
+
+                p {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
         }
 
-        p {
-            color: white;
-            font-family: var(--primary);
-            font-family: 1.25rem;
-        }
-    }
+        .popover {
+            gap: 15px;
+            align-items: center;
+
+            .link {
+                color: white;
+                font-size: 1rem;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+
+            .containerUser {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                border: solid 1px rgb(167, 167, 167);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.623);
+                padding: 8px 15px;
+                border-radius: 40px;
+
+                .imgUser {
+                    width: 34px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.623);
+                }
+
+                .loginUser {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    display: none;
+                }
+            }
+
+            .confgUser {
+                .nameUser {
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+            }
 
 
-
-    .login {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        img {
-            width: 40px;
         }
     }
 }
