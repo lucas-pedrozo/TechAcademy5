@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+/* tailwind css v4.x */
+@import "tailwindcss";
+@import "tailwindcss-animated";
 
 body {
   background-image: url(./assets/ImageBg/BG1.png);
