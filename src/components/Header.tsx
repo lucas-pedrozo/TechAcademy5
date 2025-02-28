@@ -1,5 +1,4 @@
 "use client";
-import "./Header.css";
 import logoSoud from "../assets/logo/Mask.png";
 import logoUser from "../assets/logo/lucas.jpg";
 
@@ -68,47 +67,62 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className=" bg-[rgba(255, 255, 255, 0.2)] ">
+    <header
+      className="header"
+      style={{
+        background: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(20px)",
+        borderRadius: "0 0 40px 40px",
+        borderBottom: "1px solid white",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.6)",
+      }}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px]"
       >
-        <div className="logo">
+        <div className=" logo">
           <a href="#" className="flex items-center gap-[10px]">
-            <img alt="" src={logoSoud} className="w-[40px] " />
-            <p className="font-bold text-[1.125rem]">HARMONIC SOUND</p>
+            <img alt="" src={logoSoud} className="@min- w-[40px] " />
+            <p className="hidden min-[520px]:block font-bold text-[1.125rem]">
+              HARMONIC SOUND
+            </p>
           </a>
         </div>
         <div className="loginUserFixo flex gap-[15px] items-center">
           <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 shadow-custom hover:scale-105 hover:shadow-customHover"
+              className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] "
             >
               HOME
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 shadow-custom hover:scale-105 hover:shadow-customHover"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
             >
               SOUND
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 shadow-custom hover:scale-105 hover:shadow-customHover"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
             >
               ABOUT
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 shadow-custom hover:scale-105 hover:shadow-customHover"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
             >
               CONTACT
             </a>
           </PopoverGroup>
 
           <div className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] ">
-            <img src={logoUser} alt="" className="w-[34px] rounded-[50%] " />
+            <img
+              src={logoUser}
+              alt=""
+              className="w-[34px] rounded-[50%] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] "
+            />
             <a href="" className="font-bold text-[1rem] text-white">
               Lucas.P
             </a>
