@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(../../assets/BgHome.png);
+    background-image: url(../assets/BgHome.png);
     background-position: top center;
     background-repeat: no-repeat;
 }
@@ -13,7 +13,7 @@ body {
 .home {
     width: 100%;
     max-width: 1220px;
-    padding: 0 10px;
+    padding: 40px 10px;
     margin: auto;
 
     .newsFlex {
@@ -51,9 +51,17 @@ body {
         color: var(--Text-White);
         font-family: var(--primary);
         font-weight: bold;
-        padding: var(--paddingBT);
+        padding: 40px 0;
 
     }
+
+    .bannerSound {
+        img {
+            width: 100%;
+            box-shadow: 0 0 3px white;
+        }
+    }
+
 }
 
 @media (min-width:600px) {

@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
-
 .Card {
 
     background-color: var(--BG-Grad);
@@ -23,7 +20,8 @@
     }
 
     p {
-        font-size: 0.875rem;
+        /* font-size: 0.875rem; */
+        font-size: 1rem;
         color: white;
         padding-bottom: 40px;
         padding-top: 10px;

@@ -1,19 +1,14 @@
-import Buttons from "../Buttons";
-import "./index.css";
+import Buttons from "../components/Buttons";
+import "./Cards.css";
 
-type containerProps = {
+type cardsProps = {
   text: string;
   img: string;
   textButton: string;
   onClick: () => void;
 };
 
-export default function Containers({
-  text,
-  img,
-  textButton,
-  onClick,
-}: containerProps) {
+function Cards({ text, img, textButton, onClick }: cardsProps) {
   return (
     <>
       <div className="Card">
@@ -26,3 +21,5 @@ export default function Containers({
     </>
   );
 }
+
+export default Cards;

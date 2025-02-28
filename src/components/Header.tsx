@@ -1,65 +1,25 @@
-import "./index.css";
-import logoLucas from "../../assets/lucas.jpg";
-import logo from "../../assets/Mask.png";
+import "./Header.css";
+import logoLucas from "../assets/lucas.jpg";
+import logo from "../assets/Mask.png";
 
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { PhoneIcon, PlayCircleIcon } from "@heroicons/react/20/solid";
-
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Popover, PopoverButton, PopoverPanel } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const showAlert = () => {
+    window.location.href = "/";
+  };
+
   return (
     <header className="header">
-      <nav aria-label="Global" className="flex justify-between items-center ">
+      <nav aria-label="Global">
         <div className="containerLogo flex lg:flex-1">
-          <a href="#" className=" flex items-center ">
+          <a onClick={showAlert} className=" flex items-center">
             <img alt="lOGO " src={logo} />
             <p>HARMONIC SOUND</p>
           </a>
@@ -83,9 +43,23 @@ export default function App() {
 
           <div className="containerUser">
             <img src={logoLucas} alt="" className="imgUser" />
-            <a href="" className="loginUser ">
+            {/* <a href="" className="loginUser ">
               Log In
-            </a>
+            </a> */}
+            <Popover className="relative Popover ">
+              <PopoverButton className="inline-flex items-center gap-x-1 font-bold ">
+                <span>Lucas.P</span>
+                <ChevronDownIcon aria-hidden="true" className="size-5" />
+              </PopoverButton>
+
+              <PopoverPanel
+                transition
+                className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max  -translate-x-1/2 px-4 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                style={{ paddingTop: "20px" }}
+              >
+                <p>lucas</p>
+              </PopoverPanel>
+            </Popover>
           </div>
 
           <div className="flex lg:hidden ">

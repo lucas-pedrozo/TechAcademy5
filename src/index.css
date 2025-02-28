@@ -41,14 +41,11 @@
 
 
     /* box-shadow */
-    --box-shadow-btn: 0 2px 10px rgba(0, 0, 0, 0.6);
+    --box-shadow-btn: 0 2px 10px rgba(0, 0, 0, 0.);
+    --box-shadow-btn-white: 0 0 10px rgb(255, 255, 255);
 }
 
 body {
-    background-color: var(--BG-Primary);
+    background-color: var(--BG-Primary) !important;
     color: var(--Text-White);
-}
-
-.sp {
-    padding: 20px 0;
 }
