@@ -1,6 +1,6 @@
 "use client";
-import logoSoud from "../assets/logo/Mask.png";
-import logoUser from "../assets/logo/lucas.jpg";
+import logoSoud from "../../assets/logo/Mask.png";
+import logoUser from "../../assets/logo/lucas.jpg";
 
 import { useState } from "react";
 import {
@@ -67,7 +67,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="header bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]  ">
+    <header className="header bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white  ">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
@@ -75,7 +75,7 @@ export default function Header() {
         <div className=" logo animate-fade-up animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
           <a href="#" className="flex items-center gap-[10px]">
             <img alt="" src={logoSoud} className="@min- w-[40px] " />
-            <p className="hidden min-[520px]:block font-bold text-[1.125rem] ">
+            <p className="hidden min-[520px]:block font-bold text-[1.125rem]">
               HARMONIC SOUND
             </p>
           </a>

@@ -1,13 +1,16 @@
 @import "tailwindcss";
-/* tailwind css v4.x */
-@import "tailwindcss";
-@import "tailwindcss-animated";
+@import "tailwindcss-animate";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
   background-image: url(./assets/ImageBg/BG1.png);
   background-position: top center;
   background-repeat: no-repeat;
   background-color: #0E0E0E !important;
-  color: white !important;
-  font-family: Montserrat !important;
+  font-family: 'Montserrat', sans-serif;
 }

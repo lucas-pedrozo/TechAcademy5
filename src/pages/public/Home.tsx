@@ -1,10 +1,10 @@
-import Card from "../components/Card";
+import Card from "../../components/custom/Card";
 
-import motionBanner1 from "../assets/videos/MotionBanner1.mp4";
-import motionBanner2 from "../assets/videos/MotionBanner2.mp4";
+import motionBanner1 from "../../assets/videos/MotionBanner1.mp4";
+import motionBanner2 from "../../assets/videos/MotionBanner2.mp4";
+import banner1 from "../../assets/banners/imagemSond.webp";
+import banner2 from "../../assets/banners/imagemTileLine.png";
 
-import banner1 from "../assets/banners/imagemSond.webp";
-import banner2 from "../assets/banners/imagemTileLine.png";
 function Home() {
   const onClickChange = () => {
     alert("Hello World");
@@ -32,8 +32,8 @@ function Home() {
           <div className="newsRight flex flex-col min-[600px]:flex-col-reverse  gap-[40px]">
             <Card
               img={banner1}
-              title="Come and discover who we are and what our work is"
-              btnTitle="More"
+              title="Don't just focus on the visuals, the audio is more important"
+              btnTitle="Sound"
               onClick={onClickChange}
             />
 
