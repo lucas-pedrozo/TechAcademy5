@@ -124,14 +124,14 @@ function Header() {
           <div className="pt-[40px] flow-root">
             <div className="-my-6 divide-y ">
               <div className="flex  flex-col gap-[15px] text-center ">
-                <a
-                  href=""
+                <Link
+                  to="/"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
                    animate-fade-left animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
                   "
                 >
                   HOME
-                </a>
+                </Link>
                 <a
                   href=""
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
@@ -148,14 +148,14 @@ function Header() {
                 >
                   ABOUT
                 </a>
-                <a
-                  href=""
+                <Link
+                  to="/contact"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
                    animate-fade-left animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
                   "
                 >
                   CONTACT
-                </a>
+                </Link>
               </div>
             </div>
           </div>
