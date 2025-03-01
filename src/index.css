@@ -17,3 +17,7 @@ html {
   font-family: 'Montserrat', sans-serif !important;
   background-color: #0E0E0E !important;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

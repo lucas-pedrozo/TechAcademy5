@@ -1,6 +1,7 @@
 "use client";
 import logoSoud from "../../assets/logo/Mask.png";
 import logoUser from "../../assets/logo/lucas.jpg";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
@@ -33,14 +34,14 @@ export default function Header() {
         </div>
         <div className="loginUserFixo flex gap-[15px] items-center">
           <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
               "
             >
               HOME
-            </a>
+            </Link>
             <a
               href="#"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
@@ -57,14 +58,14 @@ export default function Header() {
             >
               ABOUT
             </a>
-            <a
-              href="Contact"
+            <Link
+              to="/Contact"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
               "
             >
               CONTACT
-            </a>
+            </Link>
           </PopoverGroup>
 
           <div
