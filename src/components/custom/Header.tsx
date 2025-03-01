@@ -1,24 +1,24 @@
 "use client";
 import logoSoud from "../../assets/logo/Mask.png";
-import logoUser from "../../assets/logo/lucas.jpg";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Userlogin from "./Userlogin";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header
-      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
+      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300 relative z-1  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
      animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
     "
     >
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
+        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] "
       >
         <div>
           <Link to="/" className="flex items-center gap-[10px]">
@@ -68,20 +68,7 @@ function Header() {
             </Link>
           </PopoverGroup>
 
-          <div
-            className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] 
-          animate-fade-down animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
-          "
-          >
-            <img
-              src={logoUser}
-              alt=""
-              className="w-[34px] rounded-[50%] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] "
-            />
-            <a href="" className="font-bold text-[1rem] text-white">
-              Lucas.P
-            </a>
-          </div>
+          <Userlogin />
 
           <div className="flex lg:hidden">
             <button
@@ -95,6 +82,7 @@ function Header() {
           </div>
         </div>
       </nav>
+
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
