@@ -3,79 +3,30 @@ import logoSoud from "../../assets/logo/Mask.png";
 import logoUser from "../../assets/logo/lucas.jpg";
 
 import { useState } from "react";
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  PopoverGroup,
-} from "@headlessui/react";
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="header bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white  ">
+    <header
+      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
+     animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
+    "
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
       >
-        <div className=" logo animate-fade-up animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
+        <div>
           <a href="#" className="flex items-center gap-[10px]">
-            <img alt="" src={logoSoud} className="@min- w-[40px] " />
-            <p className="hidden min-[520px]:block font-bold text-[1.125rem]">
+            <img
+              alt=""
+              src={logoSoud}
+              className="@min- w-[40px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal "
+            />
+            <p className="hidden min-[520px]:block font-bold text-[1.125rem]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
               HARMONIC SOUND
             </p>
           </a>
@@ -85,7 +36,7 @@ export default function Header() {
             <a
               href="#"
               className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
-              animate-fade-up animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
+              animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
               "
             >
               HOME
@@ -93,7 +44,7 @@ export default function Header() {
             <a
               href="#"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-              animate-fade-up animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
+              animate-fade-down animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
               "
             >
               SOUND
@@ -101,7 +52,7 @@ export default function Header() {
             <a
               href="#"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-              animate-fade-up animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
+              animate-fade-down animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
               "
             >
               ABOUT
@@ -109,7 +60,7 @@ export default function Header() {
             <a
               href="Contact"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
-              animate-fade-up animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
+              animate-fade-down animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
               "
             >
               CONTACT
@@ -118,7 +69,7 @@ export default function Header() {
 
           <div
             className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] 
-          animate-fade-up animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
+          animate-fade-down animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
           "
           >
             <img
@@ -149,74 +100,60 @@ export default function Header() {
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10  animate-fade-left animate-once animate-duration-500 animate-ease-out">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
-            </a>
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgba(255,255,255,0.2)] backdrop-blur-xl  sm:max-w-sm sm:ring-1 p-[20px]  animate-fade-left animate-once animate-duration-500 animate-ease-out">
+          <div
+            className="flex items-center justify-end pb-[10px]
+           animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
+          "
+          >
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-red-600"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
+              <XMarkIcon aria-hidden="true" className="size-8" />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Product
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="size-5 flex-none group-data-open:rotate-180"
-                    />
-                  </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
-                </Disclosure>
+          <hr
+            className="w-full h-[3px] bg-white opacity-100 rounded-full
+          animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
+          "
+          />
+          <div className="pt-[40px] flow-root">
+            <div className="-my-6 divide-y ">
+              <div className="flex  flex-col gap-[15px] text-center ">
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  href=""
+                  className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+                   animate-fade-left animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
+                  "
                 >
-                  Features
+                  HOME
                 </a>
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  href=""
+                  className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+                   animate-fade-left animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
+                  "
                 >
-                  Marketplace
+                  SOUND
                 </a>
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  href=""
+                  className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+                   animate-fade-left animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
+                  "
                 >
-                  Company
+                  ABOUT
                 </a>
-              </div>
-              <div className="py-6">
                 <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  href=""
+                  className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+                   animate-fade-left animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
+                  "
                 >
-                  Log in
+                  CONTACT
                 </a>
               </div>
             </div>
