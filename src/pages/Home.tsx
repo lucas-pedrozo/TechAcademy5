@@ -11,7 +11,7 @@ function Home() {
   };
   return (
     <>
-      <main className="max-w-[1220px] px-[10px] py-[40px] m-auto">
+      <main className="max-w-[1220px] px-[10px] py-[40px] m-auto ">
         <div className="newsFlex flex flex-col min-[600px]:flex-row gap-y-[40px] gap-x-[20px] ">
           <div className="newsLeft flex flex-col gap-[40px]">
             <Card

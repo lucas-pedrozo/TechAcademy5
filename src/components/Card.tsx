@@ -15,7 +15,7 @@ export default function Card({
 }: containerProps) {
   return (
     <>
-      <div className="Card bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white  p-[15px] rounded-[20px] animate-fade-up animate-once animate-duration-500 animate-ease-out">
+      <div className="Card bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white  p-[15px] rounded-[20px]">
         <img
           src={img}
           alt=""

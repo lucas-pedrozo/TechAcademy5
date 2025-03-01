@@ -67,21 +67,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header
-      className="header"
-      style={{
-        background: "rgba(255, 255, 255, 0.1)",
-        backdropFilter: "blur(20px)",
-        borderRadius: "0 0 40px 40px",
-        borderBottom: "1px solid white",
-        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.6)",
-      }}
-    >
+    <header className="header bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]  ">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px]"
+        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
       >
-        <div className=" logo">
+        <div className=" logo animate-fade-up animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
           <a href="#" className="flex items-center gap-[10px]">
             <img alt="" src={logoSoud} className="@min- w-[40px] " />
             <p className="hidden min-[520px]:block font-bold text-[1.125rem] ">
@@ -93,31 +84,43 @@ export default function Header() {
           <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] "
+              className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
+              animate-fade-up animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
+              "
             >
               HOME
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+              animate-fade-up animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
+              "
             >
               SOUND
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
+              animate-fade-up animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
+              "
             >
               ABOUT
             </a>
             <a
               href="#"
-              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
+              className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
+              animate-fade-up animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
+              "
             >
               CONTACT
             </a>
           </PopoverGroup>
 
-          <div className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] ">
+          <div
+            className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] 
+          animate-fade-up animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
+          "
+          >
             <img
               src={logoUser}
               alt=""
@@ -132,7 +135,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className=" inline-flex items-center justify-center rounded-md  "
+              className=" inline-flex items-center justify-center rounded-md animate-fade-left animate-once animate-duration-500 animate-ease-out animate-normal data-closed:translate-y-1   "
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="size-[52px]" />
