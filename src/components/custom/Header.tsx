@@ -1,12 +1,13 @@
 "use client";
 import logoSoud from "../../assets/logo/Mask.png";
 import logoUser from "../../assets/logo/lucas.jpg";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-export default function Header() {
+function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -20,7 +21,7 @@ export default function Header() {
         className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
       >
         <div>
-          <a href="#" className="flex items-center gap-[10px]">
+          <Link to="/" className="flex items-center gap-[10px]">
             <img
               alt=""
               src={logoSoud}
@@ -29,18 +30,18 @@ export default function Header() {
             <p className="hidden min-[520px]:block font-bold text-[1.125rem]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
               HARMONIC SOUND
             </p>
-          </a>
+          </Link>
         </div>
         <div className="loginUserFixo flex gap-[15px] items-center">
           <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
               "
             >
               HOME
-            </a>
+            </Link>
             <a
               href="#"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
@@ -57,14 +58,14 @@ export default function Header() {
             >
               ABOUT
             </a>
-            <a
-              href="Contact"
+            <Link
+              to="/Contact"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
               "
             >
               CONTACT
-            </a>
+            </Link>
           </PopoverGroup>
 
           <div
@@ -163,3 +164,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header;

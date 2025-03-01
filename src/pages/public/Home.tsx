@@ -8,7 +8,7 @@ import banner3 from "../../assets/banners/bannerAnucio.png";
 
 function Home() {
   const onClickChangeAbout = () => {
-    alert("Hello World About");
+    window.location.href = "/Contact";
   };
   const onClickChangeSound = () => {
     alert("Hello World Sound");

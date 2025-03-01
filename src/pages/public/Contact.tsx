@@ -1,7 +1,7 @@
 function Contact() {
   return (
-    <section className="py-[40px] m-auto max-w-[630px] px-[10px]">
-      <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white p-[20px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] animate-once animate-duration-600 animate-ease-out  animate-fade-up">
+    <section className=" m-auto max-w-[630px] px-[10px] ">
+      <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px]  border-white p-[20px] w-full rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] animate-once animate-duration-600 animate-ease-out  animate-fade-up">
         <h2 className="text-[2.5rem] font-bold text-center pt-[10px] pb-[30px]">
           CONTACT
         </h2>
