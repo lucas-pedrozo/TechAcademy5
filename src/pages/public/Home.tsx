@@ -4,6 +4,7 @@ import motionBanner1 from "../../assets/videos/MotionBanner1.mp4";
 import motionBanner2 from "../../assets/videos/MotionBanner2.mp4";
 import banner1 from "../../assets/banners/imagemSond.webp";
 import banner2 from "../../assets/banners/imagemTileLine.png";
+import banner3 from "../../assets/banners/bannerAnucio.png";
 
 function Home() {
   const onClickChangeAbout = () => {
@@ -53,6 +54,8 @@ function Home() {
         <h2 className="text-white text-[26px] min-[600px]:text-[40px] font-bold  py-[40px] text-center">
           Come discover the power of audiovisual
         </h2>
+
+        <img src={banner3} alt="" className="w-full" />
       </main>
     </>
   );
