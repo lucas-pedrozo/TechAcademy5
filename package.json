@@ -16,7 +16,6 @@
     "@types/node": "^22.13.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animated": "^2.0.0"
   },
   "devDependencies": {
