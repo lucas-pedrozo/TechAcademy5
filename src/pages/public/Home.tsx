@@ -6,9 +6,13 @@ import banner1 from "../../assets/banners/imagemSond.webp";
 import banner2 from "../../assets/banners/imagemTileLine.png";
 
 function Home() {
-  const onClickChange = () => {
-    alert("Hello World");
+  const onClickChangeAbout = () => {
+    alert("Hello World About");
   };
+  const onClickChangeSound = () => {
+    alert("Hello World Sound");
+  };
+
   return (
     <>
       <main className="max-w-[1220px] px-[10px] py-[40px] m-auto ">
@@ -18,7 +22,7 @@ function Home() {
               img={banner2}
               title="Come and discover who we are and what our work is"
               btnTitle="More"
-              onClick={onClickChange}
+              onClick={onClickChangeAbout}
             />
 
             <video
@@ -34,7 +38,7 @@ function Home() {
               img={banner1}
               title="Don't just focus on the visuals, the audio is more important"
               btnTitle="Sound"
-              onClick={onClickChange}
+              onClick={onClickChangeSound}
             />
 
             <video
@@ -46,6 +50,9 @@ function Home() {
             ></video>
           </div>
         </div>
+        <h2 className="text-white text-[26px] min-[600px]:text-[40px] font-bold  py-[40px] text-center">
+          Come discover the power of audiovisual
+        </h2>
       </main>
     </>
   );
