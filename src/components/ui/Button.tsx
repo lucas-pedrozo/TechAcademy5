@@ -1,17 +1,51 @@
-type btnProps = {
-  onClick: () => void;
-};
-const Button = ({ children, onClick }: React.PropsWithChildren<btnProps>) => {
-  return (
-    <>
-      <button
-        className="bg-white text-black shadow-[0_2px_8px_rgba(0,0,0,0.6)]  hover:shadow-[0_2px_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105  px-[20px] py-[8px] font-bold text-[1rem] rounded-[40px] cursor-pointer "
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    </>
-  );
-};
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-export default Button;
+import { cn } from "../../lib/utils";
+
+const buttonVariants = cva("", {
+  variants: {
+    variant: {
+      default: "",
+      destructive: "",
+      outline: "",
+      secondary: "",
+      ghost: "",
+      link: "",
+    },
+    size: {
+      default: "",
+      sm: "",
+      lg: "",
+      icon: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
+  },
+});
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot : "button";
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
+
+export { Button, buttonVariants };

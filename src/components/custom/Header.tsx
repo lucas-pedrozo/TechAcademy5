@@ -1,31 +1,31 @@
 "use client";
 import logoSoud from "../../assets/logo/Mask.png";
-import logoUser from "../../assets/logo/lucas.jpg";
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { UserConect } from "./UserConect";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header
-      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
+      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300 relative z-1  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
      animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
     "
     >
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] overflow-hidden"
+        className="mx-auto flex max-w-[1240px] items-center justify-between  py-[10px] px-[20px] "
       >
         <div>
           <Link to="/" className="flex items-center gap-[10px]">
             <img
               alt=""
               src={logoSoud}
-              className="@min- w-[40px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal "
+              className="@min- w-[45px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal "
             />
             <p className="hidden min-[520px]:block font-bold text-[1.125rem]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
               HARMONIC SOUND
@@ -68,20 +68,7 @@ function Header() {
             </Link>
           </PopoverGroup>
 
-          <div
-            className="containerUser flex items-center gap-[10px] bg-[rgba(255, 255, 255, 0.2)]  backdrop-blur-xl border-[1px] border-white rounded-[40px] px-[15px] py-[8px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] 
-          animate-fade-down animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
-          "
-          >
-            <img
-              src={logoUser}
-              alt=""
-              className="w-[34px] rounded-[50%] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] "
-            />
-            <a href="" className="font-bold text-[1rem] text-white">
-              Lucas.P
-            </a>
-          </div>
+          <UserConect />
 
           <div className="flex lg:hidden">
             <button
@@ -95,6 +82,7 @@ function Header() {
           </div>
         </div>
       </nav>
+
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
@@ -103,10 +91,11 @@ function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgba(255,255,255,0.2)] backdrop-blur-xl  sm:max-w-sm sm:ring-1 p-[20px]  animate-fade-left animate-once animate-duration-500 animate-ease-out">
           <div
-            className="flex items-center justify-end pb-[10px]
+            className="flex items-center justify-between pb-[10px]
            animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
           "
           >
+            <span className="font-bold text-[1rem] ">HARMONIC SOUND</span>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}

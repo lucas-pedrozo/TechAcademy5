@@ -19,14 +19,13 @@ function Home() {
       <main className="max-w-[1220px] px-[10px] py-[40px] m-auto ">
         <div className="newsFlex flex flex-col min-[600px]:flex-row gap-y-[40px] gap-x-[20px] ">
           <div className="newsLeft flex flex-col gap-[40px]">
-            <div className="animate-fade-right animate-duration-500 animate-delay-200 animate-ease-out ">
-              <Card
-                img={banner2}
-                title="Come and discover who we are and what our work is"
-                btnTitle="More"
-                onClick={onClickChangeAbout}
-              />
-            </div>
+            <Card
+              img={banner2}
+              title="Come and discover who we are and what our work is"
+              btnTitle="More"
+              onClick={onClickChangeAbout}
+              className="animate-fade-right animate-duration-500 animate-delay-300 animate-ease-out "
+            />
 
             <video
               src={motionBanner2}
@@ -37,14 +36,13 @@ function Home() {
             ></video>
           </div>
           <div className="newsRight flex flex-col min-[600px]:flex-col-reverse  gap-[40px]">
-            <div className="animate-fade-left animate-duration-500 animate-delay-250 animate-ease-out">
-              <Card
-                img={banner1}
-                title="Don't just focus on the visuals, the audio is more important"
-                btnTitle="Sound"
-                onClick={onClickChangeSound}
-              />
-            </div>
+            <Card
+              img={banner1}
+              title="Don't just focus on the visuals, the audio is more important"
+              btnTitle="Sound"
+              onClick={onClickChangeSound}
+              className="animate-fade-left animate-duration-500 animate-delay-300 animate-ease-out"
+            />
 
             <video
               src={motionBanner1}
