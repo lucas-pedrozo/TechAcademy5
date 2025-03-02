@@ -24,6 +24,7 @@ function Home() {
               title="Come and discover who we are and what our work is"
               btnTitle="More"
               onClick={onClickChangeAbout}
+              className="animate-fade-right animate-duration-500 animate-delay-300 animate-ease-out "
             />
 
             <video
@@ -40,6 +41,7 @@ function Home() {
               title="Don't just focus on the visuals, the audio is more important"
               btnTitle="Sound"
               onClick={onClickChangeSound}
+              className="animate-fade-left animate-duration-500 animate-delay-300 animate-ease-out"
             />
 
             <video

@@ -5,6 +5,7 @@ type containerProps = {
   img: string;
   btnTitle: string;
   onClick: () => void;
+  className?: string;
 };
 
 export default function Card({
@@ -12,10 +13,15 @@ export default function Card({
   img,
   btnTitle,
   onClick,
+  className,
 }: containerProps) {
   return (
     <>
-      <div className="Card bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white p-[15px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]">
+      <div
+        className={`${
+          className || ""
+        } bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white p-[15px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]`}
+      >
         <img
           src={img}
           alt=""
