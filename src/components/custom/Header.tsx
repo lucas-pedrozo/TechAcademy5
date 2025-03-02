@@ -25,7 +25,7 @@ function Header() {
             <img
               alt=""
               src={logoSoud}
-              className="@min- w-[40px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal "
+              className="@min- w-[45px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal "
             />
             <p className="hidden min-[520px]:block font-bold text-[1.125rem]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
               HARMONIC SOUND
@@ -91,10 +91,11 @@ function Header() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgba(255,255,255,0.2)] backdrop-blur-xl  sm:max-w-sm sm:ring-1 p-[20px]  animate-fade-left animate-once animate-duration-500 animate-ease-out">
           <div
-            className="flex items-center justify-end pb-[10px]
+            className="flex items-center justify-between pb-[10px]
            animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
           "
           >
+            <span className="font-bold text-[1rem] ">HARMONIC SOUND</span>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
