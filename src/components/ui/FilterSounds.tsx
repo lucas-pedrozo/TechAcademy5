@@ -102,7 +102,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -118,7 +118,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -134,7 +134,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -150,7 +150,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -166,7 +166,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -182,7 +182,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria2"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -205,7 +205,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria2"
+              name="categoria3"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 
@@ -221,7 +221,7 @@ function FilterSounds() {
           <div className="flex items-center gap-2">
             <input
               type="radio"
-              name="categoria1"
+              name="categoria3"
               className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative 
                 checked:bg-white-500 checked:border-white-500 
                 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 

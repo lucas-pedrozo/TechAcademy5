@@ -22,6 +22,7 @@ html {
 } */
 
 .custom-scrollbar::-webkit-scrollbar {
+  padding: 20px;
   width: 8px;
 }
 
