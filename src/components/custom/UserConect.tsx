@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import logoUser from "../../assets/logo/lucas.jpg";
 
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,

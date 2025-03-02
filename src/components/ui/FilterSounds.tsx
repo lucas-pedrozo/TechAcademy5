@@ -1,5 +1,3 @@
-import Button from "../ui/Button";
-
 function FilterSounds() {
   return (
     <div className="w-2xs flex flex-col flex-wrap gap-3 bg-[rgba(255,255,255,0)] border-[1px] border-white p-[15px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]">
@@ -474,9 +472,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         </div>
       </section>
 
-      <div className="flex justify-end">
-        <Button onClick={() => {}}>Aplicar</Button>
-      </div>
+      <div className="flex justify-end"></div>
     </div>
   );
 }
