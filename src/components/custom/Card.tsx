@@ -1,5 +1,3 @@
-import Button from "../ui/Button";
-
 type containerProps = {
   title: string;
   img: string;
@@ -30,8 +28,13 @@ export default function Card({
         <p className="text-[1rem] min-[600px]:text-[0,875rem]  text-white pb-[30px]">
           {title}
         </p>
-        <div className="directionButton flex justify-end">
-          <Button onClick={onClick}>{btnTitle} </Button>
+        <div className="flex justify-end">
+          <button
+            className="bg-white py-[8px] px-[20px] rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-black font-bold transition hover:scale-105 hover:shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500 cursor-pointer "
+            onClick={onClick}
+          >
+            {btnTitle}
+          </button>
         </div>
       </div>
     </>
