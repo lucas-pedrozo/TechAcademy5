@@ -5,6 +5,9 @@ import motionBanner2 from "../../assets/videos/MotionBanner2.mp4";
 import banner1 from "../../assets/banners/imagemSond.webp";
 import banner2 from "../../assets/banners/imagemTileLine.png";
 import banner3 from "../../assets/banners/bannerAnucio.png";
+import Layout from "../../components/layout/LayoutHome";
+
+import bg from "../../assets/ImageBg/BG1.png";
 
 function Home() {
   const onClickChangeAbout = () => {
@@ -15,7 +18,7 @@ function Home() {
   };
 
   return (
-    <>
+    <Layout backgroundImage={bg}>
       <main className="max-w-[1220px] px-[10px] py-[40px] m-auto ">
         <div className="newsFlex flex flex-col min-[600px]:flex-row gap-y-[40px] gap-x-[20px] ">
           <div className="newsLeft flex flex-col gap-[40px]">
@@ -59,7 +62,7 @@ function Home() {
 
         <img src={banner3} alt="" className="w-full" />
       </main>
-    </>
+    </Layout>
   );
 }
 

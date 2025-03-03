@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header
-      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px] border-neutral-300 relative z-1  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
+      className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px]  border-neutral-300 relative z-1  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
      animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
     "
     >
