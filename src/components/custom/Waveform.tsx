@@ -14,12 +14,13 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
 
     const ws = WaveSurfer.create({
       container: waveformRef.current,
-      waveColor: "#4f46e5",
-      progressColor: "#1d4ed8",
-      cursorColor: "#ffffff",
+      waveColor: "#7d7d7d",
+      progressColor: "#ffffff",
+      cursorColor: "#000000",
       barWidth: 3,
       barGap: 2,
-      height: 100,
+      height: 50,
+      width: 800,
     });
 
     ws.load(audioUrl);

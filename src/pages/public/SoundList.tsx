@@ -1,6 +1,8 @@
 import { SidebarProvider, SidebarTrigger } from "../../components/ui/sidebar";
 import { AppSidebar } from "../../components/custom/sideBar_FilterSounds";
 import Waveform from "../../components/custom/Waveform";
+import testeAudio from "../../assets/audio/teste.mp3"; // importando o áudio como variável
+
 interface SoundListProps {
   children: React.ReactNode;
 }
@@ -24,7 +26,7 @@ function SoundList({ children }: SoundListProps) {
             <section className="pl-[11px] ">
               <h1>Sound List</h1>
 
-              <Waveform audioUrl="/path/to/audio/file.mp3" />
+              <Waveform audioUrl={testeAudio} />
             </section>
           </div>
         </div>
