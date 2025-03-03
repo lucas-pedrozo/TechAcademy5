@@ -1,9 +1,22 @@
-import FilterSounds from "../../components/ui/FilterSounds";
+import { FilterSounds } from "../../components/ui/FilterSounds";
+import {
+  SidebarProvider,
+  SidebarTrigger,
+  AppSidebar,
+} from "../../components/ui/FilterSounds";
 
 function SoundList() {
   return (
     <>
-      <main className="max-w-[1220px] px-[10px] py-[40px] m-auto overflow-hidden">
+      <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
+          {children}
+        </main>
+      </SidebarProvider>
+
+      {/* <main className="max-w-[1220px] px-[10px] py-[40px] m-auto overflow-hidden">
         <div className="Card bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white p-[15px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] h-[670px]  overflow-y-scroll custom-scrollbar">
           <div className="flex">
             <FilterSounds />
@@ -11,7 +24,7 @@ function SoundList() {
             <p>Here is a list of sounds.</p>
           </div>
         </div>
-      </main>
+      </main> */}
     </>
   );
 }
