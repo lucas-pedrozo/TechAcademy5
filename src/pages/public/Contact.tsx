@@ -1,10 +1,10 @@
 import Layout from "../../components/layout/Layout";
-import bg from "../../assets/ImageBg/BG2.png";
+import bg from "../../assets/ImageBg/BG3.png";
 
 function Contact() {
   return (
     <Layout backgroundImage={bg}>
-      <section className="m-auto max-w-[630px] px-[10px] py-[40px]">
+      <section className="m-auto max-w-[630px] px-[10px] py-[6em]">
         <div className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white p-[20px] w-full rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] animate-once animate-duration-600 animate-ease-out animate-fade-up">
           <h2
             className="text-[2.5rem] font-bold text-center pt-[10px] pb-[30px]"
@@ -34,7 +34,7 @@ function Contact() {
 
             <textarea
               id="message"
-              title="message"
+              title="messagea"
               placeholder="Enter your message"
               className="w-full bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[20px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] min-h-[280px] placeholder-white text-white font-medium animate-fade animate-once animate-duration-500 animate-delay-300 animate-normal placeholder:tracking-wide focus:outline-none focus:border-white"
             ></textarea>
