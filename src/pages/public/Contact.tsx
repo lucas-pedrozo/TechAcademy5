@@ -19,6 +19,7 @@ function Contact() {
             <input
               type="email"
               id="email"
+              title="email"
               placeholder="Email"
               className="w-full bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[20px] rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] placeholder-white text-white font-medium animate-fade animate-once animate-duration-500 animate-delay-200 animate-normal placeholder:tracking-wide focus:outline-none focus:border-white"
             />
@@ -26,12 +27,14 @@ function Contact() {
             <input
               type="name"
               id="name"
+              title="name"
               placeholder="name"
               className="w-full bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[20px] rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] placeholder-white text-white font-medium animate-fade animate-once animate-duration-500 animate-delay-250 animate-normal placeholder:tracking-wide focus:outline-none focus:border-white"
             />
 
             <textarea
               id="message"
+              title="message"
               placeholder="Enter your message"
               className="w-full bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[20px] rounded-[20px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] min-h-[280px] placeholder-white text-white font-medium animate-fade animate-once animate-duration-500 animate-delay-300 animate-normal placeholder:tracking-wide focus:outline-none focus:border-white"
             ></textarea>
