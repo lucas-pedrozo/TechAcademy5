@@ -10,13 +10,6 @@ import Layout from "../../components/layout/LayoutHome";
 import bg from "../../assets/ImageBg/BG1.png";
 
 function Home() {
-  const onClickChangeAbout = () => {
-    window.location.href = "/Contact";
-  };
-  const onClickChangeSound = () => {
-    alert("Hello World Sound");
-  };
-
   return (
     <Layout backgroundImage={bg}>
       <main className="max-w-[1220px] px-[10px] py-[40px] m-auto ">
@@ -26,7 +19,7 @@ function Home() {
               img={banner2}
               title="Come and discover who we are and what our work is"
               btnTitle="More"
-              onClick={onClickChangeAbout}
+              caminho="/about"
               className="animate-fade-right animate-duration-500 animate-delay-300 animate-ease-out "
             />
 
@@ -43,7 +36,7 @@ function Home() {
               img={banner1}
               title="Don't just focus on the visuals, the audio is more important"
               btnTitle="Sound"
-              onClick={onClickChangeSound}
+              caminho="/SoundList"
               className="animate-fade-left animate-duration-500 animate-delay-300 animate-ease-out"
             />
 

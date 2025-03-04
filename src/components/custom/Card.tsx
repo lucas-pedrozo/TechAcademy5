@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 type containerProps = {
   title: string;
   img: string;
   btnTitle: string;
-  onClick: () => void;
+  caminho: string;
   className?: string;
 };
 
@@ -10,7 +12,7 @@ export default function Card({
   title,
   img,
   btnTitle,
-  onClick,
+  caminho,
   className,
 }: containerProps) {
   return (
@@ -29,12 +31,12 @@ export default function Card({
           {title}
         </p>
         <div className="flex justify-end">
-          <button
+          <Link
+            to={caminho}
             className="bg-white py-[8px] px-[20px] rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-black font-bold transition hover:scale-105 hover:shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500 cursor-pointer "
-            onClick={onClick}
           >
             {btnTitle}
-          </button>
+          </Link>
         </div>
       </div>
     </>

@@ -36,6 +36,7 @@ function Header() {
           <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
             <Link
               to="/"
+              title="Home"
               className="text-sm/6 font-bold text-[1rem]  transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
               "
@@ -44,6 +45,7 @@ function Header() {
             </Link>
             <a
               href="#"
+              title="Sound"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
               animate-fade-down animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
               "
@@ -52,6 +54,7 @@ function Header() {
             </a>
             <a
               href="#"
+              title="About"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
               animate-fade-down animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
               "
@@ -60,6 +63,7 @@ function Header() {
             </a>
             <Link
               to="/Contact"
+              title="Contact"
               className="text-sm/6 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] 
               animate-fade-down animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
               "
@@ -115,6 +119,7 @@ function Header() {
               <div className="flex  flex-col gap-[15px] text-center ">
                 <Link
                   to="/"
+                  title="Home"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
                    animate-fade-left animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
                   "
@@ -123,6 +128,7 @@ function Header() {
                 </Link>
                 <a
                   href=""
+                  title="Sound"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
                    animate-fade-left animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
                   "
@@ -131,6 +137,7 @@ function Header() {
                 </a>
                 <a
                   href=""
+                  title="About"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
                    animate-fade-left animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
                   "
