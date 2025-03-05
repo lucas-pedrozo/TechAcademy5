@@ -30,7 +30,7 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   }, [audioUrl]);
 
   return (
-    <div>
+    <div className="flex flex-row items-center">
       <div ref={waveformRef} className="waveform-container"></div>
       <button
         onClick={() => wavesurfer?.playPause()}
