@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tailwindcss-animated";
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
@@ -9,7 +8,6 @@ body {
   color: white !important;
   min-height: 100vh !important;
 }
-
 
 html {
   font-family: "Montserrat", sans-serif !important;
