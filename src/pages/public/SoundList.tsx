@@ -23,7 +23,7 @@ function SoundList({ children }: SoundListProps) {
               </main>
             </SidebarProvider>
 
-            <section className="pl-[11px] flex flex-col gap-2.5">
+            <section className="pl-[11px] flex flex-col gap-2.5 w-full">
               <Waveform audioUrl={testeAudio} />
               <Waveform audioUrl={testeAudio} />
               <Waveform audioUrl={testeAudio} />

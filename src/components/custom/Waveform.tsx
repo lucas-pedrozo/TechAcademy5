@@ -56,8 +56,7 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   };
 
   return (
-    <div className=" flex w-full items-center gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
-      {/* Seção de imagem e título */}
+    <div className="flex justify-around w-full items-center gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
       <section className="flex items-center gap-4">
         <img
           src={ImgAudio}
@@ -70,7 +69,6 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
         </div>
       </section>
 
-      {/* Seção de player e waveform */}
       <section className="flex flex-1 items-center gap-4">
         <button
           onClick={togglePlayPause}
@@ -87,11 +85,8 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
         </div>
 
         {/* Waveform ocupa todo o espaço restante */}
-        <div ref={waveformRef} className="waveform-container flex-1"></div>
-      </section>
+        <div ref={waveformRef} className="waveform-container flex"></div>
 
-      {/* Seção de botões extras */}
-      <section>
         <div className="flex p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)] gap-3">
           <button>
             <i className="bi bi-cloud-download"></i>
