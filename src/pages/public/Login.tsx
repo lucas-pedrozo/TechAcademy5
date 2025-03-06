@@ -32,13 +32,13 @@ export default function Login() {
             </h3>
             <div className="py-[40px] flex justify-center gap-[20px] ">
               <Link
-                to="/"
+                to="/login"
                 className="bg-white px-[20px] py-[8px] rounded-4xl text-[1rem] font-bold text-black shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105 cursor-pointer    "
               >
                 LOGIN
               </Link>
               <Link
-                to="/"
+                to="/register"
                 className="bg-black px-[20px] py-[8px] rounded-4xl text-[1rem] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105 cursor-pointer    "
               >
                 REGISTER

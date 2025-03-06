@@ -17,13 +17,18 @@ export function UserConect() {
     animate-fade-down animate-once animate-duration-500 animate-delay-400 animate-ease-out
     "
     >
-      <img src={logoUser} alt="" className="w-[34px] rounded-3xl" />
+      <img
+        src={logoUser}
+        alt="Name User"
+        title="Name User"
+        className="w-[34px] rounded-3xl"
+      />
       <DropdownMenu>
-        <Link to="/Login" className="font-bold hidden text-white text-[1rem] ">
+        <Link to="/Login" className="font-bold flex text-white text-[1rem] ">
           Log in
         </Link>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="flex  gap-[8px] items-center">
+          <Button variant="outline" className="hidden  gap-[8px] items-center">
             <span className="font-bold text-white text-[1rem]">Lucas.p</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

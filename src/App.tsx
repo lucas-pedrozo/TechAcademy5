@@ -5,6 +5,7 @@ import Home from "./pages/public/Home";
 import SoundList from "./pages/public/SoundList";
 import Login from "./pages/public/Login";
 import Footer from "./components/custom/Footer";
+import Register from "./pages/public/Register";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/soundList" element={<SoundList />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </BrowserRouter>
