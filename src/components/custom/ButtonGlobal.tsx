@@ -1,5 +1,5 @@
 type btnProps = {
-  onClick: () => void;
+  onClick?: () => void;
 };
 const ButtonGlobal = ({
   children,
