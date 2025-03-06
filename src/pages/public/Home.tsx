@@ -31,7 +31,7 @@ function Home() {
               muted={true}
             ></video>
           </div>
-          <div className="newsRight flex flex-col min-[600px]:flex-col-reverse  gap-[40px]">
+          <div className="newsRight flex flex-col min-[600px]:flex-col-reverse gap-[40px]">
             <Card
               img={banner1}
               title="Don't just focus on the visuals, the audio is more important"
