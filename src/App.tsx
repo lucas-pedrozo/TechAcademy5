@@ -8,6 +8,8 @@ import Footer from "./components/custom/Footer";
 import Register from "./pages/public/Register";
 import LayoutHome from "./components/layout/LayoutHome";
 import Layout from "./components/layout/Layout";
+import ForgotMyPassoword from "./pages/public/ForgotMyPassoword";
+import NewPassWord from "./pages/public/NewPassWord";
 
 import backgrouHome from "./assets/ImageBg/BG1.png";
 import backgroudUser from "./assets/ImageBg/BG3.png";
@@ -26,6 +28,8 @@ function App() {
           <Route path="/soundList" element={<SoundList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgotMyPassoword" element={<ForgotMyPassoword />} />
+          <Route path="/newPassWord" element={<NewPassWord />} />
         </Route>
       </Routes>
       <Footer />

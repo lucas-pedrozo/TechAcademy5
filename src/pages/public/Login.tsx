@@ -57,7 +57,7 @@ export default function Login() {
               className="px-[20px] w-full h-[40px] rounded-[40px] text-[rgba(0,0,0,0.8)]  bg-[rgba(255,255,255,0.2)] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] border-[1px] border-white placeholder:text-[rgba(0,0,0,0.8)] placeholder:text-[1rem] placeholder:font-medium placeholder:tracking-wide focus:outline-none focus:border-white "
             />
             <div className="flex justify-between pt-[10px] pl-[20px] pr-[10px] ">
-              <Link to="/new" className="flex items-center">
+              <Link to="/forgotMyPassoword" className="flex items-center">
                 Forgot My Password!
               </Link>
               <button

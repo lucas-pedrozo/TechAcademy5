@@ -1,7 +1,7 @@
 import imagemLogin from "../../assets/banners/ImagemLogin.webp";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function NewPassWord() {
   return (
     <section className="py-[6em] px-[0.625em]">
       <div
@@ -22,25 +22,12 @@ export default function Login() {
           "
         >
           <h3
-            className="text-center text-[2.5rem] font-bold tracking-wide m-0"
+            className="text-center text-[2.5rem] font-bold tracking-wide m-0 pb-[2.5rem]"
             style={{ letterSpacing: "13px" }}
           >
-            LOGIN
+            NEW
+            PASSWORD
           </h3>
-          <div className="py-[40px] flex justify-center gap-[20px] ">
-            <Link
-              to="/login"
-              className="bg-white px-[20px] py-[8px] rounded-4xl text-[1rem] font-bold text-black shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105 cursor-pointer    "
-            >
-              LOGIN
-            </Link>
-            <Link
-              to="/register"
-              className="bg-black px-[20px] py-[8px] rounded-4xl text-[1rem] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105 cursor-pointer    "
-            >
-              REGISTER
-            </Link>
-          </div>
           <form action="" className="flex flex-col gap-[20px]   ">
             <input
               type="email"
@@ -57,8 +44,8 @@ export default function Login() {
               className="px-[20px] w-full h-[40px] rounded-[40px] text-[rgba(0,0,0,0.8)]  bg-[rgba(255,255,255,0.2)] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] border-[1px] border-white placeholder:text-[rgba(0,0,0,0.8)] placeholder:text-[1rem] placeholder:font-medium placeholder:tracking-wide focus:outline-none focus:border-white "
             />
             <div className="flex justify-between pt-[10px] pl-[20px] pr-[10px] ">
-              <Link to="/new" className="flex items-center">
-                Forgot My Password!
+              <Link to="/login" className="flex items-center">
+                Return To Login Screen
               </Link>
               <button
                 type="submit"
