@@ -1,4 +1,3 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
 
 import {
   Sidebar,
@@ -8,35 +7,6 @@ import {
   SidebarMenu,
 } from "../ui/sidebar";
 import { Button } from "../ui/Button";
-
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-];
 
 export function AppSidebar() {
   return (
@@ -56,10 +26,7 @@ export function AppSidebar() {
                     <h4 className="text-lg font-bold">Categoria</h4>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria1"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria1" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         Background Sounds
@@ -67,10 +34,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria1"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria1" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         Overlays
@@ -78,10 +42,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria1"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria1" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         Transições
@@ -89,10 +50,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria1"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria1" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         Sons de Ambiente
@@ -107,10 +65,7 @@ export function AppSidebar() {
                     <h4 className="text-lg font-bold">Duração</h4>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         5 Segundos
@@ -118,10 +73,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         10 Segundos
@@ -129,10 +81,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative  checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         15 Segundos
@@ -140,10 +89,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3  checked:after:bg-white checked:after:rounded-full  checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         20 Segundos
@@ -151,10 +97,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2  checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         25 Segundos
@@ -162,10 +105,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500  checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         30 Segundos
@@ -173,10 +113,7 @@ export function AppSidebar() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="categoria2"
-                        className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
+                      <input type="radio" name="categoria2" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
                         Qualquer Duração
