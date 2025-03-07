@@ -1,3 +1,5 @@
+import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+
 import {
   Sidebar,
   SidebarContent,
@@ -5,7 +7,36 @@ import {
   SidebarGroupContent,
   SidebarMenu,
 } from "../ui/sidebar";
-import ButtonGlobal from "./ButtonGlobal";
+import { Button } from "../ui/Button";
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "#",
+    icon: Home,
+  },
+  {
+    title: "Inbox",
+    url: "#",
+    icon: Inbox,
+  },
+  {
+    title: "Calendar",
+    url: "#",
+    icon: Calendar,
+  },
+  {
+    title: "Search",
+    url: "#",
+    icon: Search,
+  },
+  {
+    title: "Settings",
+    url: "#",
+    icon: Settings,
+  },
+];
 
 export function AppSidebar() {
   return (
@@ -181,7 +212,7 @@ export function AppSidebar() {
                   <hr className="h-[2px] bg-white rounded-full border-none" />
                 </div>
 
-                <ButtonGlobal children="Aplicar" />
+                <Button>Aplicar</Button>
 
                 <div className="flex justify-end"></div>
               </div>
