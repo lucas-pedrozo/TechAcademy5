@@ -11,7 +11,6 @@ const Layout: React.FC<LayoutProps> = ({ backgroundImage, children }) => {
       document.body.style.backgroundImage = `url(${backgroundImage})`;
       document.body.style.backgroundRepeat = "no-repeat";
       document.body.style.backgroundPosition = " top center";
-      document.body.style.transition = "background-image 0.5s ease-in-out";
     }
   }, [backgroundImage]);
 

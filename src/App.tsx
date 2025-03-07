@@ -13,6 +13,7 @@ import NewPassWord from "./pages/public/NewPassWord";
 
 import backgrouHome from "./assets/ImageBg/BG1.png";
 import backgroudUser from "./assets/ImageBg/BG3.png";
+import About from "./pages/public/About";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgotMyPassoword" element={<ForgotMyPassoword />} />
           <Route path="/newPassWord" element={<NewPassWord />} />
+          <Route path="/about" element={<About />} />
         </Route>
       </Routes>
       <Footer />
