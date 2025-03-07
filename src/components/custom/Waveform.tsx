@@ -58,11 +58,7 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   return (
     <div className="flex justify-around w-full items-center gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
       <section className="flex items-center gap-4">
-        <img
-          src={ImgAudio}
-          className="w-[70px] rounded-[10px]"
-          alt="Audio Cover"
-        />
+        <img src={ImgAudio} className="w-[70px] rounded-[10px]" alt="Audio Cover" />
         <div className="flex flex-col ">
           <h4 className="text-white font-bold">Waveform</h4>
           <h4 className="text-white font-[300] text-sm">Waveform</h4>
@@ -70,13 +66,8 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
       </section>
 
       <section className="flex flex-1 items-center gap-4">
-        <button
-          onClick={togglePlayPause}
-          className="p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)]"
-        >
-          <i
-            className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}
-          ></i>
+        <button onClick={togglePlayPause} className="p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)]">
+          <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}></i>
         </button>
 
         {/* Tempo */}
