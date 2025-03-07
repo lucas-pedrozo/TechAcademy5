@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import ImgAudio from "../../assets/logo/lucas.jpg";
+import { before } from "node:test";
 interface WaveformProps {
   audioUrl: string;
 }
@@ -66,8 +67,9 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
       </section>
 
       <section className="flex flex-1 items-center gap-4">
-        <button onClick={togglePlayPause} className="p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)]">
-          <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}></i>
+        <button onClick={togglePlayPause} className=" border rounded-full px-[10px] h-[30px] overflow-hidden bg-[rgba(29,29,29,0.42)]">
+          <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}
+            style={{ width: "20px", height: "20px important", fontSize: "24px", position: "relative", bottom: "3px", left: "1px" }}></i>
         </button>
 
         {/* Tempo */}
