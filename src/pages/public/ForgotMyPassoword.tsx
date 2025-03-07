@@ -25,7 +25,7 @@ export default function Login() {
             className="text-center text-[2.5rem] font-bold tracking-wide m-0"
             style={{ letterSpacing: "13px" }}
           >
-            LOGIN
+            ForgotMyPassoword
           </h3>
           <div className="py-[40px] flex justify-center gap-[20px] ">
             <Link
@@ -50,21 +50,21 @@ export default function Login() {
               className="px-[20px] w-full h-[40px] rounded-[40px] text-[rgba(0,0,0,0.8)] font-medium bg-[rgba(255,255,255,0.2)] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] border-[1px] border-white placeholder:text-[rgba(0,0,0,0.8)] placeholder:text-[1rem] placeholder:font-medium placeholder:tracking-wide focus:outline-none focus:border-white "
             />
             <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              title="password"
+              type="name"
+              id="name"
+              placeholder="Name"
+              title="Name"
               className="px-[20px] w-full h-[40px] rounded-[40px] text-[rgba(0,0,0,0.8)]  bg-[rgba(255,255,255,0.2)] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] border-[1px] border-white placeholder:text-[rgba(0,0,0,0.8)] placeholder:text-[1rem] placeholder:font-medium placeholder:tracking-wide focus:outline-none focus:border-white "
             />
             <div className="flex justify-between pt-[10px] pl-[20px] pr-[10px] ">
-              <Link to="/new" className="flex items-center">
-                Forgot My Password!
+              <Link to="/login" className="flex items-center">
+                Return To Login Screen
               </Link>
               <button
                 type="submit"
                 className="bg-white py-[8px] px-[20px] rounded-[40px] text-black font-bold text-[1rem] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 trasform hover:scale-105 "
               >
-                Log in
+                Next
               </button>
             </div>
           </form>

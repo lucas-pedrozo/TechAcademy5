@@ -28,7 +28,7 @@ export function UserConect() {
           Log in
         </Link>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="hidden  gap-[8px] items-center">
+          <Button variant="outline" className="hidden gap-[8px] items-center focus:outline-none focus:ring-0 ">
             <span className="font-bold text-white text-[1rem]">Lucas.p</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export function UserConect() {
             </svg>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="p-[10px] mt-4 bg-[rgba(255,255,255,0.2)] backdrop-blur-xl flex flex-col gap-[10px] rounded-[20px] ">
+        <DropdownMenuContent className="p-[10px] mt-4 bg-[rgba(255,255,255,0.2)] backdrop-blur-xl flex flex-col gap-[10px] rounded-[20px] text-center ">
           <DropdownMenuItem className="animate-fade-up animate-once animate-duration-500 animate-delay-150 animate-ease-out">
             <Link to="/#">My Favoritos</Link>
           </DropdownMenuItem>
@@ -57,7 +57,7 @@ export function UserConect() {
               Log Out
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="animate-fade-up animate-once animate-duration-500 animate-delay-300 animate-ease-out">
+          <DropdownMenuItem className="animate-fade-up  animate-duration-500 animate-delay-300 animate-ease-out ">
             <Link to="/#">Admin</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
