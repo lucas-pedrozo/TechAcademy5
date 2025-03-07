@@ -7,6 +7,7 @@ import {
   SidebarMenu,
 } from "../ui/sidebar";
 import { Button } from "../ui/Button";
+import ButtonGlobal from "./ButtonGlobal";
 
 export function AppSidebar() {
   return (
@@ -149,8 +150,12 @@ export function AppSidebar() {
                   <hr className="h-[2px] bg-white rounded-full border-none" />
                 </div>
 
-                <Button>Aplicar</Button>
 
+                <div className="flex justify-end pt-[5px]">
+                  <ButtonGlobal>Aplicar</ButtonGlobal>
+                </div>
+
+                
                 <div className="flex justify-end"></div>
               </div>
             </SidebarMenu>
