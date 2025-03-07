@@ -1,10 +1,7 @@
 type btnProps = {
   onClick?: () => void;
 };
-const ButtonGlobal = ({
-  children,
-  onClick,
-}: React.PropsWithChildren<btnProps>) => {
+const ButtonGlobal = ({ children, onClick }: React.PropsWithChildren<btnProps>) => {
   return (
     <>
       <button
