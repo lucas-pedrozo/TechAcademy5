@@ -131,7 +131,7 @@ export function AppSidebar() {
                       <input type="radio" name="categoria3" className="appearance-none w-6 h-6 border-2 border-gray-500 rounded-full relative checked:bg-white-500 checked:border-white-500 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:bg-white checked:after:rounded-full checked:after:absolute checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer transition-all"
                       />
                       <label className="text-center" htmlFor="">
-                        Mais baixados 
+                        Mais baixados
                       </label>
                     </div>
 
