@@ -13,19 +13,19 @@ const Footer = () => {
             Login
           </Link>
           <Link
-            to="/login"
+            to="/register"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             Register
           </Link>
           <Link
-            to="/login"
+            to="/forgotMyPassoword"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             forgot my password
           </Link>
           <Link
-            to="/login"
+            to="/contact"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             Contact
@@ -34,19 +34,19 @@ const Footer = () => {
         <div className="flex flex-col gap-[0.9375em] text-center min-[500px]:text-end ">
           <h6 className="underline font-bold text-[1.3rem]">User Policies</h6>
           <Link
-            to="/login"
+            to="/"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             User Terms
           </Link>
           <Link
-            to="/login"
+            to="/about"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             About
           </Link>
           <Link
-            to="/login"
+            to="/admin"
             className="text-[1rem] font-medium drop-shadow-[0px_2px_10px_rgba(0,0,0,0.6)] transition hover:scale-105 hover:drop-shadow-[0px_2px_10px_rgba(255,255,255,1)] duration-500"
           >
             Admin

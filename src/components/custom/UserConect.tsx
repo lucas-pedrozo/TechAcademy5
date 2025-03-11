@@ -11,9 +11,12 @@ import {
 } from "../../components/ui/dropdown-menu";
 
 export function UserConect() {
+
+  const isUserLogged = true;
+
   return (
     <div
-      className="flex gap-[10px] items-center bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[15px] rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]
+      className="flex  items-center bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-[1px] border-white py-[8px] px-[15px] gap-[10px]  rounded-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)]
     animate-fade-down animate-once animate-duration-500 animate-delay-400 animate-ease-out
     "
     >
@@ -24,11 +27,11 @@ export function UserConect() {
         className="w-[34px] rounded-3xl"
       />
       <DropdownMenu>
-        <Link to="/Login" className="font-bold flex text-white text-[1rem] ">
+        <Link to="/Login" className={`font-bold flex text-white text-[1rem] ${!isUserLogged ? "flex" : "hidden"} `}>
           Log in
         </Link>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="hidden gap-[8px] items-center focus:outline-none focus:ring-0 ">
+          <Button className={`gap-[8px] border-none  items-center focus:outline-none focus:ring-0  focus-visible:ring-0 focus-visible:shadow-none  ${!isUserLogged ? "hidden" : "flex"}`}>
             <span className="font-bold text-white text-[1rem]">Lucas.p</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +65,6 @@ export function UserConect() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </div>
+    </div >
   );
 }

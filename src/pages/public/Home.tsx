@@ -27,6 +27,7 @@ function Home() {
             autoPlay={true}
             loop={true}
             muted={true}
+          // controls={true}
           ></video>
         </div>
         <div className="newsRight flex flex-col min-[600px]:flex-col-reverse gap-[40px]">
@@ -44,6 +45,7 @@ function Home() {
             autoPlay={true}
             loop={true}
             muted={true}
+          // controls={true}
           ></video>
         </div>
       </div>

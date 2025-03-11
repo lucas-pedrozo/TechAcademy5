@@ -13,7 +13,7 @@ function Header() {
   return (
     <header
       className="bg-[rgba(255,255,255,0.1)] backdrop-blur-xl border-b-[1px]  border-neutral-300 relative z-1  rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
-     animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
+      animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal
     "
     >
       <nav
@@ -92,7 +92,7 @@ function Header() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgba(255,255,255,0.2)] backdrop-blur-xl  sm:max-w-sm sm:ring-1 p-[20px]  animate-fade-left animate-once animate-duration-500 animate-ease-out">
           <div
             className="flex items-center justify-between pb-[10px]
-           animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
+            animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
           "
           >
             <span className="font-bold text-[1rem] ">HARMONIC SOUND</span>
@@ -117,7 +117,7 @@ function Header() {
                   to="/home"
                   title="Home"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-                   animate-fade-left animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
+                    animate-fade-left animate-once animate-duration-500 animate-delay-250 animate-ease-out animate-normal
                   "
                 >
                   HOME
@@ -126,7 +126,7 @@ function Header() {
                   to="/soundlist"
                   title="Sound"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-                   animate-fade-left animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
+                    animate-fade-left animate-once animate-duration-500 animate-delay-300 animate-ease-out animate-normal
                   "
                 >
                   SOUND
@@ -135,7 +135,7 @@ function Header() {
                   href=""
                   title="About"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-                   animate-fade-left animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
+                    animate-fade-left animate-once animate-duration-500 animate-delay-350 animate-ease-out animate-normal
                   "
                 >
                   ABOUT
@@ -143,7 +143,7 @@ function Header() {
                 <Link
                   to="/contact"
                   className=" m-0 font-bold text-[1rem] transition duration-500 hover:scale-105 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]
-                   animate-fade-left animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
+                    animate-fade-left animate-once animate-duration-500 animate-delay-400 animate-ease-out animate-normal
                   "
                 >
                   CONTACT
