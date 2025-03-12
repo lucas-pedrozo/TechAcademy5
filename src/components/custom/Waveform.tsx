@@ -57,8 +57,8 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   };
 
   return (
-    <div className="flex justify-around w-full items-center gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
-      <section className="flex items-center gap-4">
+    <div className="flex flex-col min-[600px]:flex-row  min-[600px]:justify-around w-full min-[600px]:items-center gap-2 min-[600px]:gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
+      <section className="flex items-center gap-4 ">
         <img src={ImgAudio} className="w-[70px] rounded-[10px]" alt="Audio Cover" />
         <div className="flex flex-col ">
           <h4 className="text-white font-bold">Waveform</h4>
@@ -66,19 +66,20 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
         </div>
       </section>
 
-      <section className="flex flex-1 items-center gap-4">
-        <button onClick={togglePlayPause} className=" border rounded-full px-[10px] h-[30px] overflow-hidden bg-[rgba(29,29,29,0.42)]">
-          <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}
-            style={{ width: "20px", height: "20px important", fontSize: "24px", position: "relative", bottom: "3px", left: "1px" }}></i>
-        </button>
+      <section className="flex flex-1 items-center gap-4 justify-between">
+        <div className="flex gap-4 items-center">
+          <button onClick={togglePlayPause} className=" border rounded-full px-[10px] h-[30px] overflow-hidden bg-[rgba(29,29,29,0.42)]">
+            <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}
+              style={{ width: "20px", height: "20px important", fontSize: "24px", position: "relative", bottom: "3px", left: "1px" }}></i>
+          </button>
 
-        {/* Tempo */}
-        <div className="text-white min-w-[80px]">
-          {formatTime(currentTime)} / {formatTime(duration)}
+          <div className="text-white min-w-[80px]">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </div>
         </div>
 
-        {/* Waveform ocupa todo o espaço restante */}
-        <div ref={waveformRef} className="waveform-container flex"></div>
+
+        <div ref={waveformRef} className="waveform-container hidden min-[600px]:flex"></div>
 
         <div className="flex p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)] gap-3">
           <button>
