@@ -9,15 +9,10 @@ body {
   min-height: 100vh !important;
 }
 
-
 html {
   font-family: "Montserrat", sans-serif !important;
   background-color: #0e0e0e !important;
 }
-
-/* ::-webkit-scrollbar {
-  display: none;
-} */
 
 .custom-scrollbar::-webkit-scrollbar {
   padding: 20px;

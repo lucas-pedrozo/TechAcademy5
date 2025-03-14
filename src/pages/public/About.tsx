@@ -4,8 +4,10 @@ export default function About() {
     return (
         <>
             <div className="max-w-[1220px] py-[60px] px-[10px] m-auto">
-                <h1 className='text-[3rem] pb-2 font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,8]'>About</h1>
-                <section className='flex gap-4 flex-col ' >
+                <h1 className='text-[3rem] pb-2 font-bold text-center drop-shadow-[0_0_10px_rgba(255,255,255,8]'>
+                    Who We Are</h1>
+                <section className='flex gap-[50px]  flex-col ' >
+
                     <div className='bg-[rgba(0,0,0,0.2)] backdrop-blur-xl border-[1px] border-white shadow-[0px_2px_10px_rgba(0,0,0,0.6)]  rounded-[20px] p-[10px]
                     flex flex-col min-[600px]:flex-row gap-[20px] items-center
                     '>
@@ -20,6 +22,7 @@ export default function About() {
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero alias illo esse dolorem, iure modi fugiat dolore repudiandae, sit recusandae nostrum quasi illum ipsam, id odio perferendis odit est nemo.</p>
                         </div>
                     </div>
+
                     <div className='bg-[rgba(0,0,0,0.2)] backdrop-blur-xl border-[1px] border-white shadow-[0px_2px_10px_rgba(0,0,0,0.6)]  rounded-[20px] p-[10px]
                     flex flex-col min-[600px]:flex-row gap-[20px] items-center
                     '>
