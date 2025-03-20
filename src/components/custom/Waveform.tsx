@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import WaveSurfer from "wavesurfer.js";
 import ImgAudio from "../../assets/logo/lucas.jpg";
-import { before } from "node:test";
+
+import playIcon from "../../assets/play.svg";
+import pauseIcon from "../../assets/pause.svg";
 interface WaveformProps {
   audioUrl: string;
 }
@@ -57,38 +59,39 @@ const Waveform: React.FC<WaveformProps> = ({ audioUrl }) => {
   };
 
   return (
-    <div className="flex flex-col min-[600px]:flex-row  min-[600px]:justify-around w-full min-[600px]:items-center gap-2 min-[600px]:gap-18 border p-3 rounded-[10px] bg-[rgba(255,255,255,0.1)] backdrop-blur-xl">
-      <section className="flex items-center gap-4 ">
-        <img src={ImgAudio} className="w-[70px] rounded-[10px]" alt="Audio Cover" />
-        <div className="flex flex-col ">
-          <h4 className="text-white font-bold">Waveform</h4>
-          <h4 className="text-white font-[300] text-sm">Waveform</h4>
+    <div className="flex flex-col min-[880px]:flex-row justify-between p-3 gap-2.5 bg-[rgba(255,255,255,0.2)] backdrop-blur-xl border rounded-[20px] ">
+      <section className="flex items-center gap-2.5 min-w-[28%]">
+        <img src={ImgAudio} className="max-w-[60px] rounded-[10px]" alt="Audio Cover" />
+        <div>
+          <h4 className="text-white text-[14px] font-bold">DIE WITH A SMILE</h4>
+          <h4 className="text-white text-[12px] font-light">LADY GAGA E BRUNO MARKS</h4>
         </div>
       </section>
 
-      <section className="flex flex-1 items-center gap-4 justify-between">
-        <div className="flex gap-4 items-center">
-          <button onClick={togglePlayPause} className=" border rounded-full px-[10px] h-[30px] overflow-hidden bg-[rgba(29,29,29,0.42)]">
-            <i className={`bi ${isPlaying ? "bi-pause-fill" : "bi-play-fill"}`}
-              style={{ width: "20px", height: "20px important", fontSize: "24px", position: "relative", bottom: "3px", left: "1px" }}></i>
+      <section className="flex items-center justify-between w-full gap-2.5">
+        <div className="flex gap-2.5 items-center">
+          <button onClick={togglePlayPause} className="border rounded-full overflow-hidden bg-[rgba(29,29,29,0.42)] p-[6px_15px]   ">
+            <img
+              src={isPlaying ? pauseIcon : playIcon}
+              alt={isPlaying ? "Pause Icon" : "Play Icon"}
+            />
           </button>
-
-          <div className="text-white min-w-[80px]">
+          <span className="text-white min-w-[80px]">
             {formatTime(currentTime)} / {formatTime(duration)}
-          </div>
+          </span>
         </div>
-
 
         <div ref={waveformRef} className="waveform-container hidden min-[600px]:flex"></div>
 
-        <div className="flex p-[5px] px-[15px] border rounded-full bg-[rgba(29,29,29,0.42)] gap-3">
+        <section className="flex item gap-5 p-[4px_10px] pt-[6px] border rounded-full bg-[rgba(29,29,29,0.42)]">
           <button>
-            <i className="bi bi-cloud-download"></i>
+            <i className="bi bi-cloud-download text-[18px]"></i>
           </button>
           <button>
-            <i className="bi bi-star"></i>
+            <i className="bi bi-star text-[18px]"></i>
           </button>
-        </div>
+        </section>
+
       </section>
     </div>
   );

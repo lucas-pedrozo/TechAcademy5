@@ -13,7 +13,11 @@ import NewPassWord from "./pages/public/NewPassWord";
 
 import backgrouHome from "./assets/ImageBg/BG1.png";
 import backgroudUser from "./assets/ImageBg/BG3.png";
+import backgroudUser2 from "./assets/ImageBg/BG4.png";
+import imagemErro from "./assets/erro.jpg"
+
 import About from "./pages/public/About";
+import Error from "./pages/public/Erro404";
 
 function App() {
   return (
@@ -24,14 +28,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
         </Route>
+        <Route element={<Layout backgroundImage={backgroudUser2}><Outlet /></Layout>}>
+          <Route path="/soundList" element={<SoundList />} />
+        </Route>
         <Route element={<Layout backgroundImage={backgroudUser}><Outlet /></Layout>}>
           <Route path="/contact" element={<Contact />} />
-          <Route path="/soundList" element={<SoundList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgotMyPassoword" element={<ForgotMyPassoword />} />
           <Route path="/newPassWord" element={<NewPassWord />} />
           <Route path="/about" element={<About />} />
+        </Route>
+        <Route element={<LayoutHome backgroundImage={imagemErro}><Outlet /></LayoutHome>}>
+          <Route path="*" element={<Error />} />
         </Route>
       </Routes>
       <Footer />
