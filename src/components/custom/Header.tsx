@@ -1,85 +1,72 @@
-import logoSoud from "../../assets/logo/Mask.png";
+import logoSite from "../../assets/image/Mask.png";
+
+// link para navegação do site no header
 import { Link } from "react-router-dom";
+import UserLogin from "./UserLogin";
+import MenuHeader from "./MenuHeader";
+import UserLoginActive from "./UserLoginActive";
 
-import { useState } from "react";
-import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { UserConect } from "./UserConect";
-import LinkDesk from "./LinkDesk";
+const Header = () => {
 
-function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    //animation zoom Link
+    const shadow = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]';
 
-  return (
-    <header className="bg-[rgba(255,255,255,0.1)] backdrop-blur-[20px] border-b-[1px] border-gray-300 relative z-1 rounded-b-[40px] shadow-[0px_2px_10px_rgba(0,0,0,0.6)] text-white
-animate-fade-down animate-once animate-duration-500 animate-ease-out animate-normal 
-    ">
-      <nav className="mx-auto flex max-w-[1240px] items-center justify-between py-[10px] px-[20px]">
-        <div>
-          <Link to="/" className="flex items-center gap-[10px]">
-            <img src={logoSoud} className="@min- w-[45px]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal " />
-            <p className="hidden min-[520px]:block font-bold text-[1.125rem]  animate-fade-down animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal">
-              HARMONIC SOUND
-            </p>
-          </Link>
+    // função para quando usuario estiver logado
+    const isUserLogin = () => {
+        return false;
+    };
+
+    return (
+        <div className="px-2.5">
+            <header className={`max-w-[1240px] px-5 py-2.5 mx-auto mt-5  || flex justify-between items-center || bg-[rgba(255,255,255,0.1)]  backdrop-blur-xl ${shadow} || rounded-full border-gray-300 border-1`}>
+
+                <Link to={'/home'} className="flex items-center gap-2.5">
+                    <img src={logoSite} alt="Harmonic Sound" className="w-12 rounded-full" />
+                    <p className="font-bold hidden min-[500px]:block">HARMONIC SOUND</p>
+                </Link>
+
+                <nav className="flex items-center gap-3.5">
+                    <ul className="hidden min-[900px]:flex gap-2.5">
+                        <li>
+                            <Link to={'/home'}
+                                className={`font-bold || `}
+                            >HOME</Link>
+                        </li>
+                        <li>
+                            <Link to={'sound'}
+                                className={`font-bold || `}
+                            >SOUND</Link>
+                        </li>
+                        <li>
+                            <Link to={'contact'}
+                                className={`font-bold || `}
+                            >CONTACT</Link>
+                        </li>
+                        <li>
+                            <Link to={'about'}
+                                className={`font-bold ||`}
+                            >ABOUT</Link>
+                        </li>
+                    </ul>
+
+                    <div className={`${!isUserLogin ? 'hidden' : 'flex'}`}>
+                        <UserLogin />
+                    </div>
+
+                    <div className={`${!isUserLogin ? 'flex' : 'hidden'}`}>
+                        <UserLoginActive />
+                    </div>
+
+                    <div className="block min-[900px]:hidden">
+                        <MenuHeader />
+                    </div>
+
+                </nav>
+            </header>
         </div>
-
-        <div className="loginUserFixo flex gap-[15px] items-center">
-          <PopoverGroup className="hidden lg:flex gap-[15px] items-center">
-
-            <LinkDesk title="Home" to="/home" className=" animate-delay-250 animate-fade-down ">HOME</LinkDesk>
-            <LinkDesk title="sound" to="/soundList" className=" animate-delay-300 animate-fade-down " >SOUND</LinkDesk>
-            <LinkDesk title="about" to="/about" className=" animate-delay-350 animate-fade-down " >ABOUT</LinkDesk>
-            <LinkDesk title="contact" to="/contact" className=" animate-delay-400 animate-fade-down " >CONTACT</LinkDesk>
-          </PopoverGroup>
-
-          <UserConect />
-
-          <div className="flex lg:hidden">
-            <button
-              type="button" onClick={() => setMobileMenuOpen(true)}
-              className=" inline-flex items-center justify-center rounded-md animate-fade-left animate-once animate-duration-500 animate-ease-out animate-normal data-closed:translate-y-1 ">
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-[52px]" />
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[rgba(255,255,255,0.2)] backdrop-blur-xl  sm:max-w-sm sm:ring-1 p-[20px]  animate-fade-left animate-once animate-duration-500 animate-ease-out">
-          <div
-            className="flex items-center justify-between pb-[10px]
-            animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal
-          "
-          >
-            <span className="font-bold text-[1rem] ">HARMONIC SOUND</span>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-red-600"
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-8" />
-            </button>
-          </div>
-
-          <hr className="w-full h-[3px] bg-white opacity-100 rounded-full animate-fade-left animate-once animate-duration-500 animate-delay-200 animate-ease-out animate-normal" />
-
-          <div className="pt-[40px] flow-root">
-            <div className="-my-6 divide-y ">
-              <div className="flex  flex-col gap-[15px] text-center ">
-                <LinkDesk title="Home" to="/home" className=" animate-delay-250 animate-fade-left">HOME</LinkDesk>
-                <LinkDesk title="sound" to="/soundList" className=" animate-delay-300 animate-fade-left" >SOUND</LinkDesk>
-                <LinkDesk title="about" to="/about" className=" animate-delay-350 animate-fade-left" >ABOUT</LinkDesk>
-                <LinkDesk title="contact" to="/contact" className=" animate-delay-400 animate-fade-left" >CONTACT</LinkDesk>
-              </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
-  );
+    );
 }
+
 export default Header;
+
+

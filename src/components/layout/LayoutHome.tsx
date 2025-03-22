@@ -1,20 +1,23 @@
 import React, { useEffect } from "react";
 
-interface LayoutProps {
-  backgroundImage: string;
-  children: React.ReactNode;
+type LayoutProps = {
+    backgroundImage: string;
+    children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ backgroundImage, children }) => {
-  useEffect(() => {
-    if (backgroundImage) {
-      document.body.style.backgroundImage = `url(${backgroundImage})`;
-      document.body.style.backgroundRepeat = "no-repeat";
-      document.body.style.backgroundPosition = " top center";
-    }
-  }, [backgroundImage]);
+const LayoutHome: React.FC<LayoutProps> = ({ backgroundImage, children }) => {
 
-  return <div>{children}</div>;
+    useEffect(() => {
+        if (backgroundImage) {
+            document.body.style.backgroundImage = `url(${backgroundImage})`;
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundPosition = " top center";
+        }
+    }, [backgroundImage]);
+
+    return <div>
+        {children}
+    </div>;
 };
 
-export default Layout;
+export default LayoutHome;
