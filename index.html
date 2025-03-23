@@ -5,9 +5,46 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <script src="./src/TS/finisher-header.es5.min.ts" type="text/javascript"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+
+  <script type="text/javascript">
+    new FinisherHeader({
+      "count": 2,
+      "size": {
+        "min": 1197,
+        "max": 1500,
+        "pulse": 0
+      },
+      "speed": {
+        "x": {
+          "min": 0.6,
+          "max": 3
+        },
+        "y": {
+          "min": 0.6,
+          "max": 3
+        }
+      },
+      "colors": {
+        "background": "#420092",
+        "particles": [
+          "#00c5c3"
+        ]
+      },
+      "blending": "lighten",
+      "opacity": {
+        "center": 0.6,
+        "edge": 0
+      },
+      "skew": -2,
+      "shapes": [
+        "c"
+      ]
+    });
+    </script>
 </html>

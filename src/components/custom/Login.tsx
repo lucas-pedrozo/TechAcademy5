@@ -1,6 +1,7 @@
 import { useState, FormEvent } from "react";
 import { ButtonLogin } from "../ui/button";
 import Input from "./Input";
+import InputPassword from "./InputPassword";
 
 type Props = {
     className?: string
@@ -21,9 +22,9 @@ function Login({ className }: Props) {
         <form onSubmit={handleSubmit} className={`${className} flex-col gap-4 || w-full`}>
 
             <Input type="email" id="email" placeholder="Email" onChange={(e) => setUserEmail(e.target.value)} />
-            <Input type="Password" id="password" placeholder="Password" onChange={(e) => setUserPassword(e.target.value)} />
+            <InputPassword placeholder="Password" onChange={(e) => setUserPassword(e.target.value)} />
 
-            <ButtonLogin rotate="/login" />
+            <ButtonLogin rotate="/newpassword " />
         </form>
     );
 }
