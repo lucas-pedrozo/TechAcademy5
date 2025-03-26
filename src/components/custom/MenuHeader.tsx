@@ -1,7 +1,9 @@
 import { MenuButton } from "@/components/ui/button"
 import iconsMenu from "../../assets/icons/menu.svg"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"
+
+import logoGit from "../../assets/icons/github.svg"
 
 function MenuHeader() {
     return (
@@ -19,28 +21,35 @@ function MenuHeader() {
                 </SheetHeader>
                 <div className="grid gap-4 py-4">
                     <div >
-                        <ul className="flex flex-col gap-4 || text-center">
+                        <ul className="flex flex-col gap-4 || text-center pb-5">
                             <li>
-                                <Link to={'/home'}
-                                    className={`font-bold || `}
-                                >HOME</Link>
+                                <SheetClose asChild>
+                                    <Link to="/home" className="font-bold">HOME</Link>
+                                </SheetClose>
                             </li>
                             <li>
-                                <Link to={'sound'}
-                                    className={`font-bold || `}
-                                >SOUND</Link>
+                                <SheetClose asChild>
+                                    <Link to="/sound" className="font-bold">SOUND</Link>
+                                </SheetClose>
                             </li>
                             <li>
-                                <Link to={'contact'}
-                                    className={`font-bold || `}
-                                >CONTACT</Link>
+                                <SheetClose asChild>
+                                    <Link to="/contact" className="font-bold">CONTACT</Link>
+                                </SheetClose>
                             </li>
                             <li>
-                                <Link to={'about'}
-                                    className={`font-bold ||`}
-                                >ABOUT</Link>
+                                <SheetClose asChild>
+                                    <Link to="/about" className="font-bold">ABOUT</Link>
+                                </SheetClose>
                             </li>
                         </ul>
+
+                        <a href="https://github.com/lucas-pedrozo/TechAcademy5.git" className="hidden min-[500px]:flex justify-center items-center gap-1.5 || px-5 py-2 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
+                            style={{ backgroundColor: '#6900e2', backgroundImage: 'linear-gradient(135deg, #6900e2 0%, #00e2bd 100%)' }}>
+                            <img src={logoGit} alt="github" />
+                            GitHub
+                        </a>
+
                     </div>
                 </div>
             </SheetContent>

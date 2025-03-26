@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState } from 'react';
 import { ButtonLogin } from "../ui/button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
@@ -9,20 +9,32 @@ type Props = {
 
 function Login({ className }: Props) {
 
-    const [username, setUserEmail] = useState("");
-    const [password, setUserPassword] = useState("");
+    // verificar se o email é valido
 
+    // cores de aviso
+    const campoInvalido = "border-1 border-red-500";
+    const campoValido = "border-1 border-green-500";
+    const campoVazio = "border-1 border-white";
 
-    const handleSubmit = (event: FormEvent): void => {
-        event.preventDefault();
-        alert(username + " - " + password);
+    // verificação de o email é valido
+    const validateEmail = (email: string) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     };
 
-    return (
-        <form onSubmit={handleSubmit} className={`${className} flex-col gap-4 || w-full`}>
+    const [email, setEmail] = useState("");
+    const emailClass = email === "" ? campoVazio : (validateEmail(email) ? campoValido : campoInvalido);
 
-            <Input type="email" id="email" placeholder="Email" onChange={(e) => setUserEmail(e.target.value)} />
-            <InputPassword placeholder="Password" onChange={(e) => setUserPassword(e.target.value)} />
+    return (
+        <form action="" className={`${className} flex-col gap-4 || w-full`}>
+            <Input
+                type="email"
+                id="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={emailClass} />
+            <InputPassword placeholder="Password" />
 
             <ButtonLogin rotate="/newpassword " />
         </form>

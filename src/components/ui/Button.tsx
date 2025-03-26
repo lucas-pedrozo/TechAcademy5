@@ -74,12 +74,67 @@ function MenuButton({
     />
   )
 }
+function ButtonFiltro({
+  className,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> & {
+  asChild?: boolean
+}) {
+  const Comp = asChild ? Slot : "button"
+
+  const style = "bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105"
+
+  return (
+    <Comp
+      data-slot="button"
+      className={`${className} ${style} `}
+      {...props}
+    />
+  )
+}
 
 function ButtonLogin({ rotate = "/", }: React.ComponentProps<"button">) {
   return (
     <div className="flex justify-between items-center pt-5 px-2.5">
 
-      <Link to={rotate} className="">Forgot My Password!</Link>
+      <Link to={rotate} className="underline decoration-white">Forgot My Password!</Link>
+
+      <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
+        Log in
+      </button>
+    </div>
+  )
+}
+
+function ButtonRegister({ rotate = "/", disabled }: React.ComponentProps<"button">) {
+  return (
+    <div className="flex justify-between items-center pt-5 px-2.5">
+
+      <Link to={rotate} className="underline decoration-white">Forgot My Password!</Link>
+
+      <button disabled={disabled} type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
+        Register
+      </button>
+    </div>
+  )
+}
+function ButtonContact() {
+  return (
+    <div className="flex justify-end items-center pt-5 px-2.5">
+
+      <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
+
+        Conclude
+      </button>
+    </div>
+  )
+}
+function ButtonNepass({ rotate = "/", }: React.ComponentProps<"button">) {
+  return (
+    <div className="flex justify-between items-center pt-5 px-2.5">
+
+      <Link to={rotate} className="underline decoration-white">Return To Login Screen</Link>
 
       <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
 
@@ -90,4 +145,4 @@ function ButtonLogin({ rotate = "/", }: React.ComponentProps<"button">) {
 }
 
 
-export { Button, buttonVariants, MenuButton, ButtonLogin }
+export { Button, buttonVariants, MenuButton, ButtonLogin, ButtonNepass, ButtonContact, ButtonRegister, ButtonFiltro }

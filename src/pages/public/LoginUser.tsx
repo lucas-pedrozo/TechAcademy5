@@ -28,7 +28,7 @@ function LoginUser() {
 
     return (
         <main className="py-14 px-2.5">
-            <section className={`max-w-[500px] min-[880px]:max-w-[860px] mx-auto p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
+            <section className={`max-w-[500px] min-[880px]:max-w-[860px] mx-auto mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
 
                 <img src={ImageLogin} alt="imagem Login" className={`rounded-2xl hidden min-[880px]:flex || ${MotionImage} animate-delay-100 `} />
 
@@ -44,6 +44,16 @@ function LoginUser() {
                     {isLoginActive ? (<Login className="flex" />) : (<Register className="flex" />)}
                 </div>
             </section>
+
+            <div className="bg-white/20 backdrop-blur-xl rounded-2xl || border-1 border-white || p-5 m-auto || max-w-[600px] || flex flex-col gap-2.5 ">
+                <div>
+                    <input type="checkbox" />  <label htmlFor="checkbox"
+                    >Read the policy terms and features of our system,<span className="font-bold"> Policy Terms</span></label>
+                </div>
+                <div>
+                    <input type="checkbox" />  <label htmlFor="checkbox">Read the policy terms and features of our system,<span className="font-bold"> Policy Terms</span></label>
+                </div>
+            </div>
         </main >
     );
 }

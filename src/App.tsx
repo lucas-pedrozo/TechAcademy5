@@ -13,7 +13,11 @@ import Header from "./components/custom/Header";
 import LayoutHome from "./components/layout/LayoutHome";
 import LayoutLogin from "./components/layout/LayoutLogin";
 import LoginUser from "./pages/public/LoginUser";
-import NewPassword from "./pages/public/NewPassword";
+import Contact from "./pages/public/Contact";
+import About from "./pages/public/About";
+import Sound from "./pages/public/Sound";
+import Footer from "./components/custom/footer";
+import Admin from "./pages/auth/Admin";
 
 
 // rotas de navegação dentro do site 
@@ -23,19 +27,24 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+
         <Route element={<LayoutHome backgroundImage={background}><Outlet /></LayoutHome>}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
         </Route>
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
           <Route path="/login" element={<LoginUser />} />
-          <Route path="/newpassword" element={<NewPassword />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/sound" element={<Sound />} />
         </Route>
 
         {/* rota de erro 404 */}
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+      <Footer />
     </BrowserRouter >
 
   );
