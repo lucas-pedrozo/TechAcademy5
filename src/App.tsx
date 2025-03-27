@@ -16,7 +16,7 @@ import LoginUser from "./pages/public/LoginUser";
 import Contact from "./pages/public/Contact";
 import About from "./pages/public/About";
 import Sound from "./pages/public/Sound";
-import Footer from "./components/custom/footer";
+import Footer from "./components/custom/Footer";
 import Admin from "./pages/auth/Admin";
 
 

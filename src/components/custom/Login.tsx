@@ -1,42 +1,59 @@
-import { useState } from 'react';
+import { useForm, SubmitHandler } from "react-hook-form";
 import { ButtonLogin } from "../ui/button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
 
+type FormValues = {
+    email: string;
+    password: string;
+};
+
 type Props = {
-    className?: string
-}
+    className?: string;
+};
 
 function Login({ className }: Props) {
+    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
+        mode: "onBlur"
+    });
 
-    // verificar se o email é valido
 
-    // cores de aviso
-    const campoInvalido = "border-1 border-red-500";
-    const campoValido = "border-1 border-green-500";
-    const campoVazio = "border-1 border-white";
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
+        alert(`Email: ${data.email}\nPassword: ${data.password}`);
 
-    // verificação de o email é valido
-    const validateEmail = (email: string) => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
     };
 
-    const [email, setEmail] = useState("");
-    const emailClass = email === "" ? campoVazio : (validateEmail(email) ? campoValido : campoInvalido);
-
     return (
-        <form action="" className={`${className} flex-col gap-4 || w-full`}>
-            <Input
-                type="email"
-                id="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={emailClass} />
-            <InputPassword placeholder="Password" />
+        <form onSubmit={handleSubmit(onSubmit)} className={`${className} flex-col gap-4 w-full`}>
 
-            <ButtonLogin rotate="/newpassword " />
+            <label htmlFor="email" className="flex flex-col gap-1">
+                <Input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    {...register("email", {
+                        required: "Email é obrigatório",
+                        pattern: {
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            message: "Email inválido"
+                        }
+                    })}
+                />
+                {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+            </label>
+
+            <label htmlFor="password" className="flex flex-col gap-1">
+                <InputPassword
+                    placeholder="Password"
+                    {...register("password", {
+                        required: "Senha é obrigatória",
+                        minLength: { value: 8, message: "Senha Incorreta" }
+                    })}
+                />
+                {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+            </label>
+
+            <ButtonLogin />
         </form>
     );
 }

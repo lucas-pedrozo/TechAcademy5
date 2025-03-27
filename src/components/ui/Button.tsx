@@ -94,26 +94,20 @@ function ButtonFiltro({
   )
 }
 
-function ButtonLogin({ rotate = "/", }: React.ComponentProps<"button">) {
+function ButtonLogin() {
   return (
-    <div className="flex justify-between items-center pt-5 px-2.5">
-
-      <Link to={rotate} className="underline decoration-white">Forgot My Password!</Link>
-
+    <div className="flex justify-end items-center pt-5 px-2.5">
       <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
-        Log in
+        Login
       </button>
     </div>
   )
 }
 
-function ButtonRegister({ rotate = "/", disabled }: React.ComponentProps<"button">) {
+function ButtonRegister() {
   return (
-    <div className="flex justify-between items-center pt-5 px-2.5">
-
-      <Link to={rotate} className="underline decoration-white">Forgot My Password!</Link>
-
-      <button disabled={disabled} type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
+    <div className="flex justify-end items-center pt-5 px-2.5">
+      <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
         Register
       </button>
     </div>

@@ -1,15 +1,21 @@
 import { useAudioController } from "@/hook/audioController";
 import imagemSound from "@/assets/image/lucas.jpg";
 
-import adio from '@/assets/audio/Laura Marling - Night After Night Legendado(MP3_320K).mp3';
-
 import downl from "@/assets/icons/download.svg"
 import play from "@/assets/icons/play.svg"
+import pause from "@/assets/icons/pause.svg"
 import Waveform from "./WaveForm";
 
+type props = {
+    src: string;
+    name: string;
+    author: string;
+
+}
 
 
-function ContainerSound() {
+
+function ContainerSound({ src, name, author }: props) {
 
     const SyTime = "font-light text-[0.875rem]";
     const SyButton = "bg-black/20 rounded-full || border-1 border-white || px-2.5 py-[5px]";
@@ -31,14 +37,14 @@ function ContainerSound() {
 
     return (
         <section className="bg-white/20 backdrop-blur-xl rounded-2xl border-1 border-white p-2.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0">
-            <audio ref={audioRef} src={adio} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
+            <audio ref={audioRef} src={src} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
 
             <div className="flex gap-2.5 min-w-[28%] || min-[990px]:items-center  ">
                 <img src={imagemSound} alt="lucas pedrozo" className="w-14 rounded-[10px] min-[990px]:w-20" />
 
                 <div>
-                    <p className="font-semibold text-[0.875rem]">DIE WITH A SMILE</p>
-                    <p className="font-light text-[0.75rem]">LADY GAGA E BRUNO MARS</p>
+                    <p className="font-semibold text-[0.875rem]">{name}</p>
+                    <p className="font-light text-[0.75rem]">{author}</p>
                 </div>
 
             </div>
@@ -48,7 +54,7 @@ function ContainerSound() {
 
                     <button onClick={togglePlayPause} className={`${SyButton}`}>
                         {isPlaying ? (
-                            <img src={downl} />
+                            <img src={pause} />
                         ) : (
                             <img src={play} className="pl-[2px]" />
                         )}

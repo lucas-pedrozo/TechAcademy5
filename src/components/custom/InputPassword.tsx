@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import ViewPassword from "./ViewPassword";
 
 interface InputProps {
@@ -11,11 +11,10 @@ interface InputProps {
     value?: string;
 }
 
-function InputPassword({ placeholder, className, onChange, value, }: InputProps) {
-
+const InputPassword = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+    const { placeholder, className, onChange, value, ...rest } = props;
     const [visible, setVisible] = useState(false);
-    const styleInput = "text-white placeholder:text-white placeholder:font-medium focus:outline-none ";
-
+    const styleInput = "text-white placeholder:text-white placeholder:font-medium focus:outline-none";
 
     const toggleVisibility = () => {
         setVisible((prev) => !prev);
@@ -23,7 +22,7 @@ function InputPassword({ placeholder, className, onChange, value, }: InputProps)
 
     return (
         <div>
-            <div className={`${className ? className : ""} bg-white/20 backdrop-blur-xl rounded-full border-1 border-white py-2 px-5 flex items-center `}>
+            <div className={`${className ?? ""} bg-white/20 backdrop-blur-xl rounded-full border-1 border-white py-2 px-5 flex items-center`}>
                 <input
                     type={visible ? "text" : "password"}
                     placeholder={placeholder}
@@ -32,11 +31,15 @@ function InputPassword({ placeholder, className, onChange, value, }: InputProps)
                     value={value}
                     className={`${styleInput} flex-1`}
                     onChange={onChange}
+                    ref={ref}
+                    {...rest}
+                    required
                 />
                 <ViewPassword onClick={toggleVisibility} />
             </div>
         </div>
     );
-}
+});
 
+InputPassword.displayName = "InputPassword";
 export default InputPassword;
