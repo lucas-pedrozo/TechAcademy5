@@ -44,7 +44,7 @@ function MenuHeader() {
                             </li>
                         </ul>
 
-                        <a href="https://github.com/lucas-pedrozo/TechAcademy5.git" className="hidden min-[500px]:flex justify-center items-center gap-1.5 || px-5 py-2 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
+                        <a href="https://github.com/lucas-pedrozo/TechAcademy5.git" className="flex justify-center items-center gap-1.5 || px-5 py-2 rounded-full || font-semibold || shadow-[0_0_8px_rgba(22,186,203,0.4)] hover:shadow-[0_0_10px_rgba(22,186,203,1)] transition duration-300"
                             style={{ backgroundColor: '#6900e2', backgroundImage: 'linear-gradient(135deg, #6900e2 0%, #00e2bd 100%)' }}>
                             <img src={logoGit} alt="github" />
                             GitHub

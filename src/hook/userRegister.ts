@@ -15,19 +15,25 @@ export function useUserRegister() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormValues>({
-    mode: "onChange",
-  });
+  } = useForm<FormValues>({ mode: "onChange" });
+
   const password = watch("password");
 
+  // Validação do CPF: remove caracteres não numéricos, verifica se contém somente números,
+  // confere se possui exatamente 11 dígitos e utiliza o cpf-cnpj-validator para validar
   const validateCPF = (value: string) => {
-    const stripped = value.replace(/[.\-]/g, "");
+    const stripped = value.replace(/\D/g, "");
+    if (!/^\d+$/.test(stripped)) {
+      return "Apenas números são permitidos";
+    }
+    if (stripped.length !== 11) {
+      return "CPF deve ter 11 dígitos";
+    }
     return cpfValidator.isValid(stripped) || "CPF inválido";
   };
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    const cpfStripped = data.cpf.replace(/[.\-]/g, "");
-
+    const cpfStripped = data.cpf.replace(/\D/g, "");
     alert(
       `Name: ${data.name}\nCPF: ${cpfStripped}\nEmail: ${data.email}\nPassword: ${data.password}`
     );

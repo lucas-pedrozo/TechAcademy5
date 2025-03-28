@@ -1,42 +1,47 @@
-import ContainerSound from "@/components/custom/ContainerSond";
+import { Link } from "react-router-dom";
 
 function Admin() {
 
-    const SyButtonNot = "bg-black rounded-full border-1 border-white || px-5 py-2 || font-bold text-white"
-    const SyButtonActive = "bg-white rounded-full border-1 border-black || px-5 py-2 || font-bold text-black"
-    const SyInput = "bg-white/10 backdrop-blur-md rounded-full border-1 border-white  || w-full text-white placeholder:text-white placeholder:font-medium focus:outline-none || px-5 py-2"
+    const SyCotainer = "bg-white/10 backdrop-blur-xl rounded-2xl border-1 border-white/50  || w-[50%] h-40 || flex justify-center items-center"
+
+    const MotionSyCont = "hover:scale-104 transition transform duration-300 hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
 
     return (
-        <section className="py-10">
-            <main className="max-w-[1220px] mx-auto p-2.5 || bg-white/20 backdrop-blur-md rounded-2xl || border-1 border-white">
 
-                <section className="bg-black/30 border-1 border-white rounded-full || p-[6px_20px] || flex justify-between items-center ">
-                    <span className="font-bold">Area do Admin</span>
-                    <div className="flex gap-2.5">
-                        {/* <button className={`${SyButtonActive}`}>Add Sound</button>
-                        <button className={`${SyButtonNot}`}>Add Sound</button>
-                        <button className={`${SyButtonNot}`}>Add Sound</button> */}
-                    </div>
-                </section>
-                <div className="">
-                    <input type="search" placeholder="search..." className={`${SyInput}`} />
+        <main className="max-w-[1220px] mx-auto p-2.5 min-h-[50vh]  || flex justify-center items-center ">
+
+            <div className="flex flex-col justify-center gap-5 | w-full">
+
+                <div className="flex gap-5">
+                    <Link to={'/adminuser'} className={`${SyCotainer} ${MotionSyCont}`}>
+                        <span className="">
+                            User Administration
+                        </span>
+                    </Link>
+
+                    <Link to={'/user'} className={`${SyCotainer} ${MotionSyCont}`}>
+                        <span className="">
+                            Adm Author
+                        </span>
+                    </Link>
                 </div>
 
-                <section className="overflow-hidden overflow-y-scroll max-h-[700px] pt-5 || flex flex-col gap-2.5 w-full">
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                    <ContainerSound />
-                </section>
+                <div className="flex gap-5">
+                    <Link to={'/user'} className={`${SyCotainer} ${MotionSyCont}`}>
+                        <span className="">
+                            Upload Sound
+                        </span>
+                    </Link>
 
-            </main>
-        </section>
+                    <Link to={'/user'} className={`${SyCotainer} ${MotionSyCont}`}>
+                        <span className="">
+                            Amd Sound
+                        </span>
+                    </Link>
+                </div>
+            </div >
+
+        </main >
     );
 }
 

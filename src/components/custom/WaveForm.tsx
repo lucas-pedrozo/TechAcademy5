@@ -1,4 +1,4 @@
-import "@/css/WaveForm.css"
+
 
 interface props {
     id?: string,

@@ -4,9 +4,9 @@ function FilterContainer() {
     const flex = "flex items-center gap-2";
 
     return (
-        <div>
+        <div className="px-2.5">
             <section className="flex flex-col gap-2.5 font-bold pb-2.5">
-                <h4 className=" font-bold">Categoria</h4>
+                < h4 className=" font-bold" > Categoria</h4 >
 
                 <div className={`${flex}`}>
                     <input type="radio" name="categoria1" className={`${checkbox}`} />
@@ -87,7 +87,7 @@ function FilterContainer() {
                     <label className="text-[14px]" htmlFor="cat2"> Least Downloads</label>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }
 

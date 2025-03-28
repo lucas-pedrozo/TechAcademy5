@@ -18,6 +18,7 @@ import About from "./pages/public/About";
 import Sound from "./pages/public/Sound";
 import Footer from "./components/custom/Footer";
 import Admin from "./pages/auth/Admin";
+import AdmUser from "./pages/auth/AdmUser";
 
 
 // rotas de navegação dentro do site 
@@ -32,7 +33,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+
+
           <Route path="/admin" element={<Admin />} />
+          <Route path="/adminuser" element={<AdmUser />} />
         </Route>
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
@@ -41,7 +45,7 @@ function App() {
           <Route path="/sound" element={<Sound />} />
         </Route>
 
-        {/* rota de erro 404 */}
+        {/* rota de erro 404 */}]
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer />

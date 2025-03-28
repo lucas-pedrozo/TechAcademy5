@@ -1,7 +1,8 @@
 import { useAudioController } from "@/hook/audioController";
 import imagemSound from "@/assets/image/lucas.jpg";
 
-import downl from "@/assets/icons/download.svg"
+import favorite from "@/assets/icons/favorite.svg"
+import download from "@/assets/icons/download.svg"
 import play from "@/assets/icons/play.svg"
 import pause from "@/assets/icons/pause.svg"
 import Waveform from "./WaveForm";
@@ -13,7 +14,7 @@ type props = {
 
 }
 
-
+// ======================================================================================================================================================================================
 
 function ContainerSound({ src, name, author }: props) {
 
@@ -34,9 +35,10 @@ function ContainerSound({ src, name, author }: props) {
         formatTime,
     } = useAudioController();
 
+    // ======================================================================================================================================================================================
 
     return (
-        <section className="bg-white/20 backdrop-blur-xl rounded-2xl border-1 border-white p-2.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0">
+        <section className="bg-white/20 backdrop-blur-xl rounded-2xl border-1 border-white p-2.5 min-[800px]:mr-1.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0 ">
             <audio ref={audioRef} src={src} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
 
             <div className="flex gap-2.5 min-w-[28%] || min-[990px]:items-center  ">
@@ -70,15 +72,15 @@ function ContainerSound({ src, name, author }: props) {
                 <Waveform id="seekBar" min="0" max={duration.toString()} value={currentTime.toString()} onChange={handleSeekChange} className="hidden min-[570px]:flex w-[65%]" />
 
                 <div className={`${SyButton2}`}>
-                    <button onClick={handleDownload}>
-                        <img src={downl} />
+                    <button onClick={() => { handleDownload() }} disabled={true}>
+                        <img src={download} />
                     </button>
-                    <button onClick={handleDownload}>
-                        <img src={downl} />
+                    <button>
+                        <img src={favorite} />
                     </button>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 

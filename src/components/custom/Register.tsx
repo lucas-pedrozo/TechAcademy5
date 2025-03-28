@@ -3,8 +3,6 @@ import { ButtonRegister } from "../ui/button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
 
-
-
 type Props = {
     className?: string;
 };
@@ -19,15 +17,13 @@ function Register({ className }: Props) {
         onSubmit
     } = useUserRegister();
 
-    const SyError = "text-red-500 text-sm || pl-5"
-
+    const SyError = "text-red-500 text-sm pl-5";
 
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className={`${className} flex-col gap-4 w-full`}
+            className={`${className} flex-col gap-4 w-full `}
         >
-
             <label>
                 <Input
                     type="name"
@@ -35,7 +31,7 @@ function Register({ className }: Props) {
                     placeholder="Name"
                     {...register("name", { required: "Nome é obrigatório" })}
                 />
-                {errors.name && <span className={`${SyError}`}>{errors.name.message}</span>}
+                {errors.name && <span className={SyError}>{errors.name.message}</span>}
             </label>
 
             <label>
@@ -43,9 +39,21 @@ function Register({ className }: Props) {
                     type="text"
                     id="cpf"
                     placeholder="CPF"
-                    {...register("cpf", { required: "CPF é obrigatório", validate: validateCPF })}
+                    maxLength={11}
+                    {...register("cpf", {
+                        required: "CPF é obrigatório",
+                        pattern: { value: /^\d+$/, message: "Apenas números são permitidos" },
+                        validate: validateCPF
+                    })}
+                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                        const allowedKeys = ["Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight"];
+                        if (allowedKeys.includes(e.key)) return;
+                        if (!/^\d$/.test(e.key)) {
+                            e.preventDefault();
+                        }
+                    }}
                 />
-                {errors.cpf && <span className={`${SyError}`}>{errors.cpf.message}</span>}
+                {errors.cpf && <span className={SyError}>{errors.cpf.message}</span>}
             </label>
 
             <label>
@@ -61,7 +69,7 @@ function Register({ className }: Props) {
                         }
                     })}
                 />
-                {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+                {errors.email && <span className={SyError}>{errors.email.message}</span>}
             </label>
 
             <label>
@@ -72,7 +80,7 @@ function Register({ className }: Props) {
                         minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
                     })}
                 />
-                {errors.password && <span className={`${SyError}`}>{errors.password.message}</span>}
+                {errors.password && <span className={SyError}>{errors.password.message}</span>}
             </label>
 
             <label>
@@ -83,7 +91,7 @@ function Register({ className }: Props) {
                         validate: (value) => value === password || "As senhas não coincidem"
                     })}
                 />
-                {errors.confirmPassword && <span className={`${SyError}`}>{errors.confirmPassword.message}</span>}
+                {errors.confirmPassword && <span className={SyError}>{errors.confirmPassword.message}</span>}
             </label>
 
             <ButtonRegister />
