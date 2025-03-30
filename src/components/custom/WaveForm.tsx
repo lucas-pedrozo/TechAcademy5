@@ -1,25 +1,18 @@
+import { cn } from "@/lib/utils"
+import { Slider } from "@/components/ui/slider"
 
+type SliderProps = React.ComponentProps<typeof Slider>
 
-interface props {
-    id?: string,
-    min?: string,
-    max?: string,
-    value?: string,
-    onChange?: React.ChangeEventHandler<HTMLInputElement>,
-    className?: string,
-}
-
-function Waveform({ id, min, max, value, onChange, className }: props) {
+function WaveForm({ className, ...props }: SliderProps) {
     return (
-        <input
-            type="range"
-            id={id}
-            min={min}
-            max={max}
-            value={value}
-            onChange={onChange}
-            className={className}
+        <Slider
+            defaultValue={[50]}
+            max={100}
+            step={1}
+            className={cn("w-[60%]", className)}
+            {...props}
         />
-    );
+    )
 }
-export default Waveform;
+
+export default WaveForm;

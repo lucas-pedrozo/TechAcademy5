@@ -19,6 +19,7 @@ import Sound from "./pages/public/Sound";
 import Footer from "./components/custom/Footer";
 import Admin from "./pages/auth/Admin";
 import AdmUser from "./pages/auth/AdmUser";
+import BuscarSound from "./pages/auth/BuscarSound";
 
 
 // rotas de navegação dentro do site 
@@ -37,6 +38,7 @@ function App() {
 
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminuser" element={<AdmUser />} />
+          <Route path="/buscarSound" element={<BuscarSound />} />
         </Route>
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>

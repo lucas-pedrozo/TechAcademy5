@@ -4,7 +4,7 @@ function FilterContainer() {
     const flex = "flex items-center gap-2";
 
     return (
-        <div className="px-2.5">
+        <form className="px-2.5">
             <section className="flex flex-col gap-2.5 font-bold pb-2.5">
                 < h4 className=" font-bold" > Categoria</h4 >
 
@@ -87,7 +87,7 @@ function FilterContainer() {
                     <label className="text-[14px]" htmlFor="cat2"> Least Downloads</label>
                 </div>
             </section>
-        </div >
+        </form >
     );
 }
 

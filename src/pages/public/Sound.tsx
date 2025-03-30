@@ -69,7 +69,7 @@ function Sound() {
                 <div className="overflow-hidden overflow-y-scroll max-h-[700px] flex flex-col gap-2.5 w-full">
 
                     {filteredSounds.length > 0 ? (filteredSounds.map((sound, index) => (
-                        <ContainerSound key={index} src={sound.src} name={sound.name} author={sound.author} />
+                        <ContainerSound key={index} src={sound.src} name={sound.name} author={sound.author} className1="flex" className2="hidden" />
                     ))
                     ) : (<p className="text-center text-white/70 pt-10">Nenhum resultado encontrado.</p>)}
                 </div>

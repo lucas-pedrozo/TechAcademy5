@@ -34,7 +34,7 @@ function Admin() {
                         </span>
                     </Link>
 
-                    <Link to={'/user'} className={`${SyCotainer} ${MotionSyCont}`}>
+                    <Link to={'/buscarSound'} className={`${SyCotainer} ${MotionSyCont}`}>
                         <span className="">
                             Amd Sound
                         </span>
