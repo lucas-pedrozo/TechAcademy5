@@ -15,12 +15,10 @@ export function useUserRegister() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormValues>({ mode: "onChange" });
+  } = useForm<FormValues>({ mode: "onSubmit" });
 
   const password = watch("password");
 
-  // Validação do CPF: remove caracteres não numéricos, verifica se contém somente números,
-  // confere se possui exatamente 11 dígitos e utiliza o cpf-cnpj-validator para validar
   const validateCPF = (value: string) => {
     const stripped = value.replace(/\D/g, "");
     if (!/^\d+$/.test(stripped)) {

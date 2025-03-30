@@ -21,7 +21,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
             ref={ref}
             className={`${className} ${styleInput}`}
             {...rest}
-            required
         />
     );
 });

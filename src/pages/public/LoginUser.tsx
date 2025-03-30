@@ -44,16 +44,6 @@ function LoginUser() {
                     {isLoginActive ? (<Login className="flex" />) : (<Register className="flex" />)}
                 </div>
             </section>
-
-            <div className="bg-white/20 backdrop-blur-xl rounded-2xl || border-1 border-white || p-5 m-auto || max-w-[600px] || flex flex-col gap-2.5 ">
-                <div>
-                    <input type="checkbox" />  <label htmlFor="checkbox"
-                    >Read the policy terms and features of our system,<span className="font-bold"> Policy Terms</span></label>
-                </div>
-                <div>
-                    <input type="checkbox" />  <label htmlFor="checkbox">Read the policy terms and features of our system,<span className="font-bold"> Policy Terms</span></label>
-                </div>
-            </div>
         </main >
     );
 }

@@ -33,7 +33,6 @@ const InputPassword = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                     onChange={onChange}
                     ref={ref}
                     {...rest}
-                    required
                 />
                 <ViewPassword onClick={toggleVisibility} />
             </div>

@@ -1,4 +1,4 @@
-import { MenuButton } from "@/components/ui/button"
+import { MenuButton } from "@/components/ui/Button"
 import iconsMenu from "../../assets/icons/menu.svg"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"

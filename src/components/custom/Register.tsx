@@ -1,5 +1,5 @@
 import { useUserRegister } from "@/hook/userRegister";
-import { ButtonRegister } from "../ui/button";
+import { ButtonRegister } from "../ui/Button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
 
@@ -24,7 +24,7 @@ function Register({ className }: Props) {
             onSubmit={handleSubmit(onSubmit)}
             className={`${className} flex-col gap-4 w-full `}
         >
-            <label>
+            <section>
                 <Input
                     type="name"
                     id="name"
@@ -32,9 +32,9 @@ function Register({ className }: Props) {
                     {...register("name", { required: "Nome é obrigatório" })}
                 />
                 {errors.name && <span className={SyError}>{errors.name.message}</span>}
-            </label>
+            </section>
 
-            <label>
+            <section>
                 <Input
                     type="text"
                     id="cpf"
@@ -54,9 +54,9 @@ function Register({ className }: Props) {
                     }}
                 />
                 {errors.cpf && <span className={SyError}>{errors.cpf.message}</span>}
-            </label>
+            </section>
 
-            <label>
+            <section>
                 <Input
                     type="email"
                     id="email"
@@ -70,9 +70,9 @@ function Register({ className }: Props) {
                     })}
                 />
                 {errors.email && <span className={SyError}>{errors.email.message}</span>}
-            </label>
+            </section>
 
-            <label>
+            <section>
                 <InputPassword
                     placeholder="Password"
                     {...register("password", {
@@ -81,9 +81,9 @@ function Register({ className }: Props) {
                     })}
                 />
                 {errors.password && <span className={SyError}>{errors.password.message}</span>}
-            </label>
+            </section>
 
-            <label>
+            <section>
                 <InputPassword
                     placeholder="Confirm Password"
                     {...register("confirmPassword", {
@@ -92,7 +92,7 @@ function Register({ className }: Props) {
                     })}
                 />
                 {errors.confirmPassword && <span className={SyError}>{errors.confirmPassword.message}</span>}
-            </label>
+            </section>
 
             <ButtonRegister />
 

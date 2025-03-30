@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import UserLogin from "./UserLogin";
 import MenuHeader from "./MenuHeader";
 import UserLoginActive from "./UserLoginActive";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
@@ -15,7 +16,15 @@ const Header = () => {
     // motion header 
     const MotionHeader = 'animate-fade-down animate-duration-500 animate-ease-out animate-normal';
 
-    const isUserLogin = true;
+    // Estado para verificar se o usuário está logado
+    const [isUserLogin, setIsUserLogin] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setIsUserLogin(!!token);
+    }, []);
+
+
 
     return (
         <div className={`px-2.5`}>
@@ -43,13 +52,7 @@ const Header = () => {
                         GitHub
                     </a>
 
-                    <div className={`${!isUserLogin ? 'flex' : 'hidden'}`}>
-                        <UserLogin />
-                    </div>
-
-                    <div className={`${!isUserLogin ? 'hidden' : 'flex'}`}>
-                        <UserLoginActive />
-                    </div>
+                    {isUserLogin ? <UserLoginActive /> : <UserLogin />}
 
                     <div className="block min-[1000px]:hidden">
                         <MenuHeader />
