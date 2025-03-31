@@ -3,24 +3,43 @@ import { ButtonLogin } from "../ui/Button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
 
+import api from "@/service/api";
+import { useAuth } from "@/context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
+
 type Props = {
     className?: string;
 };
 
-function Login({ className }: Props) {
+interface LoginResponse {
+    token: string;
+}
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        onSubmit,
-    } = useUserLogin();
+function Login({ className = "" }: Props) {
+    const { register, handleSubmit, errors } = useUserLogin();
+    const errorStyle = "text-red-500 text-sm pl-5";
+    const { login } = useAuth();
+    const navigate = useNavigate();
 
-    const SyError = "text-red-500 text-sm pl-5";
+    const handleLogin = async (data: { email: string; password: string }) => {
+        try {
+            const response = await api.post("/login", {
+                email: data.email,
+                password: data.password,
+            });
+            const token = response.data as LoginResponse;
+            login(token.token);
+            navigate("/home");
+            location.reload();
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao fazer login.");
+        }
+    };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className={`${className} flex-col gap-4 w-full`}>
-
+        <form onSubmit={handleSubmit(handleLogin)} className={`${className} flex-col gap-4 w-full`}>
             <section className="flex flex-col gap-1">
                 <Input
                     type="email"
@@ -34,7 +53,7 @@ function Login({ className }: Props) {
                         }
                     })}
                 />
-                {errors.email && <span className={SyError}>{errors.email.message}</span>}
+                {errors.email && <span className={errorStyle}>{errors.email.message}</span>}
             </section>
 
             <section>
@@ -45,7 +64,7 @@ function Login({ className }: Props) {
                         minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
                     })}
                 />
-                {errors.password && <span className={SyError}>{errors.password.message}</span>}
+                {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
             </section>
 
             <ButtonLogin />

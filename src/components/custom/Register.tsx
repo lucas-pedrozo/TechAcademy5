@@ -2,36 +2,45 @@ import { useUserRegister } from "@/hook/userRegister";
 import { ButtonRegister } from "../ui/Button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
+import api from "@/service/api";
+import { AxiosError } from "axios";
 
 type Props = {
     className?: string;
 };
 
-function Register({ className }: Props) {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        password,
-        validateCPF,
-        onSubmit
-    } = useUserRegister();
+function Register({ className = "" }: Props) {
+    const { register, errors, password, validateCPF, handleSubmit } = useUserRegister();
 
-    const SyError = "text-red-500 text-sm pl-5";
+    const errorStyle = "text-red-500 text-sm pl-5";
+
+    const handleRegister = async (data: { name: string; email: string; cpf: string; password: string; }) => {
+        try {
+            await api.post("/users", {
+                name: data.name,
+                cpf: data.cpf,
+                email: data.email,
+                password: data.password,
+            });
+            location.reload();
+        } catch (error: AxiosError) {
+            console.log(error);
+            const errorMessage = error.response.data.error.map((e: { message: string }) => e.message).join(', ');
+            console.log(errorMessage);
+            alert(errorMessage);
+        }
+    };
 
     return (
-        <form
-            onSubmit={handleSubmit(onSubmit)}
-            className={`${className} flex-col gap-4 w-full `}
-        >
+        <form className={`${className} flex-col gap-4 w-full `} onSubmit={handleSubmit(handleRegister)}>
             <section>
                 <Input
-                    type="name"
+                    type="text"
                     id="name"
                     placeholder="Name"
                     {...register("name", { required: "Nome é obrigatório" })}
                 />
-                {errors.name && <span className={SyError}>{errors.name.message}</span>}
+                {errors.name && <span className={errorStyle}>{errors.name.message}</span>}
             </section>
 
             <section>
@@ -53,7 +62,7 @@ function Register({ className }: Props) {
                         }
                     }}
                 />
-                {errors.cpf && <span className={SyError}>{errors.cpf.message}</span>}
+                {errors.cpf && <span className={errorStyle}>{errors.cpf.message}</span>}
             </section>
 
             <section>
@@ -69,7 +78,7 @@ function Register({ className }: Props) {
                         }
                     })}
                 />
-                {errors.email && <span className={SyError}>{errors.email.message}</span>}
+                {errors.email && <span className={errorStyle}>{errors.email.message}</span>}
             </section>
 
             <section>
@@ -80,7 +89,7 @@ function Register({ className }: Props) {
                         minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
                     })}
                 />
-                {errors.password && <span className={SyError}>{errors.password.message}</span>}
+                {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
             </section>
 
             <section>
@@ -91,7 +100,7 @@ function Register({ className }: Props) {
                         validate: (value) => value === password || "As senhas não coincidem"
                     })}
                 />
-                {errors.confirmPassword && <span className={SyError}>{errors.confirmPassword.message}</span>}
+                {errors.confirmPassword && <span className={errorStyle}>{errors.confirmPassword.message}</span>}
             </section>
 
             <ButtonRegister />

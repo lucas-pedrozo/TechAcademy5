@@ -7,9 +7,14 @@ import './index.css'
 // app arquivo feito para rotas no site 
 import App from './App'
 
+// importando context de autenticação
+import { AuthProvider } from "@/context/AuthContext";
+
 // renderizando o app
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </StrictMode>,
 )

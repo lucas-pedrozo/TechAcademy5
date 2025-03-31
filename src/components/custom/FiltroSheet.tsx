@@ -1,4 +1,4 @@
-import { ButtonFiltro } from "@/components/ui/button"
+import { ButtonFiltro } from "@/components/ui/Button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import FiltroContainer from "@/components/custom/FiltroContainer";
 

@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { cpf as cpfValidator } from "cpf-cnpj-validator";
 
 interface FormValues {
@@ -19,31 +19,22 @@ export function useUserRegister() {
 
   const password = watch("password");
 
-  const validateCPF = (value: string) => {
-    const stripped = value.replace(/\D/g, "");
-    if (!/^\d+$/.test(stripped)) {
-      return "Apenas números são permitidos";
-    }
-    if (stripped.length !== 11) {
-      return "CPF deve ter 11 dígitos";
-    }
-    return cpfValidator.isValid(stripped) || "CPF inválido";
-  };
+  const validateCPF = (cpf: string) => {
+    const cleanedCPF = cpf.replace(/\D/g, "");
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    const cpfStripped = data.cpf.replace(/\D/g, "");
-    alert(
-      `Name: ${data.name}\nCPF: ${cpfStripped}\nEmail: ${data.email}\nPassword: ${data.password}`
-    );
+    if (!/^[0-9]+$/.test(cleanedCPF)) return "Apenas números são permitidos";
+    if (cleanedCPF.length !== 11) return "CPF deve ter 11 dígitos";
+    if (!cpfValidator.isValid(cleanedCPF)) return "CPF inválido";
+
+    return true;
   };
 
   return {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    errors,
     password,
     validateCPF,
-    onSubmit,
   };
 }

@@ -34,12 +34,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+        </Route>
 
-
+        <Route element={<LayoutHome backgroundImage={background}><Outlet /></LayoutHome>}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/adminuser" element={<AdmUser />} />
           <Route path="/buscarSound" element={<BuscarSound />} />
         </Route>
+
+
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
           <Route path="/login" element={<LoginUser />} />

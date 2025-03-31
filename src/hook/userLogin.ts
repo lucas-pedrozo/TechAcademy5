@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 interface FormValues {
   email: string;
@@ -12,14 +12,9 @@ export function useUserLogin() {
     formState: { errors },
   } = useForm<FormValues>({ mode: "onSubmit" });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    alert(`Email: ${data.email}\nPassword: ${data.password}`);
-  };
-
   return {
     register,
     handleSubmit,
-    formState: { errors },
-    onSubmit,
+    errors,
   };
 }
