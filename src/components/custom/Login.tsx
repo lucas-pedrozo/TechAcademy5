@@ -6,6 +6,7 @@ import InputPassword from "./InputPassword";
 import api from "@/service/api";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 type Props = {
@@ -33,8 +34,10 @@ function Login({ className = "" }: Props) {
             navigate("/home");
             location.reload();
         } catch (error) {
-            console.log(error);
-            alert("Erro ao fazer login.");
+            if (axios.isAxiosError(error)) {
+                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao cadastrar";
+                alert(errorMessage);
+            }
         }
     };
 

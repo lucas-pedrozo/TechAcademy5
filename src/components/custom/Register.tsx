@@ -3,7 +3,7 @@ import { ButtonRegister } from "../ui/Button";
 import Input from "./Input";
 import InputPassword from "./InputPassword";
 import api from "@/service/api";
-import { AxiosError } from "axios";
+import axios from "axios";
 
 type Props = {
     className?: string;
@@ -23,11 +23,11 @@ function Register({ className = "" }: Props) {
                 password: data.password,
             });
             location.reload();
-        } catch (error: AxiosError) {
-            console.log(error);
-            const errorMessage = error.response.data.error.map((e: { message: string }) => e.message).join(', ');
-            console.log(errorMessage);
-            alert(errorMessage);
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao cadastrar";
+                alert(errorMessage);
+            }
         }
     };
 
