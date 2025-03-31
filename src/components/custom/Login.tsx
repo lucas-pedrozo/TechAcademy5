@@ -35,7 +35,7 @@ function Login({ className = "" }: Props) {
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao cadastrar";
+                const errorMessage = error?.response?.data || "email ou senha incorretos";
                 alert(errorMessage);
             }
         }

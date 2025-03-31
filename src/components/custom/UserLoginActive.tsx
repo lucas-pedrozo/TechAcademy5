@@ -3,11 +3,14 @@ import { Link } from "react-router-dom"
 
 // import logo user
 import logoUser from "../../assets/image/lucas.jpg"
+import { useAuth } from "@/context/AuthContext";
 
 
 const UserLoginActive = () => {
+    const { logout } = useAuth();
 
     const styleLink = 'bg-black/40 border 1 border-white || px-3 py-1.5 rounded-full || font-semibold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
+    const styleLinkOut = 'bg-black/40 border 1 border-red-600 || px-3 py-1.5 rounded-full || font-semibold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
 
     //animation zoom Link
     const MotionZoom = 'drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] hover:scale-103 transition duration-200 transform || font-bold';
@@ -27,7 +30,7 @@ const UserLoginActive = () => {
 
                 <Link to={'/alterarSenha'} className={`${styleLink} ${MotionZoom}`}>New Password</Link>
 
-                <Link to={'/logout'} className={`${styleLink} ${MotionZoom}`}>Log out</Link>
+                <button onClick={logout} className={`${styleLinkOut} ${MotionZoom}`}>Log out</button>
 
                 <Link to={'/admin'} className={`${styleLink} ${MotionZoom}`}>Admin</Link>
 

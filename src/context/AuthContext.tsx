@@ -20,8 +20,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const logout = () => {
-        localStorage.removeItem("authToken");
-        setToken(null);
+        if (confirm("Deseja prosseguir?")) {
+            localStorage.removeItem("authToken");
+            setToken(null);
+            alert("Usuário deslogado com sucesso!");
+            location.reload();
+        }
     };
 
     return (
