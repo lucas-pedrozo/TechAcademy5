@@ -22,6 +22,7 @@ function Register({ className = "" }: Props) {
                 email: data.email,
                 password: data.password,
             });
+            alert("Cadastro realizado com sucesso!");
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
@@ -103,7 +104,7 @@ function Register({ className = "" }: Props) {
                 {errors.confirmPassword && <span className={errorStyle}>{errors.confirmPassword.message}</span>}
             </section>
 
-            <ButtonRegister />
+            <ButtonRegister children="Register" />
 
         </form>
     );

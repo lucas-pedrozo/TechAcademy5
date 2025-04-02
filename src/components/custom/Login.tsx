@@ -31,6 +31,7 @@ function Login({ className = "" }: Props) {
             });
             const token = response.data as LoginResponse;
             login(token.token);
+            console.log(token);
             navigate("/home");
             location.reload();
         } catch (error) {
