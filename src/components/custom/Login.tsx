@@ -36,7 +36,7 @@ function Login({ className = "" }: Props) {
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data || "email ou senha incorretos";
+                const errorMessage = error?.response?.data || "Incorrect email or password";
                 alert(errorMessage);
             }
         }
@@ -50,7 +50,7 @@ function Login({ className = "" }: Props) {
                     id="email"
                     placeholder="Email"
                     {...register("email", {
-                        required: "Email é obrigatório",
+                        required: "Email is mandatory",
                         pattern: {
                             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                             message: "Email inválido"
@@ -64,8 +64,8 @@ function Login({ className = "" }: Props) {
                 <InputPassword
                     placeholder="Password"
                     {...register("password", {
-                        required: "Senha é obrigatória",
-                        minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
+                        required: "Password is mandatory",
+                        minLength: { value: 8, message: "Password must be at least 8 characters long" }
                     })}
                 />
                 {errors.password && <span className={errorStyle}>{errors.password.message}</span>}

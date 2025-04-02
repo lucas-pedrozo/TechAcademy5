@@ -20,10 +20,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const logout = () => {
-        if (confirm("Deseja prosseguir?")) {
+        if (confirm("Do you want to proceed?")) {
             localStorage.removeItem("authToken");
             setToken(null);
-            alert("Usuário deslogado com sucesso!");
+            alert("User successfully logged out!");
             location.reload();
         }
     };
@@ -39,6 +39,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
     const context = useContext(AuthContext);
-    if (!context) throw new Error("useAuth precisa estar dentro do AuthProvider");
+    if (!context) throw new Error("useAuth needs to be inside the AuthProvider");
     return context;
 };

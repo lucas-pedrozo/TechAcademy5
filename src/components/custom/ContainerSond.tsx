@@ -7,6 +7,8 @@ import play from "@/assets/icons/play.svg";
 import pause from "@/assets/icons/pause.svg";
 import Waveform from "./WaveForm";
 import ALterSound from "./Alert";
+import { useEffect, useState } from "react";
+import AOS from "aos";
 
 type Props = {
     src: string;
@@ -40,9 +42,33 @@ function ContainerSound({ src, name, author, className1, className2 }: Props) {
         }
     };
 
+    const [AccessoDowload, setIsUserLogin] = useState<boolean>(true);
+
+    useEffect(() => {
+        const checkToken = () => {
+            const isUserLoggedIn = !!localStorage.getItem("authToken"); // ✅ Corrected variable
+            console.log("Token encontrado:", isUserLoggedIn);
+            setIsUserLogin(isUserLoggedIn); // ✅ Use `isUserLoggedIn` instead of `token`
+        };
+
+        checkToken(); // Check token on mount
+
+        window.addEventListener("storage", checkToken); // Monitor storage changes
+
+        return () => {
+            window.removeEventListener("storage", checkToken);
+        };
+    }, []);
+
+
+    useEffect(() => {
+        AOS.init({ duration: 500 });
+        AOS.init({ delay: 0 });
+    }, [])
+
 
     return (
-        <section className="bg-white/20 backdrop-blur-xl rounded-2xl border border-white p-2.5 min-[800px]:mr-1.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0">
+        <section className="bg-white/10 backdrop-blur-xl rounded-2xl border border-white p-2.5 min-[800px]:mr-1.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0" data-aos="fade-up">
             <audio ref={audioRef} src={src} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
 
             <div className="flex gap-2.5 min-w-[28%] min-[990px]:items-center">
@@ -77,7 +103,7 @@ function ContainerSound({ src, name, author, className1, className2 }: Props) {
                 />
 
                 <div className={`${SyButton2} ${className1}`}>
-                    <button onClick={handleDownload} disabled>
+                    <button onClick={handleDownload} disabled={!AccessoDowload}>
                         <img src={download} />
                     </button>
                     <button>

@@ -9,7 +9,7 @@ type Props = {
     className?: string;
 };
 
-function Register({ className = "" }: Props) {
+const Register = ({ className = "" }: Props) => {
     const { register, errors, password, validateCPF, handleSubmit } = useUserRegister();
 
     const errorStyle = "text-red-500 text-sm pl-5";
@@ -22,11 +22,11 @@ function Register({ className = "" }: Props) {
                 email: data.email,
                 password: data.password,
             });
-            alert("Cadastro realizado com sucesso!");
+            alert("Registration completed successfully!");
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao cadastrar";
+                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Error registering";
                 alert(errorMessage);
             }
         }
@@ -39,7 +39,7 @@ function Register({ className = "" }: Props) {
                     type="text"
                     id="name"
                     placeholder="Name"
-                    {...register("name", { required: "Nome é obrigatório" })}
+                    {...register("name", { required: "Name is mandatory" })}
                 />
                 {errors.name && <span className={errorStyle}>{errors.name.message}</span>}
             </section>
@@ -52,7 +52,7 @@ function Register({ className = "" }: Props) {
                     maxLength={11}
                     {...register("cpf", {
                         required: "CPF é obrigatório",
-                        pattern: { value: /^\d+$/, message: "Apenas números são permitidos" },
+                        pattern: { value: /^\d+$/, message: "Only numbers are allowed" },
                         validate: validateCPF
                     })}
                     onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -72,10 +72,10 @@ function Register({ className = "" }: Props) {
                     id="email"
                     placeholder="Email"
                     {...register("email", {
-                        required: "Email é obrigatório",
+                        required: "Email is mandatory",
                         pattern: {
                             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                            message: "Email inválido"
+                            message: "Invalid email"
                         }
                     })}
                 />
@@ -86,8 +86,8 @@ function Register({ className = "" }: Props) {
                 <InputPassword
                     placeholder="Password"
                     {...register("password", {
-                        required: "Senha é obrigatória",
-                        minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
+                        required: "Password is mandatory",
+                        minLength: { value: 8, message: "Password must be at least 8 characters long" }
                     })}
                 />
                 {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
@@ -97,8 +97,8 @@ function Register({ className = "" }: Props) {
                 <InputPassword
                     placeholder="Confirm Password"
                     {...register("confirmPassword", {
-                        required: "Confirmação de senha é obrigatória",
-                        validate: (value) => value === password || "As senhas não coincidem"
+                        required: "Password confirmation is mandatory",
+                        validate: (value) => value === password || "Passwords do not match"
                     })}
                 />
                 {errors.confirmPassword && <span className={errorStyle}>{errors.confirmPassword.message}</span>}

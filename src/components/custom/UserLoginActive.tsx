@@ -20,7 +20,7 @@ const UserLoginActive = () => {
             <DropdownMenuTrigger asChild>
                 <button className=" flex items-center gap-1.5 || px-2.5 py-2 || bg backdrop-blur-xl rounded-full bg-white/5 full focus:outline-none || border-white/40 border-1 || font-semibold text-[14px] || shadow-[0_0_10px_rgba(255,255,255,0.1)] ">
                     <img src={logoUser} alt="" className="w-7 rounded-full" />
-                    Lucas.P
+                    Logged in
                 </button>
             </DropdownMenuTrigger>
 
@@ -28,7 +28,7 @@ const UserLoginActive = () => {
 
                 <Link to={'/favoritos'} className={`${styleLink} ${MotionZoom}`} >My Favoritos</Link>
 
-                <Link to={'/alterarSenha'} className={`${styleLink} ${MotionZoom}`}>New Password</Link>
+                <Link to={'/newPassword'} className={`${styleLink} ${MotionZoom}`}>New Password</Link>
 
                 <button onClick={logout} className={`${styleLinkOut} ${MotionZoom}`}>Log out</button>
 

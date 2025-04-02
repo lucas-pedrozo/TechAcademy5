@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-
+import PrivateRoute from "./components/custom/PrivateRoute";
 
 // imports end images
 import background from "./assets/image/Home.png";
@@ -18,8 +18,8 @@ import About from "./pages/public/About";
 import Sound from "./pages/public/Sound";
 import Footer from "./components/custom/Footer";
 import Admin from "./pages/auth/Admin";
-import AdmUser from "./pages/auth/AdmUser";
 import BuscarSound from "./pages/auth/BuscarSound";
+import NewPasswordUser from "./pages/public/NewPasswordUser";
 
 
 // rotas de navegação dentro do site 
@@ -36,9 +36,8 @@ function App() {
           <Route path="/about" element={<About />} />
         </Route>
 
-        <Route element={<LayoutHome backgroundImage={background}><Outlet /></LayoutHome>}>
+        <Route element={<PrivateRoute><LayoutHome backgroundImage={background}><Outlet /></LayoutHome></PrivateRoute>}>
           <Route path="/admin" element={<Admin />} />
-          <Route path="/adminuser" element={<AdmUser />} />
           <Route path="/buscarSound" element={<BuscarSound />} />
         </Route>
 
@@ -46,11 +45,12 @@ function App() {
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
           <Route path="/login" element={<LoginUser />} />
+          <Route path="/newPassword" element={<NewPasswordUser />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sound" element={<Sound />} />
         </Route>
 
-        {/* rota de erro 404 */}]
+        {/* rota de erro 404 */}
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer />

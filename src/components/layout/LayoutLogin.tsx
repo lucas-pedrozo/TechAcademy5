@@ -10,7 +10,7 @@ const LayoutHome: React.FC<LayoutProps> = ({ backgroundImage, children }) => {
     useEffect(() => {
         if (backgroundImage) {
             document.body.style.backgroundImage = `url(${backgroundImage})`;
-            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundRepeat = "repeat";
             document.body.style.backgroundPosition = "center";
             document.body.style.transition = "background-image 0.5s ease-in-out";
         }
