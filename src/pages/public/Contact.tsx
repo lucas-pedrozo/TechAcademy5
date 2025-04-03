@@ -1,5 +1,5 @@
 import Input from "@/components/custom/Input";
-import { ButtonContact } from "@/components/ui/button";
+import { ButtonContact } from "@/components/ui/Button";
 
 function Contact() {
 

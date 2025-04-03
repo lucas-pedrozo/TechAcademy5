@@ -7,9 +7,9 @@ interface Props {
 }
 
 const PrivateRoute = ({ children }: Props) => {
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated, userAdmin } = useAuth();
 
-    return isAuthenticated ? children : <Navigate to="/" />;
+    return isAuthenticated && userAdmin === "true" ? children : <Navigate to="/" />;
 };
 
 export default PrivateRoute;

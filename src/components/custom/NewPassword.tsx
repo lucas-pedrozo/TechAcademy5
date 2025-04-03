@@ -8,11 +8,18 @@ import axios from "axios";
 const NewPassword = () => {
     const { register, errors, password, handleSubmit } = useUserRegister();
 
+
     const errorStyle = "text-red-500 text-sm pl-5";
 
-    const handleRegister = async (data: { name: string; email: string; cpf: string; password: string; }) => {
+    const handleRegister = async (data: { name: string; password: string; }) => {
         try {
-            await api.put("/users", {
+            const userId = localStorage.getItem("userId");
+            if (!userId) {
+                alert("Usuário não encontrado.");
+                return;
+            }
+
+            await api.put(`/users/${userId}`, {
                 name: data.name,
                 password: data.password,
             });

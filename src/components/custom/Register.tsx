@@ -21,6 +21,7 @@ const Register = ({ className = "" }: Props) => {
                 cpf: data.cpf,
                 email: data.email,
                 password: data.password,
+                admin: false,
             });
             alert("Registration completed successfully!");
             location.reload();

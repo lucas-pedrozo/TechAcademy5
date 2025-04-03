@@ -9,14 +9,18 @@ import { useEffect, useState } from "react";
 const UserLoginActive = () => {
     const { logout } = useAuth();
     const [userName, setUserName] = useState<string | null>(null);
+    const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
     // Recupera o nome do usuário do localStorage
     useEffect(() => {
         const fullName = localStorage.getItem("userName");
         const firstName = fullName ? fullName.split(" ")[0] : null;
         setUserName(firstName);
-    }, []);
 
+        // Verifica se o usuário é admin
+        const userAdmin = localStorage.getItem("userAdmin") === "true";
+        setIsAdmin(userAdmin);
+    }, []);
 
     const styleLink = 'bg-black/40 border 1 border-white || px-3 py-1.5 rounded-full || font-semibold text-white text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
     const styleLinkOut = 'border 1 border-red-600 || px-3 py-1.5 rounded-full || font-semibold text-red-600 text-[14px] || shadow-[0px_2px_10px_rgba(0,0,0,0.6)]';
@@ -38,7 +42,7 @@ const UserLoginActive = () => {
                 <Link to={'/favoritos'} className={`${styleLink} ${MotionZoom}`}>My Favoritos</Link>
                 <Link to={'/newPassword'} className={`${styleLink} ${MotionZoom}`}>New Password</Link>
                 <button onClick={logout} className={`${styleLinkOut} ${MotionZoomOut}`}>Log out</button>
-                <Link to={'/admin'} className={`${styleLink} ${MotionZoom}`}>Admin</Link>
+                {isAdmin && <Link to={'/admin'} className={`${styleLink} ${MotionZoom}`}>Admin</Link>}
             </DropdownMenuContent>
         </DropdownMenu>
     );
