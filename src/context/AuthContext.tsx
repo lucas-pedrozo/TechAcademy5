@@ -54,7 +54,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setToken(null);
             setUserId(null);
             setUserName(null);
-            alert("User successfully logged out!");
             location.reload();
         }
     };

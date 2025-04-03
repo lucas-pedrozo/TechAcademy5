@@ -23,8 +23,8 @@ const Footer = () => {
             }
 
             await api.delete(`/users/${userId}`);
-            alert("Cadastro excluído com sucesso!");
-            logout(); // Deslogando o usuário após a exclusão
+            alert("Usuario excluído com sucesso");
+            logout();
 
             location.reload();
         } catch (error) {
