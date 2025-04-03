@@ -12,7 +12,7 @@ const NewPassword = () => {
 
     const handleRegister = async (data: { name: string; email: string; cpf: string; password: string; }) => {
         try {
-            await api.post("/users", {
+            await api.put("/users", {
                 name: data.name,
                 password: data.password,
             });
@@ -32,7 +32,7 @@ const NewPassword = () => {
                 <Input
                     type="text"
                     id="name"
-                    placeholder="Name"
+                    placeholder="Name Não Obrig"
                     {...register("name", { required: "Nome é obrigatório" })}
                 />
                 {errors.name && <span className={errorStyle}>{errors.name.message}</span>}

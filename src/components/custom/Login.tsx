@@ -8,14 +8,9 @@ import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 type Props = {
     className?: string;
 };
-
-interface LoginResponse {
-    token: string;
-}
 
 function Login({ className = "" }: Props) {
     const { register, handleSubmit, errors } = useUserLogin();
@@ -29,9 +24,9 @@ function Login({ className = "" }: Props) {
                 email: data.email,
                 password: data.password,
             });
-            const token = response.data as LoginResponse;
-            login(token.token);
-            console.log(token);
+
+            const { token } = response.data;
+            login(token);
             navigate("/home");
             location.reload();
         } catch (error) {
@@ -52,7 +47,7 @@ function Login({ className = "" }: Props) {
                     {...register("email", {
                         required: "Email is mandatory",
                         pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                            value: /^[^\s@]+@[^\s@]+$/,
                             message: "Email inválido"
                         }
                     })}

@@ -15,7 +15,6 @@ const Header = () => {
     useEffect(() => {
         const checkToken = () => {
             const token = localStorage.getItem("authToken");
-            console.log("Token encontrado:", token);
             setIsUserLogin(!!token);
         };
 

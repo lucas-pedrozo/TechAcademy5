@@ -28,7 +28,7 @@ function Admin() {
                 </div>
 
                 <div className="flex gap-5">
-                    <Link to={'/user'} className={`${SyCotainer} ${MotionSyCont}`}>
+                    <Link to={'/uploadSound'} className={`${SyCotainer} ${MotionSyCont}`}>
                         <span className="">
                             Upload Sound
                         </span>
