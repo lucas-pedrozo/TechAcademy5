@@ -26,7 +26,6 @@ const Footer = () => {
             alert("Usuario excluído com sucesso");
             logout();
 
-            location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao excluir cadastro";
