@@ -31,7 +31,7 @@ function Login({ className = "" }: Props) {
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data || "Incorrect email or password";
+                const errorMessage = "Incorrect email or password";
                 alert(errorMessage);
             }
         }

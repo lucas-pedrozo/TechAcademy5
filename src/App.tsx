@@ -21,6 +21,7 @@ import Admin from "./pages/auth/Admin";
 import BuscarSound from "./pages/auth/BuscarSound";
 import NewPasswordUser from "./pages/public/NewPasswordUser";
 import UploadSound from "./pages/auth/UploadSound";
+import AdminAuthor from "./pages/auth/AdminAuthor";
 
 
 // rotas de navegação dentro do site 
@@ -41,9 +42,10 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/buscarSound" element={<BuscarSound />} />
           <Route path="/uploadSound" element={<UploadSound />} />
+          <Route path="/adminAuthor" element={<AdminAuthor />} />
         </Route>
 
-
+        hookform
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
           <Route path="/login" element={<LoginUser />} />

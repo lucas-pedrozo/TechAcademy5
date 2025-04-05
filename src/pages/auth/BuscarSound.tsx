@@ -4,6 +4,7 @@ import axios from "axios";
 import AOS from "aos";
 import ContainerSound from "@/components/custom/ContainerSond";
 import { PaginationComponent } from "@/components/custom/ConponentesPagination";
+import { ButtonUpdate } from "@/components/ui/Button";
 
 interface MapAuthor {
     id: number;
@@ -19,6 +20,10 @@ interface MapItems {
 
 const BuscarSound = () => {
     const SyInput = "bg-white/10 backdrop-blur-md rounded-full border-1 border-white || w-full text-white placeholder:text-white placeholder:font-medium focus:outline-none || px-5 py-2";
+    const styleInput = "bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
+    const styleForm = "flex flex-col gap-2.5 ";
+    const styleHr = "h-[3px] rounded-full";
+
 
     const [loading, setLoading] = useState(false);
     const [sounds, setSounds] = useState<MapItems[]>([]);
@@ -58,6 +63,21 @@ const BuscarSound = () => {
 
     return (
         <main className="px-2.5 py-10 max-w-[1220px] m-auto flex flex-col gap-5">
+
+            <section className=" w-full " data-aos="fade-up">
+                <form action="" className={`${styleForm}`}>
+                    <input type="text" className={`${styleInput}`} placeholder="id Sound" />
+                    <input type="text" className={`${styleInput}`} placeholder="id Author" />
+                    <input type="text" className={`${styleInput}`} placeholder="id categoria" />
+                    <input type="text" className={`${styleInput}`} placeholder="title sound" />
+                    <ButtonUpdate />
+                </form>
+            </section>
+
+            <div className="py-7">
+                <hr className={styleHr} data-aos="fade-up" />
+            </div>
+
             <div className="py-5 flex justify-center">
                 <input
                     type="search"
@@ -76,7 +96,10 @@ const BuscarSound = () => {
             <section className="flex flex-col gap-2.5">
                 {!filteredSounds.length && <span className="text-center">Nenhum resultado encontrado</span>}
                 {paginatedSounds.map((item, index) => (
-                    <ContainerSound key={index} src={`../../../public/${item.directory}`} name={item.name} author={item.author?.name} className1="hidden" className2="flex" />
+                    <div>
+                        <span>{item.id}</span>
+                        <ContainerSound key={index} src={`../../../public/${item.directory}`} name={item.name} author={item.author?.name} className1="hidden" className2="flex" />
+                    </div>
                 ))}
             </section>
             <PaginationComponent currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />

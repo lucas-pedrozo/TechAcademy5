@@ -1,6 +1,5 @@
 import { useUserRegister } from "@/hook/userRegister";
 import { ButtonRegister } from "../ui/Button";
-import Input from "./Input";
 import InputPassword from "./InputPassword";
 import api from "@/service/api";
 import axios from "axios";
@@ -11,7 +10,7 @@ const NewPassword = () => {
 
     const errorStyle = "text-red-500 text-sm pl-5";
 
-    const handleRegister = async (data: { name: string; password: string; }) => {
+    const handleRegister = async (data: { password: string; }) => {
         try {
             const userId = localStorage.getItem("userId");
             if (!userId) {
@@ -20,7 +19,6 @@ const NewPassword = () => {
             }
 
             await api.put(`/users/${userId}`, {
-                name: data.name,
                 password: data.password,
             });
             alert("Cadastro realizado com sucesso!");
@@ -35,15 +33,6 @@ const NewPassword = () => {
 
     return (
         <form className={`flex flex-col gap-4 w-full `} onSubmit={handleSubmit(handleRegister)}>
-            <section>
-                <Input
-                    type="text"
-                    id="name"
-                    placeholder="Name Não Obrig"
-                    {...register("name", { required: "Nome é obrigatório" })}
-                />
-                {errors.name && <span className={errorStyle}>{errors.name.message}</span>}
-            </section>
 
             <section>
                 <InputPassword

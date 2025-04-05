@@ -1,43 +1,90 @@
+import { useForm, SubmitHandler } from "react-hook-form";
+import Input from "@/components/custom/Input";
 import { ButtonUpdate } from "@/components/ui/Button";
+import api from "@/service/api";
+
+
+interface SoundFormData {
+    name: string;
+    author: number;
+    category: number;
+    directory: File[];
+}
+
 
 function UploadSound() {
-    const styleInput = "w-full bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
-    const styleForm = "w-full bg-white/20 backdrop-blur-xl rounded-3xl border-1 border-white text-white p-2.5 || flex flex-col gap-2.5";
-    
-    const styleDivLabel = "flex flex-col gap-1.5";
-    const styleLabel = "pl-2.5";
+    const errorStyle = "text-red-500 text-sm font-medium";
+    const { register, handleSubmit, formState: { errors } } = useForm<SoundFormData>();
 
+    const handleSound: SubmitHandler<SoundFormData> = async (data) => {
+        try {
+            const file = data.directory[0];
+            console.log("Nome do arquivo:", file.name);
+
+            const requestBody = {
+                name: data.name,
+                author_id: data.author,
+                category_id: data.category,
+                directory: file.name
+            }
+
+            console.log("Request Body:", requestBody);
+
+            await api.post("/items", requestBody);
+
+            alert("Registro realizado com sucesso!");
+            location.reload();
+        } catch (error) {
+            console.log(error);
+            alert("Erro ao realizar o registro.");
+        }
+    };
 
 
     return (
-        <section className="max-w-[700px] mx-auto px-2.5 py-10">
-            <form action="" className={`${styleForm}`} >
-                <div className={styleDivLabel}>
-                    <label htmlFor="UploadSound" className={styleLabel}>Title Sound</label>
-                    <input type="text" name="UploadSound" placeholder="Title Sound" className={styleInput} />
-                </div>
-                <div className={styleDivLabel}>
-                    <label htmlFor="UploadSound" className={styleLabel}>Author</label>
-                    <input type="number" name="UploadSound" placeholder=" Id Author" className={styleInput} />
-                </div>
-                <div className={styleDivLabel}>
-                    <label htmlFor="UploadSound" className={styleLabel}>Category</label>
-                    <input type="number" name="UploadSound" placeholder="id Category" className={styleInput} />
-                </div>
-                <div className={styleDivLabel}>
-                    <label htmlFor="UploadSound" className={styleLabel}>Upload Sound</label>
-                    <input type="file" name="UploadSound" className={styleInput} />
-                </div>
-                <div className={styleDivLabel}>
-                    <label htmlFor="UploadSound" className={styleLabel}>Upload Sound</label>
-                    <input type="file" name="UploadSound" className={styleInput} />
-                </div>
-                <div className="flex justify-end">
-                    <ButtonUpdate />
-                </div>
-            </form>
-        </section>
-    )
-}
+        <form className="flex flex-col gap-4 max-w-[600px] py-10 mx-auto" onSubmit={handleSubmit(handleSound)}>
+            <section>
+                <Input
+                    type="text"
+                    id="name"
+                    placeholder="Nome"
+                    {...register("name", { required: "Nome é obrigatório" })}
+                />
+                {errors.name && <span className={errorStyle}>{errors.name.message}</span>}
+            </section>
 
+            <section>
+                <Input
+                    type="number"
+                    id="author"
+                    placeholder="ID do autor"
+                    {...register("author", { required: "ID do autor é obrigatório", valueAsNumber: true })}
+                />
+                {errors.author && <span className={errorStyle}>{errors.author.message}</span>}
+            </section>
+
+            <section>
+                <Input
+                    type="number"
+                    id="category"
+                    placeholder="ID da categoria"
+                    {...register("category", { required: "ID da categoria é obrigatório", valueAsNumber: true })}
+                />
+                {errors.category && <span className={errorStyle}>{errors.category.message}</span>}
+            </section>
+
+            <section>
+                <Input
+                    type="file"
+                    id="directory"
+                    placeholder="Arquivo"
+                    {...register("directory", { required: "Arquivo é obrigatório" })}
+                />
+                {errors.directory && <span className={errorStyle}>{errors.directory.message}</span>}
+            </section>
+
+            <ButtonUpdate />
+        </form>
+    );
+}
 export default UploadSound;

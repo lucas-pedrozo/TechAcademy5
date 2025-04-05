@@ -14,13 +14,12 @@ type Props = {
     src: string;
     name: string;
     author: string;
-    id?: string;
 
     className1?: string;
     className2?: string;
 };
 
-function ContainerSound({ src, name, author, id, className1, className2 }: Props) {
+function ContainerSound({ src, name, author, className1, className2 }: Props) {
     const SyTime = "font-light text-[0.875rem]";
     const SyButton = "bg-black/20 rounded-full border border-white px-2.5 py-[5px]";
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
@@ -70,7 +69,7 @@ function ContainerSound({ src, name, author, id, className1, className2 }: Props
 
     return (
         <section className="bg-white/10 backdrop-blur-xl rounded-2xl border border-white p-2.5 min-[800px]:mr-1.5 flex flex-col gap-2.5 min-[990px]:flex-row min-[990px]:gap-0" data-aos="fade-up">
-            <audio ref={audioRef} id={id} src={src} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
+            <audio ref={audioRef} src={src} onTimeUpdate={handleTimeUpdate} onLoadedMetadata={handleLoadedMetadata} />
 
             <div className="flex gap-2.5 min-w-[28%] min-[990px]:items-center">
                 <img src={imagemSound} alt="lucas pedrozo" className="w-14 rounded-[10px] min-[990px]:w-20" />

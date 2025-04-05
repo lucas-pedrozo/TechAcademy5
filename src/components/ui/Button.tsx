@@ -144,6 +144,17 @@ const ButtonUpdate = () => {
   )
 }
 
+const ButtonCreate = () => {
+  return (
+    <div className="flex justify-end items-center pt-5 px-2.5">
+
+      <button type="submit" className="bg-white px-5 py-2 rounded-full font-bold text-black || cursor-pointer || shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105">
+        Create
+      </button>
+    </div>
+  )
+}
 
 
-export { Button, buttonVariants, MenuButton, ButtonLogin, ButtonContact, ButtonRegister, ButtonFiltro, ButtonUpdate }
+
+export { Button, buttonVariants, MenuButton, ButtonLogin, ButtonContact, ButtonRegister, ButtonFiltro, ButtonUpdate, ButtonCreate }
