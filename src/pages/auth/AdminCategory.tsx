@@ -33,7 +33,7 @@ function AdminCategory() {
     const getCategories = async () => {
         setLoading(true);
         try {
-            const { data } = await api.get("/authors");
+            const { data } = await api.get("/categories");
             setItems(data);
         } catch (error) {
             alert(axios.isAxiosError(error) ? error?.response?.data || "Erro ao carregar os dados." : "Erro desconhecido.");
@@ -45,7 +45,7 @@ function AdminCategory() {
     const handleSound = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await api.post("/authors", { name: createName });
+            await api.post("/categories", { name: createName });
             alert("Registro realizado com sucesso!");
             location.reload();
         } catch (error) {
@@ -57,7 +57,7 @@ function AdminCategory() {
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await api.put(`/authors/${updateId}`, {
+            await api.put(`/categories/${updateId}`, {
                 id: Number(updateId),
                 name: updateName,
             });
@@ -76,7 +76,7 @@ function AdminCategory() {
     const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            await api.delete(`/authors/${deleteId}`);
+            await api.delete(`/categories/${deleteId}`);
             alert("Categoria deletada com sucesso!");
             location.reload();
         } catch (error) {
@@ -97,12 +97,12 @@ function AdminCategory() {
         <main className="py-14 px-2.5 mx-auto max-w-[1220px]">
             <section className="flex gap-2.5 flex-col min-[700px]:flex-row" data-aos="fade-up">
                 <div className="w-full">
-                    <p>Criar authors</p>
+                    <p>Criar Categoria</p>
                     <form onSubmit={handleSound} className={styleForm}>
                         <input
                             type="text"
                             className={styleInput}
-                            placeholder="Name authors"
+                            placeholder="Name Category"
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
@@ -111,19 +111,19 @@ function AdminCategory() {
                 </div>
 
                 <div className="w-full" data-aos="fade-up">
-                    <p>Atualizar authors</p>
+                    <p>Atualizar Categoria</p>
                     <form onSubmit={handleUpdate} className={styleForm}>
                         <input
                             type="number"
                             className={styleInput}
-                            placeholder="ID authors"
+                            placeholder="ID Category"
                             value={updateId}
                             onChange={(e) => setUpdateId(e.target.value)}
                         />
                         <input
                             type="text"
                             className={styleInput}
-                            placeholder="Name authors"
+                            placeholder="Name Category"
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
@@ -132,12 +132,12 @@ function AdminCategory() {
                 </div>
 
                 <div className="w-full" data-aos="fade-up">
-                    <p>Deletar authors</p>
+                    <p>Deletar Categoria</p>
                     <form onSubmit={handleDelete} className={styleForm}>
                         <input
                             type="number"
                             className={styleInput}
-                            placeholder="ID authors"
+                            placeholder="ID Category"
                             value={deleteId}
                             onChange={(e) => setDeleteId(e.target.value)}
                         />

@@ -6,8 +6,6 @@ import axios from "axios";
 
 const NewPassword = () => {
     const { register, errors, password, handleSubmit } = useUserRegister();
-
-
     const errorStyle = "text-red-500 text-sm pl-5";
 
     const handleRegister = async (data: { password: string; }) => {
@@ -25,7 +23,9 @@ const NewPassword = () => {
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Erro ao cadastrar";
+                const errorMessage = error?.response?.data?.error
+                    ? error.response.data.error.map((e: { message: string }) => e.message).join(', ')
+                    : "Erro ao cadastrar";
                 alert(errorMessage);
             }
         }
@@ -33,13 +33,16 @@ const NewPassword = () => {
 
     return (
         <form className={`flex flex-col gap-4 w-full `} onSubmit={handleSubmit(handleRegister)}>
-
             <section>
                 <InputPassword
                     placeholder="Password"
                     {...register("password", {
                         required: "Senha é obrigatória",
-                        minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" }
+                        minLength: { value: 8, message: "A senha deve ter pelo menos 8 caracteres" },
+                        pattern: {
+                            value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&/])[A-Za-z\d@$!%*?&/]{8,}$/,
+                            message: "A senha deve conter pelo menos uma letra maiúscula, um número e um caractere especial (@$!%*?&/)"
+                        }
                     })}
                 />
                 {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
@@ -57,7 +60,6 @@ const NewPassword = () => {
             </section>
 
             <ButtonRegister children="Register" />
-
         </form>
     );
 }

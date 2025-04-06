@@ -11,6 +11,7 @@ interface MapAuthor {
 }
 
 interface MapItems {
+    id: number;
     name: string;
     author: MapAuthor;
     directory: string;

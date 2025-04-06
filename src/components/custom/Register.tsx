@@ -11,7 +11,6 @@ type Props = {
 
 const Register = ({ className = "" }: Props) => {
     const { register, errors, password, validateCPF, handleSubmit } = useUserRegister();
-
     const errorStyle = "text-red-500 text-sm pl-5";
 
     const handleRegister = async (data: { name: string; email: string; cpf: string; password: string; }) => {
@@ -88,7 +87,11 @@ const Register = ({ className = "" }: Props) => {
                     placeholder="Password"
                     {...register("password", {
                         required: "Password is mandatory",
-                        minLength: { value: 8, message: "Password must be at least 8 characters long" }
+                        minLength: { value: 8, message: "Password must be at least 8 characters long" },
+                        pattern: {
+                            value: /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&/])[A-Za-z\d@$!%*?&/]{8,}$/,
+                            message: "Password must contain at least one uppercase letter, one number, and one special character"
+                        }
                     })}
                 />
                 {errors.password && <span className={errorStyle}>{errors.password.message}</span>}
@@ -106,7 +109,6 @@ const Register = ({ className = "" }: Props) => {
             </section>
 
             <ButtonRegister children="Register" />
-
         </form>
     );
 }

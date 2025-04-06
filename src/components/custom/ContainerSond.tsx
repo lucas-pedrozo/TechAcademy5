@@ -1,12 +1,11 @@
 import { useAudioController } from "@/hook/audioController";
 import imagemSound from "@/assets/image/lucas.jpg";
 
-import favorite from "@/assets/icons/favorite.svg";
+// import favorite from "@/assets/icons/favorite.svg";
 import download from "@/assets/icons/download.svg";
 import play from "@/assets/icons/play.svg";
 import pause from "@/assets/icons/pause.svg";
 import Waveform from "./WaveForm";
-import ALterSound from "./Alert";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 
@@ -14,12 +13,13 @@ type Props = {
     src: string;
     name: string;
     author: string;
+    IdSound?: number;
 
     className1?: string;
     className2?: string;
 };
 
-function ContainerSound({ src, name, author, className1, className2 }: Props) {
+function ContainerSound({ src, name, author, className1, className2, IdSound }: Props) {
     const SyTime = "font-light text-[0.875rem]";
     const SyButton = "bg-black/20 rounded-full border border-white px-2.5 py-[5px]";
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
@@ -106,15 +106,12 @@ function ContainerSound({ src, name, author, className1, className2 }: Props) {
                     <button onClick={handleDownload} disabled={!AccessoDowload}>
                         <img src={download} />
                     </button>
-                    <button>
+                    {/* <button>
                         <img src={favorite} />
-                    </button>
+                    </button> */}
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
-                    <ALterSound />
-                    <button>
-                        Del
-                    </button>
+                    <span>Id: {IdSound}</span>
                 </div>
 
 

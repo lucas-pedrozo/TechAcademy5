@@ -39,7 +39,7 @@ const UserLoginActive = () => {
             </DropdownMenuTrigger>
 
             <DropdownMenuContent>
-                <Link to={'/favoritos'} className={`${styleLink} ${MotionZoom}`}>My Favoritos</Link>
+                {/* <Link to={'/favoritos'} className={`${styleLink} ${MotionZoom}`}>My Favoritos</Link> */}
                 <Link to={'/newPassword'} className={`${styleLink} ${MotionZoom}`}>New Password</Link>
                 <button onClick={logout} className={`${styleLinkOut} ${MotionZoomOut}`}>Log out</button>
                 {isAdmin && <Link to={'/admin'} className={`${styleLink} ${MotionZoom}`}>Admin</Link>}

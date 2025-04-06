@@ -33,6 +33,11 @@ function Admin() {
                             Amd Sound
                         </span>
                     </Link>
+                    <Link to={'/adminCategory'} className={`${SyCotainer} ${MotionSyCont}`} data-aos="fade-up">
+                        <span className="">
+                            Amd category
+                        </span>
+                    </Link>
                 </div>
             </div >
         </main >

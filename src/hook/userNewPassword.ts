@@ -18,7 +18,6 @@ export function useUserRegister() {
 
   const password = watch("password");
 
-
   return {
     register,
     handleSubmit,
