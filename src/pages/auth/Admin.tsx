@@ -1,46 +1,46 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import AOS from "aos";
 
 function Admin() {
 
-    const SyCotainer = "bg-white/10 backdrop-blur-xl rounded-2xl border-1 border-white/50  || w-[46%] h-40 || flex justify-center items-center"
-
-    const MotionSyCont = "hover:scale-104 transition transform duration-300 hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
-
+    // separation of style components
+    const styleCotainer = "bg-white/10 backdrop-blur-xl rounded-2xl border-1 border-white/50  || w-[46%] h-40 || flex justify-center items-center"
+    const MotionStyleCont = "hover:scale-104 transition transform duration-300 hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)]"
+    const styleMain = "max-w-[1220px] min-h-[50vh] mx-auto p-2.5 || flex justify-center items-center";
 
     useEffect(() => {
-        AOS.init({ duration: 500 });
+        AOS.init({ duration: 500, delay: 0 });
     })
 
     return (
-        <main className="max-w-[1220px] mx-auto p-2.5 min-h-[50vh]  || flex justify-center items-center ">
-            <div className="flex flex-col justify-center gap-5 | w-full">
-                <div className="flex gap-5 flex-wrap" >
-                    <Link to={'/adminAuthor'} className={`${SyCotainer} ${MotionSyCont}`} data-aos="fade-up">
-                        <span className="">
-                            Adm Author
-                        </span>
-                    </Link>
-                    <Link to={'/uploadSound'} className={`${SyCotainer} ${MotionSyCont}`} data-aos="fade-up">
-                        <span className="">
-                            Upload Sound
-                        </span>
+        <main className={`${styleMain}`}>
+            <div className="w-full flex flex-col justify-center">
+                <div className="flex flex-wrap gap-5">
+
+                    {/* routes Admin Author */}
+                    <Link to={'/adminAuthor'} className={`${styleCotainer} ${MotionStyleCont}`} data-aos="fade-up">
+                        <span>Adm Author</span>
                     </Link>
 
-                    <Link to={'/buscarSound'} className={`${SyCotainer} ${MotionSyCont}`} data-aos="fade-up">
-                        <span className="">
-                            Amd Sound
-                        </span>
+                    {/* routes Upload Sound */}
+                    <Link to={'/uploadSound'} className={`${styleCotainer} ${MotionStyleCont}`} data-aos="fade-up">
+                        <span>Upload Sound</span>
                     </Link>
-                    <Link to={'/adminCategory'} className={`${SyCotainer} ${MotionSyCont}`} data-aos="fade-up">
-                        <span className="">
-                            Amd category
-                        </span>
+
+                    {/* routes Admin Sound */}
+                    <Link to={'/buscarSound'} className={`${styleCotainer} ${MotionStyleCont}`} data-aos="fade-up">
+                        <span>Amd Sound</span>
                     </Link>
+
+                    {/* routes Admin Category */}
+                    <Link to={'/adminCategory'} className={`${styleCotainer} ${MotionStyleCont}`} data-aos="fade-up">
+                        <span>Amd category</span>
+                    </Link>
+
                 </div>
-            </div >
-        </main >
+            </div>
+        </main>
     );
 }
 

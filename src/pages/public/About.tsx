@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
-
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AOS from 'aos';
 
-import imageDev from '@/assets/image/lucas.jpg';
 import imageDev2 from '@/assets/image/leonado.png';
+import imageDev from '@/assets/image/lucas.jpg';
 import logoGit from "@/assets/icons/github.svg"
 
 
 function About() {
 
-    useEffect(() => {
-        AOS.init({ duration: 500 });
-    })
-
     const styleContainer = "flex flex-col min-[700px]:flex-row gap-5 || bg-white/10 backdrop-blur-lg rounded-3xl border-1 border-white/50 || p-2.5 || text-center  min-[700px]:text-start ";
+
+    useEffect(() => {
+        AOS.init({ duration: 500, delay: 0 });
+
+    })
 
     return (
         <main className="max-w-[1220px] || py-14 px-2.5 m-auto">
@@ -27,7 +27,7 @@ function About() {
                     <img src={imageDev} alt="Lucas Pedrozo" title='Lucas Pedrozo' className='w-72 rounded-2xl m-auto ' />
 
                     <div>
-                        <h3 className='text-3xl font-bold || pb-2.5'>Lucas Pedrozo | Developer Front-End</h3>
+                        <h3 className='text-3xl font-bold || pb-2.5'>Lucas Pedrozo | Developer Front-End | Designer</h3>
                         <p className='text-[14px]'>Trabalho como Freelancer em Edição de Vídeos, Motion Designer e Técnico Agropecuário. Atualmente estou estudando programação com o curso de TADS em campo mourão, meu destino final de nessa área é o Front-End.
                             Tenho uma formação em Técnico Agropecuário, 18 cursos na Área do audiovisual, Formado em Técnico de manutenção de celulares e hardware e estou realizando minha Graduação em TADS.
                         </p>
@@ -47,7 +47,7 @@ function About() {
                     <img src={imageDev2} alt="Lucas Pedrozo" title='Lucas Pedrozo' className='w-72 rounded-2xl m-auto' />
 
                     <div>
-                        <h3 className='text-3xl font-bold || pb-2.5'>Leonardo Nunes | Developer Back-End</h3>
+                        <h3 className='text-3xl font-bold || pb-2.5'>Leonardo Nunes | Developer Back-end | BDA</h3>
                         <p className='text-[14px]'>Olá, Sou Leonardo, também conhecido como SrVertex.
                             Desenvolvedor Junior com foco em WEB e desenvolvimento Java. Minha jornada inicia em 2019 com desenvolvimento de conteúdo de MODS para jogos, tendo nesse hobbie despertado o interesse pela área de programação e hoje assim sigo. Nessa área desapertei diversas competências, como Photoshop, CorelDRAW, Blender, Autodesk Maya, SolidWorks, Cinema4D, KeyShot, Substance Painter, Unreal, entre outras</p>
 

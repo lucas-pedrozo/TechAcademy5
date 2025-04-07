@@ -2,27 +2,28 @@ import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import PrivateRoute from "./components/custom/PrivateRoute";
 
 // imports end images
-import background from "./assets/image/Home.png";
 import BGLogin from "./assets/image/BGfinal.webp";
+import background from "./assets/image/Home.png";
 
 // imports end pages
-import Home from "./pages/public/Home";
 import Header from "./components/custom/Header";
+import Home from "./pages/public/Home";
 
 // imports end layout
-import LayoutHome from "./components/layout/LayoutHome";
+import NewPasswordUser from "./pages/public/NewPasswordUser";
 import LayoutLogin from "./components/layout/LayoutLogin";
+import LayoutHome from "./components/layout/LayoutHome";
+import AdminCategory from "./pages/auth/AdminCategory";
+import AdminAuthor from "./pages/auth/AdminAuthor";
+import BuscarSound from "./pages/auth/BuscarSound";
+import UploadSound from "./pages/auth/UploadSound";
 import LoginUser from "./pages/public/LoginUser";
+import Footer from "./components/custom/Footer";
+import Erro404 from "./pages/public/erro404";
 import Contact from "./pages/public/Contact";
 import About from "./pages/public/About";
 import Sound from "./pages/public/Sound";
-import Footer from "./components/custom/Footer";
 import Admin from "./pages/auth/Admin";
-import BuscarSound from "./pages/auth/BuscarSound";
-import NewPasswordUser from "./pages/public/NewPasswordUser";
-import UploadSound from "./pages/auth/UploadSound";
-import AdminAuthor from "./pages/auth/AdminAuthor";
-import AdminCategory from "./pages/auth/AdminCategory";
 
 
 // rotas de navegação dentro do site 
@@ -30,21 +31,15 @@ function App() {
   return (
 
     <BrowserRouter>
+      {/* header */}
       <Header />
       <Routes>
 
+        {/* rotas de navegacao publicas */}
         <Route element={<LayoutHome backgroundImage={background}><Outlet /></LayoutHome>}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-        </Route>
-
-        <Route element={<PrivateRoute><LayoutHome backgroundImage={background}><Outlet /></LayoutHome></PrivateRoute>}>
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/buscarSound" element={<BuscarSound />} />
-          <Route path="/uploadSound" element={<UploadSound />} />
-          <Route path="/adminAuthor" element={<AdminAuthor />} />
-          <Route path="/adminCategory" element={<AdminCategory />} />
         </Route>
 
         <Route element={<LayoutLogin backgroundImage={BGLogin}><Outlet /></LayoutLogin>}>
@@ -54,9 +49,21 @@ function App() {
           <Route path="/sound" element={<Sound />} />
         </Route>
 
+        {/* rotas de navegacao privadas */}
+        <Route element={<PrivateRoute><LayoutHome backgroundImage={background}><Outlet /></LayoutHome></PrivateRoute>}>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/buscarSound" element={<BuscarSound />} />
+          <Route path="/uploadSound" element={<UploadSound />} />
+          <Route path="/adminAuthor" element={<AdminAuthor />} />
+          <Route path="/adminCategory" element={<AdminCategory />} />
+        </Route>
+
+
         {/* rota de erro 404 */}
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<Erro404 />} />
+
       </Routes>
+      {/* footer */}
       <Footer />
     </BrowserRouter >
 

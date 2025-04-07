@@ -2,14 +2,14 @@ import logoSite from "../../assets/image/Mask.png";
 import logoGit from "@/assets/icons/github.svg";
 
 // link para navegação do site no header
-import { Link } from "react-router-dom";
-import UserLogin from "./UserLogin";
-import MenuHeader from "./MenuHeader";
 import UserLoginActive from "./UserLoginActive";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import MenuHeader from "./MenuHeader";
+import UserLogin from "./UserLogin";
 
 const Header = () => {
-    // Estado para verificar se o usuário está logado
+
     const [isUserLogin, setIsUserLogin] = useState<boolean>(false);
 
     useEffect(() => {
@@ -17,12 +17,8 @@ const Header = () => {
             const token = localStorage.getItem("authToken");
             setIsUserLogin(!!token);
         };
-
-        checkToken(); // Verifica o token na montagem
-
-        // Evento para monitorar mudanças no localStorage
+        checkToken();
         window.addEventListener("storage", checkToken);
-
         return () => {
             window.removeEventListener("storage", checkToken);
         };

@@ -9,8 +9,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-    const { placeholder, type, className, id, title, ...rest } = props;
+
     const styleInput = "w-full bg-white/20 backdrop-blur-xl rounded-full border-1 border-white text-white py-2 px-5 placeholder:text-white placeholder:font-medium focus:outline-none";
+    const { placeholder, type, className, id, title, ...rest } = props;
 
     return (
         <input
@@ -25,5 +26,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     );
 });
 
-Input.displayName = "Input";
+// Input.displayName = "Input";
 export default Input;

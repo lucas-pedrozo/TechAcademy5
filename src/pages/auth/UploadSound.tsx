@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import Input from "@/components/custom/Input";
 import { ButtonUpdate } from "@/components/ui/Button";
+import Input from "@/components/custom/Input";
 import api from "@/service/api";
 
 
@@ -13,8 +13,8 @@ interface SoundFormData {
 
 
 function UploadSound() {
-    const errorStyle = "text-red-500 text-sm font-medium";
     const { register, handleSubmit, formState: { errors } } = useForm<SoundFormData>();
+    const errorStyle = "text-red-500 text-sm font-medium";
 
     const handleSound: SubmitHandler<SoundFormData> = async (data) => {
         try {
@@ -28,57 +28,57 @@ function UploadSound() {
                 directory: file.name
             }
 
+            await api.post("/items", requestBody);
             console.log("Request Body:", requestBody);
 
-            await api.post("/items", requestBody);
-
-            alert("Registro realizado com sucesso!");
+            alert("Registration completed successfully!");
             location.reload();
         } catch (error) {
+            alert("Error registering sound.");
             console.log(error);
-            alert("Erro ao realizar o registro.");
         }
     };
 
 
     return (
-        <form className="flex flex-col gap-4 max-w-[600px] py-10 mx-auto" onSubmit={handleSubmit(handleSound)}>
+        <form className="flex flex-col gap-4 max-w-[600px] py-24 mx-auto" onSubmit={handleSubmit(handleSound)} data-aos="fade-up">
+
             <section>
                 <Input
-                    type="text"
                     id="name"
+                    type="text"
                     placeholder="Nome"
-                    {...register("name", { required: "Nome é obrigatório" })}
+                    {...register("name", { required: "Name is required" })}
                 />
                 {errors.name && <span className={errorStyle}>{errors.name.message}</span>}
             </section>
 
             <section>
                 <Input
-                    type="number"
                     id="author"
+                    type="number"
                     placeholder="ID do autor"
-                    {...register("author", { required: "ID do autor é obrigatório", valueAsNumber: true })}
+                    {...register("author", { required: "Author ID is required", valueAsNumber: true })}
                 />
                 {errors.author && <span className={errorStyle}>{errors.author.message}</span>}
             </section>
 
             <section>
                 <Input
-                    type="number"
                     id="category"
+                    type="number"
                     placeholder="ID da categoria"
-                    {...register("category", { required: "ID da categoria é obrigatório", valueAsNumber: true })}
+                    {...register("category", { required: "Category ID is required", valueAsNumber: true })}
                 />
                 {errors.category && <span className={errorStyle}>{errors.category.message}</span>}
             </section>
 
             <section>
                 <Input
-                    type="file"
                     id="directory"
+                    type="file"
                     placeholder="Arquivo"
-                    {...register("directory", { required: "Arquivo é obrigatório" })}
+                    {...register("directory", { required: "file is required" })}
                 />
                 {errors.directory && <span className={errorStyle}>{errors.directory.message}</span>}
             </section>

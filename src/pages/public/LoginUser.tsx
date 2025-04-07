@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
-import Login from "@/components/custom/Login";
-import Register from "@/components/custom/Register";
 import ImageLogin from "@/assets/image/ImagemLogin.png";
+import Register from "@/components/custom/Register";
+import Login from "@/components/custom/Login";
+import { useState, useEffect } from "react";
 
 function LoginUser() {
 
     // True: Login ativo; false: Register ativo
     const [isLoginActive, setIsLoginActive] = useState(true);
 
-    // UseEffect para quando ouver  a troca detenas
     useEffect(() => {
         console.log(isLoginActive ? "Login ativo" : "Register ativo");
     }, [isLoginActive]);
@@ -18,12 +17,9 @@ function LoginUser() {
     const styleButtonNull = "bg-black rounded-full px-5 py-2 font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.6)] hover:shadow-[0_0_8px_rgba(255,255,255,0.6)] transition duration-500 transform hover:scale-105";
 
     // animation end form
-    const MotionForm = "animate-fade-left animate-duration-500 animate-ease-out animate-normal"
-    const MotionImage = "animate-fade-right animate-duration-500 animate-ease-out animate-normal || shadow-[0_0_8px_rgba(0,0,0,0.6)]"
     const MotionContainer = "animate-fade-up animate-duration-500 animate-ease-out animate-normal || shadow-[0_0_8px_rgba(0,0,0,0.6)]"
-
-
-
+    const MotionImage = "animate-fade-right animate-duration-500 animate-ease-out animate-normal || shadow-[0_0_8px_rgba(0,0,0,0.6)]"
+    const MotionForm = "animate-fade-left animate-duration-500 animate-ease-out animate-normal"
 
 
     return (
@@ -42,6 +38,7 @@ function LoginUser() {
                     </div>
 
                     {isLoginActive ? (<Login className="flex" />) : (<Register className="flex" />)}
+
                 </div>
             </section>
         </main >

@@ -19,16 +19,22 @@ function AdminCategory() {
     const [loading, setLoading] = useState(false);
     const [items, setItems] = useState<Item[]>([]);
 
-    // Inputs controlados
-    const [createName, setCreateName] = useState("");
+
     const [updateId, setUpdateId] = useState<number | string>("");
-    const [updateName, setUpdateName] = useState("");
     const [deleteId, setDeleteId] = useState<number | string>("");
+    const [createName, setCreateName] = useState("");
+    const [updateName, setUpdateName] = useState("");
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
         getCategories();
     }, []);
+
+    if (loading) {
+        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
+    }
+
+    // ============================================================================================== //
 
     const getCategories = async () => {
         setLoading(true);
@@ -36,11 +42,14 @@ function AdminCategory() {
             const { data } = await api.get("/authors");
             setItems(data);
         } catch (error) {
-            alert(axios.isAxiosError(error) ? error?.response?.data || "Erro ao carregar os dados." : "Erro desconhecido.");
+            console.log(error);
+            alert("Unknown error!");
         } finally {
             setLoading(false);
         }
     };
+
+    // ============================================================================================== //
 
     const handleSound = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -54,6 +63,9 @@ function AdminCategory() {
         }
     };
 
+    // ============================================================================================== //
+
+
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -61,7 +73,8 @@ function AdminCategory() {
                 id: Number(updateId),
                 name: updateName,
             });
-            alert("Atualização realizada com sucesso!");
+
+            alert("Update completed successfully!");
             location.reload();
         } catch (error) {
             if (axios.isAxiosError(error)) {
@@ -72,37 +85,35 @@ function AdminCategory() {
             }
         }
     };
+
+    // ============================================================================================== //
 
     const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             await api.delete(`/authors/${deleteId}`);
-            alert("Categoria deletada com sucesso!");
+
+            alert("Category deleted successfully!");
             location.reload();
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data?.error
-                    ? error.response.data.error.map((e: { message: string }) => e.message).join(', ')
-                    : "Erro ao atualizar";
-                alert(errorMessage);
-            }
+            alert("Unknown error!");
+            console.log(error);
         }
     };
 
-    if (loading) {
-        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
-    }
+    // ============================================================================================== //
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px]">
             <section className="flex gap-2.5 flex-col min-[700px]:flex-row" data-aos="fade-up">
+
                 <div className="w-full">
-                    <p>Criar authors</p>
+                    <label>Create Author</label>
                     <form onSubmit={handleSound} className={styleForm}>
                         <input
                             type="text"
-                            className={styleInput}
                             placeholder="Name authors"
+                            className={styleInput}
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
@@ -110,20 +121,20 @@ function AdminCategory() {
                     </form>
                 </div>
 
-                <div className="w-full" data-aos="fade-up">
-                    <p>Atualizar authors</p>
+                <div className="w-full">
+                    <label>Update Author</label>
                     <form onSubmit={handleUpdate} className={styleForm}>
                         <input
                             type="number"
-                            className={styleInput}
                             placeholder="ID authors"
+                            className={styleInput}
                             value={updateId}
                             onChange={(e) => setUpdateId(e.target.value)}
                         />
                         <input
                             type="text"
-                            className={styleInput}
                             placeholder="Name authors"
+                            className={styleInput}
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
@@ -131,30 +142,30 @@ function AdminCategory() {
                     </form>
                 </div>
 
-                <div className="w-full" data-aos="fade-up">
-                    <p>Deletar authors</p>
+                <div className="w-full">
+                    <label>Delet Author</label>
                     <form onSubmit={handleDelete} className={styleForm}>
                         <input
                             type="number"
-                            className={styleInput}
                             placeholder="ID authors"
+                            className={styleInput}
                             value={deleteId}
                             onChange={(e) => setDeleteId(e.target.value)}
                         />
                         <ButtonDelete />
                     </form>
                 </div>
+
             </section>
 
-            <div className="py-7">
-                <hr className={styleHr} data-aos="fade-up" />
-            </div>
+            <div className="py-7"><hr className={styleHr} /></div>
 
-            <section className="flex flex-wrap gap-3 justify-center items-center">
+            <section className="flex flex-wrap justify-center items-center gap-3">
                 {items.map(item => (
                     <BlocoAuthorCatg key={item.id} Id={item.id} Name={item.name} />
                 ))}
             </section>
+
         </main>
     );
 }

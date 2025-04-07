@@ -1,9 +1,8 @@
-import BlocoAuthorCatg from "@/components/custom/BlocoAuthorCatg";
 import { ButtonCreate, ButtonDelete, ButtonUpdate } from "@/components/ui/Button";
+import BlocoAuthorCatg from "@/components/custom/BlocoAuthorCatg";
+import { useEffect, useState } from "react";
 import api from "@/service/api";
 import AOS from "aos";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
 interface Item {
     id: number;
@@ -19,16 +18,21 @@ function AdminCategory() {
     const [loading, setLoading] = useState(false);
     const [items, setItems] = useState<Item[]>([]);
 
-    // Inputs controlados
-    const [createName, setCreateName] = useState("");
     const [updateId, setUpdateId] = useState<number | string>("");
-    const [updateName, setUpdateName] = useState("");
     const [deleteId, setDeleteId] = useState<number | string>("");
+    const [createName, setCreateName] = useState("");
+    const [updateName, setUpdateName] = useState("");
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
         getCategories();
     }, []);
+
+    if (loading) {
+        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
+    }
+
+    // ===========================================================================================
 
     const getCategories = async () => {
         setLoading(true);
@@ -36,11 +40,14 @@ function AdminCategory() {
             const { data } = await api.get("/categories");
             setItems(data);
         } catch (error) {
-            alert(axios.isAxiosError(error) ? error?.response?.data || "Erro ao carregar os dados." : "Erro desconhecido.");
+            alert("Error loading categories.");
+            console.error(error);
         } finally {
             setLoading(false);
         }
     };
+
+    // ===========================================================================================
 
     const handleSound = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -54,6 +61,8 @@ function AdminCategory() {
         }
     };
 
+    // ===========================================================================================
+
     const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -61,48 +70,43 @@ function AdminCategory() {
                 id: Number(updateId),
                 name: updateName,
             });
-            alert("Atualização realizada com sucesso!");
+
+            alert("Update completed successfully!");
             location.reload();
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data?.error
-                    ? error.response.data.error.map((e: { message: string }) => e.message).join(', ')
-                    : "Erro ao atualizar";
-                alert(errorMessage);
-            }
+            alert("Error updating category.");
+            console.error(error);
         }
     };
+
+    // ===========================================================================================
 
     const handleDelete = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
             await api.delete(`/categories/${deleteId}`);
+
             alert("Categoria deletada com sucesso!");
             location.reload();
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                const errorMessage = error?.response?.data?.error
-                    ? error.response.data.error.map((e: { message: string }) => e.message).join(', ')
-                    : "Erro ao atualizar";
-                alert(errorMessage);
-            }
+            alert("Error deleting category.");
+            console.error(error);
         }
     };
 
-    if (loading) {
-        return <div className="text-center text-lg font-bold py-10">Carregando...</div>;
-    }
+    // ===========================================================================================
 
     return (
         <main className="py-14 px-2.5 mx-auto max-w-[1220px]">
             <section className="flex gap-2.5 flex-col min-[700px]:flex-row" data-aos="fade-up">
-                <div className="w-full">
-                    <p>Criar Categoria</p>
+
+                <div className="w-full" data-aos="fade-up">
+                    <label>Create Category</label>
                     <form onSubmit={handleSound} className={styleForm}>
                         <input
                             type="text"
-                            className={styleInput}
                             placeholder="Name Category"
+                            className={styleInput}
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
@@ -111,19 +115,19 @@ function AdminCategory() {
                 </div>
 
                 <div className="w-full" data-aos="fade-up">
-                    <p>Atualizar Categoria</p>
+                    <label>Update Category</label>
                     <form onSubmit={handleUpdate} className={styleForm}>
                         <input
                             type="number"
-                            className={styleInput}
                             placeholder="ID Category"
+                            className={styleInput}
                             value={updateId}
                             onChange={(e) => setUpdateId(e.target.value)}
                         />
                         <input
                             type="text"
-                            className={styleInput}
                             placeholder="Name Category"
+                            className={styleInput}
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
@@ -132,12 +136,12 @@ function AdminCategory() {
                 </div>
 
                 <div className="w-full" data-aos="fade-up">
-                    <p>Deletar Categoria</p>
+                    <label>Delete Category</label>
                     <form onSubmit={handleDelete} className={styleForm}>
                         <input
                             type="number"
-                            className={styleInput}
                             placeholder="ID Category"
+                            className={styleInput}
                             value={deleteId}
                             onChange={(e) => setDeleteId(e.target.value)}
                         />
@@ -146,9 +150,7 @@ function AdminCategory() {
                 </div>
             </section>
 
-            <div className="py-7">
-                <hr className={styleHr} data-aos="fade-up" />
-            </div>
+            <div className="py-7"><hr className={styleHr} data-aos="fade-up" /></div>
 
             <section className="flex flex-wrap gap-3 justify-center items-center">
                 {items.map(item => (
