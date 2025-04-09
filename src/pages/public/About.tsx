@@ -14,7 +14,7 @@ function About() {
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
 
-    })
+    }, [])
 
     return (
         <main className="max-w-[1220px] || py-14 px-2.5 m-auto">

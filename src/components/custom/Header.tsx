@@ -24,8 +24,8 @@ const Header = () => {
         };
     }, []);
 
+    // ======================================================================================
 
-    // Animações reutilizáveis
     const MotionZoom = 'hover:drop-shadow-[0_2px_6px_rgba(255,255,255,0.6)] || hover:scale-105 transition transform duration-300 || font-semibold text-white/50 hover:text-white';
     const MotionHeader = 'animate-fade-down animate-duration-500 animate-ease-out animate-normal';
 

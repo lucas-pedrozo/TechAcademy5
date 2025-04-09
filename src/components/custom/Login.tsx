@@ -7,12 +7,12 @@ import api from "@/service/api";
 import Input from "./Input";
 import axios from "axios";
 
-
 type Props = {
     className?: string;
 };
 
 function Login({ className = "" }: Props) {
+
     const { register, handleSubmit, errors } = useUserLogin();
     const errorStyle = "text-red-500 text-sm pl-5";
     const { login } = useAuth();
@@ -36,6 +36,8 @@ function Login({ className = "" }: Props) {
             }
         }
     };
+
+    // ==============================================================================================================
 
     return (
         <form onSubmit={handleSubmit(handleLogin)} className={`${className} flex-col gap-4 w-full`}>

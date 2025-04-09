@@ -21,7 +21,7 @@ const Home = () => {
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
-    })
+    }, [])
 
 
     return (

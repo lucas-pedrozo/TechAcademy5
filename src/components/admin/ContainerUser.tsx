@@ -7,6 +7,7 @@ function ContainerUser() {
     return (
         <section className="bg-white/20 backdrop-blur-xl border-1 border-white rounded-2xl || p-2.5 ">
             <div className="flex flex-col">
+
                 <div>
                     <label className={SyLabel}>
                         <span className={StTitle}>Name:</span>
@@ -30,6 +31,7 @@ function ContainerUser() {
                         <span>sbf8ywhfe2</span>
                     </label>
                 </div>
+
             </div>
         </section>
     );

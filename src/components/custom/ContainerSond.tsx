@@ -1,5 +1,5 @@
 import { useAudioController } from "@/hook/audioController";
-import imagemSound from "@/assets/image/lucas.jpg";
+import imagemSound from "@/assets/image/logoSoudn.png";
 
 // import favorite from "@/assets/icons/favorite.svg";
 import download from "@/assets/icons/download.svg";
@@ -24,17 +24,7 @@ function ContainerSound({ src, name, author, className1, className2, IdSound }: 
     const SyButton = "bg-black/20 rounded-full border border-white px-2.5 py-[5px]";
     const SyButton2 = "bg-black/20 rounded-full border border-white px-2.5 py-[5px] items-center gap-3";
 
-    const {
-        audioRef,
-        isPlaying,
-        currentTime,
-        duration,
-        togglePlayPause,
-        handleTimeUpdate,
-        handleLoadedMetadata,
-        handleDownload,
-        formatTime,
-    } = useAudioController();
+    const { audioRef, isPlaying, currentTime, duration, togglePlayPause, handleTimeUpdate, handleLoadedMetadata, handleDownload, formatTime, } = useAudioController();
 
     const handleSeekChange = (value: number) => {
         if (audioRef.current) {
@@ -52,7 +42,6 @@ function ContainerSound({ src, name, author, className1, className2, IdSound }: 
         };
 
         checkToken();
-
         window.addEventListener("storage", checkToken);
 
         return () => {
@@ -62,8 +51,7 @@ function ContainerSound({ src, name, author, className1, className2, IdSound }: 
 
 
     useEffect(() => {
-        AOS.init({ duration: 500 });
-        AOS.init({ delay: 0 });
+        AOS.init({ duration: 500, delay: 0 });
     }, [])
 
 
@@ -106,15 +94,10 @@ function ContainerSound({ src, name, author, className1, className2, IdSound }: 
                     <button onClick={handleDownload} disabled={!AccessoDowload}>
                         <img src={download} />
                     </button>
-                    {/* <button>
-                        <img src={favorite} />
-                    </button> */}
                 </div>
                 <div className={`${SyButton2} ${className2}`} >
                     <span>Id: {IdSound}</span>
                 </div>
-
-
             </div>
         </section>
     );

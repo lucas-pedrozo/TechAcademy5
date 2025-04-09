@@ -11,7 +11,7 @@ function Admin() {
 
     useEffect(() => {
         AOS.init({ duration: 500, delay: 0 });
-    })
+    }, [])
 
     return (
         <main className={`${styleMain}`}>
