@@ -2,6 +2,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { ButtonUpdate } from "@/components/ui/Button";
 import Input from "@/components/custom/Input";
 import api from "@/service/api";
+import { useEffect } from "react";
+import Aos from "aos";
 
 
 interface SoundFormData {
@@ -38,6 +40,10 @@ function UploadSound() {
             console.log(error);
         }
     };
+
+    useEffect(() => {
+        Aos.init({ duration: 500, delay: 0 });
+    }, [])
 
 
     return (

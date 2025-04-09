@@ -51,7 +51,7 @@ function FilterContainer() {
 
                 <div className={`${flex}`}>
                     <input type="radio" name="categoria2" className={`${checkbox}`} />
-                    <label className="text-[14px]" htmlFor="">  20 Seconds</label>
+                    <label className="text-[14px]" htmlFor=""> 20 Seconds</label>
                 </div>
 
                 <div className={`${flex}`}>

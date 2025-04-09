@@ -29,10 +29,10 @@ const BuscarSound = () => {
     const [loading, setLoading] = useState(false);
 
     // Estados dos inputs
-    const [updateCategory, setUpdateCategory] = useState<string>("");
-    const [deleteId, setDeleteId] = useState<number | string>("");
-    const [updateId, setUpdateId] = useState<number | string>("");
-    const [updateAuthor, setUpdateAuthor] = useState<string>("");
+    const [deleteId, setDeleteId] = useState<number>();
+    const [updateId, setUpdateId] = useState<number>();
+    const [updateCategory, setUpdateCategory] = useState<number>();
+    const [updateAuthor, setUpdateAuthor] = useState<number | string>();
     const [updateTitle, setUpdateTitle] = useState<string>("");
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -78,14 +78,17 @@ const BuscarSound = () => {
             await api.put(`/items/${updateId}`, {
                 id: updateId,
                 name: updateTitle,
-                author: updateAuthor,
-                category: updateCategory
+                category_id: updateCategory,
+                author_id: updateAuthor,
             });
             alert("Item load successfully!");
             location.reload();
         } catch (error) {
-            alert("Error when updating data.");
-            console.error(error);
+            if (axios.isAxiosError(error)) {
+                const errorMessage = error?.response?.data.error.map((e: { message: string }) => e.message).join(', ') || "Error registering";
+                console.log(error);
+                alert(errorMessage);
+            }
         }
     };
 
@@ -115,22 +118,22 @@ const BuscarSound = () => {
                             placeholder="Id Sound"
                             className={styleInput}
                             value={updateId}
-                            onChange={(e) => setUpdateId(e.target.value)}
+                            onChange={(e) => setUpdateId(parseInt(e.target.value))}
                             required
                         />
                         <input
-                            type="text"
+                            type="number"
                             placeholder="Id Author"
                             className={styleInput}
                             value={updateAuthor}
-                            onChange={(e) => setUpdateAuthor(e.target.value)}
+                            onChange={(e) => setUpdateAuthor(parseInt(e.target.value))}
                         />
                         <input
-                            type="text"
+                            type="number"
                             placeholder="Id Category"
                             className={styleInput}
                             value={updateCategory}
-                            onChange={(e) => setUpdateCategory(e.target.value)}
+                            onChange={(e) => setUpdateCategory(parseInt(e.target.value))}
                         />
                         <input
                             type="text"
@@ -150,7 +153,7 @@ const BuscarSound = () => {
                             placeholder="Id Sound"
                             className={styleInput}
                             value={deleteId}
-                            onChange={(e) => setDeleteId(e.target.value)}
+                            onChange={(e) => setDeleteId(parseInt(e.target.value))}
                             required
                         />
                         <ButtonDelete />
