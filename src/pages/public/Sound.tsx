@@ -61,7 +61,7 @@ const Sound = () => {
 
     return (
         <main className="px-2.5 py-10 max-w-[1220px] m-auto flex flex-col gap-5">
-            <div className="py-5 flex justify-center">
+            <div className="py-5 flex justify-center" data-aos="fade-up">
                 <input
                     type="search"
                     placeholder="search..."

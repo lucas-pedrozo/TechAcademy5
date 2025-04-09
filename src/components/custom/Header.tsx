@@ -17,6 +17,7 @@ const Header = () => {
             const token = localStorage.getItem("authToken");
             setIsUserLogin(!!token);
         };
+
         checkToken();
         window.addEventListener("storage", checkToken);
         return () => {
@@ -39,9 +40,9 @@ const Header = () => {
                     </Link>
                     <div className="hidden min-[1000px]:flex gap-5">
                         <Link to={'/home'} className={`${MotionZoom}`}>Home</Link>
-                        <Link to={'sound'} className={`${MotionZoom}`}>Sound</Link>
-                        <Link to={'contact'} className={`${MotionZoom}`}>Contact</Link>
-                        <Link to={'about'} className={`${MotionZoom}`}>Developers</Link>
+                        <Link to={'/sound'} className={`${MotionZoom}`}>Sound</Link>
+                        <Link to={'/contact'} className={`${MotionZoom}`}>Contact</Link>
+                        <Link to={'/about'} className={`${MotionZoom}`}>Developers</Link>
                     </div>
                 </nav>
 

@@ -16,7 +16,7 @@ const decodeToken = (token: string) => {
     try {
         const base64Payload = token.split(".")[1];
         const payload = JSON.parse(atob(base64Payload));
-        return payload.user ?? payload; // Retorna diretamente se não houver uma propriedade `user`
+        return payload.user ?? payload;
     } catch (error) {
         console.error("Erro ao decodificar token:", error);
         return null;
