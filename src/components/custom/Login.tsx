@@ -5,7 +5,6 @@ import InputPassword from "./InputPassword";
 import { ButtonLogin } from "../ui/Button";
 import api from "@/service/api";
 import Input from "./Input";
-import axios from "axios";
 
 type Props = {
     className?: string;
@@ -30,10 +29,8 @@ function Login({ className = "" }: Props) {
             navigate("/home");
             location.reload();
         } catch (error) {
-            if (axios.isAxiosError(error)) {
-                const errorMessage = "Incorrect email or password";
-                alert(errorMessage);
-            }
+            console.log(error);
+            alert('Error, Email or Password incorrect.');
         }
     };
 
