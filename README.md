@@ -1,6 +1,6 @@
-# Tech Academy 5 - BackEnd
+# Tech Academy 5 - FrontEnd
 
-Repositório da API do projeto **Tech Academy 5**, desenvolvido em Node.js com TypeScript. 
+Repositório do FrontEnd do projeto **Tech Academy 5**, desenvolvido em React com Vite e TypeScript.
 
 ---
 
@@ -8,23 +8,25 @@ Repositório da API do projeto **Tech Academy 5**, desenvolvido em Node.js com T
 
 - **Node.js** – Ambiente de execução JavaScript
 - **TypeScript** – Superset de JavaScript com tipagem estática
-- **Express** – Framework web minimalista para Node.js
-- **Sequelize** – ORM para banco de dados SQL
-- **MySQL** – Banco de dados relacional
-- **Dotenv** – Gerenciamento de variáveis de ambiente
-- **Bearer Token + JWT** – Autenticação e autorização
-- **Zod** – Validação de dados
-- **Jest** – Testes automatizados
-- **Swagger** – Documentação interativa da API
+- **React** – Biblioteca para construção de interfaces de usuário
+- **Vite** – Ferramenta de build rápida para projetos web
+- **Tailwind CSS** – Framework CSS utilitário
+- **ChadCn** – Biblioteca de componentes estilizados
+- **Data AOS** – Animações ao rolar a página
+- **Axios** – Cliente HTTP baseado em Promises
+- **React Hook Form** – Gerenciamento de formulários
+- **React Router** – Gerenciamento de rotas no React
+- **Base64** – Codificação e decodificação de strings
+- **Bootstrap Icons** – Ícones estilizados
+- **CPF/CNPJ Validator** – Validação de documentos brasileiros
 
 ---
 
 ## ⚙️ Configurações do Projeto
 
-| Ambiente         | Banco de Dados           | Porta             |
-|------------------|--------------------------|-------------------|
-| Desenvolvimento  | `harmonicsound_homolog`  | `localhost:3000`  |
-| Testes           | `harmonicsound_test`     | `localhost:3000`  |
+| Ambiente         | URL Base               | Porta             |
+|------------------|------------------------|-------------------|
+| Desenvolvimento  | `http://localhost:5173`| `localhost:5173`  |
 
 ---
 
@@ -33,8 +35,8 @@ Repositório da API do projeto **Tech Academy 5**, desenvolvido em Node.js com T
 ### 1. Clone o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/tech-academy5-backend.git
-cd tech-academy5-backend
+git clone https://github.com/lucas-pedrozo/TechAcademy5.git
+cd tech-academy5-frontend
 ```
 
 ### 2. Instale as dependências
@@ -43,19 +45,7 @@ cd tech-academy5-backend
 npm install
 ```
 
-### 3. Configure as variáveis de ambiente
-
-Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo (ou use o `.env.example` como base):
-
-```env
-PORT=3000
-DATABASE_URL=mysql://usuario:senha@localhost:3306/harmonicsound_homolog
-JWT_SECRET=sua_chave_secreta
-```
-
-> Altere os valores conforme suas credenciais locais.
-
-### 4. Execute o projeto
+### 3. Execute o projeto
 
 ```bash
 npm run dev
@@ -63,35 +53,16 @@ npm run dev
 
 ---
 
-## 📚 Documentação da API
+## 📚 Dicas de Uso
 
-Acesse a documentação Swagger diretamente pelo navegador:
-
-```
-http://localhost:3000/api-docs
-```
-
----
-
-## 🔗 Rotas da API
-
-| Recurso        | Rota                   |
-|----------------|------------------------|
-| 📘 Swagger      | `/api-docs`            |
-| 👤 Usuários     | `/users`               |
-| 🔐 Login        | `/login`               |
-| 🎧 Itens        | `/items`               |
-| ⭐ Favoritos     | `/favorites`           |
-| 🗂 Categorias    | `/categories`          |
-| ✍️ Autores      | `/authors`             |
+1. Ao acessar o site, realize o cadastro e login.
+2. Após o login, vá até a **Home** e busque por suas músicas favoritas.
 
 ---
 
 ## 🧪 Testes
 
-Os testes automatizados utilizam a base de dados `harmonicsound_test`.
-
-Para executar:
+Os testes automatizados podem ser executados com o comando:
 
 ```bash
 npm run test
