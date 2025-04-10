@@ -1,54 +1,104 @@
-# React + TypeScript + Vite
+# Tech Academy 5 - BackEnd
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositório da API do projeto **Tech Academy 5**, desenvolvido em Node.js com TypeScript. 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **Node.js** – Ambiente de execução JavaScript
+- **TypeScript** – Superset de JavaScript com tipagem estática
+- **Express** – Framework web minimalista para Node.js
+- **Sequelize** – ORM para banco de dados SQL
+- **MySQL** – Banco de dados relacional
+- **Dotenv** – Gerenciamento de variáveis de ambiente
+- **Bearer Token + JWT** – Autenticação e autorização
+- **Zod** – Validação de dados
+- **Jest** – Testes automatizados
+- **Swagger** – Documentação interativa da API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ⚙️ Configurações do Projeto
+
+| Ambiente         | Banco de Dados           | Porta             |
+|------------------|--------------------------|-------------------|
+| Desenvolvimento  | `harmonicsound_homolog`  | `localhost:3000`  |
+| Testes           | `harmonicsound_test`     | `localhost:3000`  |
+
+---
+
+## 📦 Instalação e Inicialização
+
+### 1. Clone o projeto
+
+```bash
+git clone https://github.com/seu-usuario/tech-academy5-backend.git
+cd tech-academy5-backend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instale as dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo (ou use o `.env.example` como base):
+
+```env
+PORT=3000
+DATABASE_URL=mysql://usuario:senha@localhost:3306/harmonicsound_homolog
+JWT_SECRET=sua_chave_secreta
+```
+
+> Altere os valores conforme suas credenciais locais.
+
+### 4. Execute o projeto
+
+```bash
+npm run dev
+```
+
+---
+
+## 📚 Documentação da API
+
+Acesse a documentação Swagger diretamente pelo navegador:
+
+```
+http://localhost:3000/api-docs
+```
+
+---
+
+## 🔗 Rotas da API
+
+| Recurso        | Rota                   |
+|----------------|------------------------|
+| 📘 Swagger      | `/api-docs`            |
+| 👤 Usuários     | `/users`               |
+| 🔐 Login        | `/login`               |
+| 🎧 Itens        | `/items`               |
+| ⭐ Favoritos     | `/favorites`           |
+| 🗂 Categorias    | `/categories`          |
+| ✍️ Autores      | `/authors`             |
+
+---
+
+## 🧪 Testes
+
+Os testes automatizados utilizam a base de dados `harmonicsound_test`.
+
+Para executar:
+
+```bash
+npm run test
+```
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
