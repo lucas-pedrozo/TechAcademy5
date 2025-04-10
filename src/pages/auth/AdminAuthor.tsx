@@ -104,7 +104,7 @@ function AdminCategory() {
     // ============================================================================================== //
 
     return (
-        <main className="py-14 px-2.5 mx-auto max-w-[1220px]">
+        <main className="py-14 px-2.5 mx-auto max-w-[1220px] min-h-[51vh]">
             <section className="flex gap-2.5 flex-col min-[700px]:flex-row" data-aos="fade-up">
 
                 <div className="w-full">

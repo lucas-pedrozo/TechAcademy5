@@ -11,10 +11,16 @@ interface MapAuthor {
     name: string;
 }
 
+interface MapCategory {
+    id: number;
+    name: string;
+}
+
 interface MapItems {
     id: number;
     name: string;
     author: MapAuthor;
+    category: MapCategory;
     directory: string;
 }
 
@@ -187,8 +193,9 @@ const BuscarSound = () => {
                         key={index}
                         name={item.name}
                         author={item.author?.name}
+                        category={item.category?.name}
                         IdSound={item.id}
-                        src={`../../../public/${item.directory}`}
+                        src={`../../../public/audio/${item.directory}`}
                         className2="flex"
                         className1="hidden"
                     />

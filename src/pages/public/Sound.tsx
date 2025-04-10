@@ -10,10 +10,16 @@ interface MapAuthor {
     name: string;
 }
 
+interface MapCategory {
+    id: number;
+    name: string;
+}
+
 interface MapItems {
     id: number;
     name: string;
     author: MapAuthor;
+    category: MapCategory;
     directory: string;
 }
 
@@ -31,7 +37,8 @@ const Sound = () => {
 
     const filteredSounds = sounds.filter(item =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.author.name.toLowerCase().includes(searchTerm.toLowerCase())
+        item.author.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.category.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     const totalPages = Math.ceil(filteredSounds.length / itemsPerPage);
@@ -85,6 +92,7 @@ const Sound = () => {
                         key={index}
                         name={item.name}
                         author={item.author?.name}
+                        category={item.category?.name}
                         className1="flex"
                         className2="hidden"
                     />

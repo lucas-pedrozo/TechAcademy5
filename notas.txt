@@ -1,0 +1,9 @@
+create users
+Name: userAdmin
+Email: userAdmin@homail.com
+password: 123456Admin//
+
+create users
+Name: userAdmin2
+Email: userAdmin2@homail.com
+password: 123456Admin2//s
