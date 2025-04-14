@@ -24,9 +24,9 @@ Repositório do FrontEnd do projeto **Tech Academy 5**, desenvolvido em React co
 
 ## ⚙️ Configurações do Projeto
 
-| Ambiente         | URL Base               | Porta             |
-|------------------|------------------------|-------------------|
-| Desenvolvimento  | `http://localhost:5173`| `localhost:5173`  |
+| Ambiente        | URL Base                | Porta            |
+| --------------- | ----------------------- | ---------------- |
+| Desenvolvimento | `http://localhost:5173` | `localhost:5173` |
 
 ---
 

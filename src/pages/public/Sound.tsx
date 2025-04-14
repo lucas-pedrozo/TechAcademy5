@@ -81,6 +81,8 @@ const Sound = () => {
                 <span className={`${styleTutleSound}`}>
                     Sound
                 </span>
+
+
             </div>
 
             <section className="flex flex-col gap-2.5">

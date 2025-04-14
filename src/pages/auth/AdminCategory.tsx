@@ -1,8 +1,8 @@
-import { ButtonCreate, ButtonDelete, ButtonUpdate } from "@/components/ui/Button";
 import BlocoAuthorCatg from "@/components/custom/BlocoAuthorCatg";
 import { useEffect, useState } from "react";
 import api from "@/service/api";
 import AOS from "aos";
+import GlobalButton from "@/components/custom/buttons/GlobalButton";
 
 interface Item {
     id: number;
@@ -110,7 +110,7 @@ function AdminCategory() {
                             value={createName}
                             onChange={(e) => setCreateName(e.target.value)}
                         />
-                        <ButtonCreate />
+                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -131,7 +131,7 @@ function AdminCategory() {
                             value={updateName}
                             onChange={(e) => setUpdateName(e.target.value)}
                         />
-                        <ButtonUpdate />
+                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -145,7 +145,7 @@ function AdminCategory() {
                             value={deleteId}
                             onChange={(e) => setDeleteId(e.target.value)}
                         />
-                        <ButtonDelete />
+                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
             </section>

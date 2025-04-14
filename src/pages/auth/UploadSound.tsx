@@ -1,9 +1,10 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { ButtonUpdate } from "@/components/ui/Button";
+
 import Input from "@/components/custom/Input";
 import api from "@/service/api";
 import { useEffect } from "react";
 import Aos from "aos";
+import GlobalButton from "@/components/custom/buttons/GlobalButton";
 
 
 interface SoundFormData {
@@ -89,7 +90,7 @@ function UploadSound() {
                 {errors.directory && <span className={errorStyle}>{errors.directory.message}</span>}
             </section>
 
-            <ButtonUpdate />
+            <GlobalButton children={"Login"} buttonPosition="justify-center" />
         </form>
     );
 }

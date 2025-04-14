@@ -1,10 +1,10 @@
 import { PaginationComponent } from "@/components/custom/ConponentesPagination";
-import { ButtonDelete, ButtonUpdate } from "@/components/ui/Button";
 import ContainerSound from "@/components/custom/ContainerSond";
 import { useEffect, useState } from "react";
 import api from "@/service/api";
 import axios from "axios";
 import AOS from "aos";
+import GlobalButton from "@/components/custom/buttons/GlobalButton";
 
 interface MapAuthor {
     id: number;
@@ -148,7 +148,7 @@ const BuscarSound = () => {
                             value={updateTitle}
                             onChange={(e) => setUpdateTitle(e.target.value)}
                         />
-                        <ButtonUpdate />
+                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
 
@@ -162,7 +162,7 @@ const BuscarSound = () => {
                             onChange={(e) => setDeleteId(parseInt(e.target.value))}
                             required
                         />
-                        <ButtonDelete />
+                        <GlobalButton children={"Login"} buttonPosition="justify-center" />
                     </form>
                 </div>
 

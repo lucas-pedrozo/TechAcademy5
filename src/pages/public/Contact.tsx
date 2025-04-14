@@ -1,8 +1,9 @@
-import { ButtonContact } from "@/components/ui/Button";
+
 import Input from "@/components/custom/Input";
 import emailjs from 'emailjs-com';
 import { useEffect } from 'react';
 import AOS from "aos";
+import GlobalButton from "@/components/custom/buttons/GlobalButton";
 
 function Contact() {
     const sendEmail = (e: React.FormEvent) => {
@@ -28,7 +29,7 @@ function Contact() {
                     <Input placeholder="Name" id="name" className="w-full" title="Your Name" />
                     <Input placeholder="Email" id="email" className="w-full" title="Your Email" />
                     <textarea name="message" placeholder="Escreva sua mensagem" className="bg-white/20 min-h-[300px] border-1 border-white rounded-2xl text-white p-2 placeholder:text-white"></textarea>
-                    <ButtonContact />
+                    <GlobalButton children={"Login"} buttonPosition="justify-center" />
                 </form>
             </section>
         </main>

@@ -9,8 +9,8 @@ function NewPasswordUser() {
     const MotionContainer = "animate-fade-up animate-duration-500 animate-ease-out animate-normal || shadow-[0_0_8px_rgba(0,0,0,0.6)]"
 
     return (
-        <main className="py-14 px-2.5">
-            <section className={`max-w-[500px] min-[880px]:max-w-[860px] mx-auto mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
+        <main className="min-h-[86vh] w-full flex justify-center items-center pt-10">
+            <section className={`w-full max-w-[500px] min-[880px]:max-w-[860px]  mb-10 p-2.5 flex  items-center gap-2.5 bg-white/10 backdrop-blur-sm rounded-3xl border border-white || overflow-hidden || ${MotionContainer}`}>
 
                 <img src={ImageLogin} alt="imagem Login" className={`rounded-2xl hidden min-[880px]:flex || ${MotionImage} animate-delay-100 `} />
 
